@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bell AI Fellows - Voice-First AI Fellowship</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #ffffff;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            background: radial-gradient(circle at 30% 50%, rgba(120, 119, 198, 0.3), transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1), transparent 50%);
+        }
+
+        .hero-content {
+            z-index: 2;
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ffffff, #e0e7ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            font-weight: 300;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+            color: white;
+            padding: 16px 32px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(255, 107, 107, 0.4);
+        }
+
+        .phone-icon {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        .section {
+            padding: 80px 0;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            margin: 40px 0;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, #ffffff, #e0e7ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #e0e7ff;
+        }
+
+        .section p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+            line-height: 1.7;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .list li {
+            padding: 0.8rem 0;
+            padding-left: 2rem;
+            position: relative;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .list li::before {
+            content: "•";
+            color: #ff6b6b;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            font-size: 1.5rem;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 60px 0;
+            background: rgba(0, 0, 0, 0.2);
+            margin-top: 60px;
+        }
+
+        .footer p {
+            opacity: 0.7;
+            margin-bottom: 1rem;
+        }
+
+        .footer a {
+            color: #e0e7ff;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: #ffffff;
+        }
+
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .floating-circle {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-circle:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-circle:nth-child(2) {
+            width: 120px;
+            height: 120px;
+            top: 60%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        .floating-circle:nth-child(3) {
+            width: 60px;
+            height: 60px;
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                padding: 40px 20px;
+                margin: 20px 0;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-elements">
+        <div class="floating-circle"></div>
+        <div class="floating-circle"></div>
+        <div class="floating-circle"></div>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>🔔 Bell AI Fellowship</h1>
+            <p class="hero-subtitle">Voice-First AI Fellowship for Builders, Creators, and Dreamers at the Edge of Conversation, Emotion & Automation</p>
+            <a href="#apply" class="cta-button">
+                <svg class="phone-icon" viewBox="0 0 24 24">
+                    <path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                </svg>
+                Call to Apply
+            </a>
+        </div>
+    </section>
+
+    <div class="container">
+        <section class="section">
+            <h2>About the Bell AI Fellowship</h2>
+            <p>Named after Alexander Graham Bell, inventor of the telephone, we are creating a new kind of digital experience—where voice is not just an interface, but a medium for connection, ritual, and transformation. This is your invitation to join a highly selective, hands-on fellowship for early-career technologists, creators, and designers who want to shape how humans interact with AI through sound, story, and emotion.</p>
+            <p><strong>This isn't a job. It's a call to invent a new medium</strong>—rooted in play, powered by empathy, and delivered through the most human interface we have: the voice.</p>
+        </section>
+
+        <section class="section">
+            <h2>Who We're Looking For</h2>
+            <p>We're assembling a small, extraordinary cohort. You might be:</p>
+            <ul class="list">
+                <li>A technical builder or software engineer interested in AI voice applications and experience with relevant tools or languages</li>
+                <li>A content creator excited to tell stories or capture emotion through audio</li>
+                <li>An experience or game designer who wants to build interactive, conversational rituals</li>
+                <li>A UX thinker who believes voice is the most underexplored dimension of design</li>
+                <li>Or a curious, self-starting creative technologist who wants to push boundaries</li>
+            </ul>
+            <p><strong>What matters most is your creative instinct, technical curiosity, and emotional intelligence.</strong></p>
+        </section>
+
+        <section class="section">
+            <h2>What You'll Work On</h2>
+            <p>Fellows will build and contribute to live, growing systems used by real communities. Depending on your focus area, you might:</p>
+            <ul class="list">
+                <li>Design and prototype voice agents that lead gratitude rituals or creative collaborations</li>
+                <li>Connect automation flows (SMS → Voice → Web) using low/no-code tools and LLM APIs</li>
+                <li>Craft audio-first experiences for cohorts: think sonic campfires, audio LinkedIn, or micro-podcasts</li>
+                <li>Conduct user testing and iterate on emotionally intelligent interactions</li>
+                <li>Help shape the grammar of voice-first storytelling</li>
+            </ul>
+        </section>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <span class="feature-icon">🚀</span>
+                <h3>Apprenticeship in Company Creation</h3>
+                <p>Work alongside experienced founders who have created and led four startups from scratch, been involved in multiple IPOs, and invested in dozens of successful startups across Silicon Valley and beyond.</p>
+            </div>
+
+            <div class="feature-card">
+                <span class="feature-icon">🎯</span>
+                <h3>Real-World Impact</h3>
+                <p>Build projects with reach and real human impact. Create a portfolio that demonstrates your ability to craft meaningful experiences at the intersection of voice, AI, and human connection.</p>
+            </div>
+
+            <div class="feature-card">
+                <span class="feature-icon">🌟</span>
+                <h3>Creative Freedom</h3>
+                <p>A sandbox to push boundaries, not just ship tickets. This is more like a creative studio meets voice lab, inside an innovation pipeline where you'll build, reflect, and shape the future.</p>
+            </div>
+        </div>
+
+        <section class="section">
+            <h2>What Makes This Different</h2>
+            <p>This is not a traditional internship. It's more like a creative studio meets voice lab, inside an innovation pipeline. You won't just observe—you'll build, reflect, and shape the future of how humans and machines talk to each other.</p>
+            <p>If this isn't the right fit, we'll match you with roles across our vast network of aligned startups and mission-driven organizations.</p>
+        </section>
+
+        <section class="section" id="apply">
+            <h2>🎧 Ready to Begin?</h2>
+            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 2rem;">Call us to activate your application.</p>
+            <div style="text-align: center;">
+                <a href="tel:[insert-number]" class="cta-button" style="font-size: 1.3rem; padding: 20px 40px;">
+                    <svg class="phone-icon" viewBox="0 0 24 24">
+                        <path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                    </svg>
+                    [Insert Phone Number]
+                </a>
+            </div>
+            <p style="text-align: center; margin-top: 2rem; opacity: 0.8;">You'll instantly reach an AI-led voice interview. No resume required.</p>
+            <p style="text-align: center; margin-top: 1rem; opacity: 0.8;"><strong>Let your voice open the door.</strong></p>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p><strong>Bell AI Fellowship</strong> | bellaifellows.com</p>
+        <p style="margin-top: 1rem; opacity: 0.6; font-size: 0.9rem;">Named after Alexander Graham Bell, inventor of the telephone</p>
+        <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+            <p>
+                <a href="https://aughthour.com/privacy-policy/" style="margin-right: 2rem;">Privacy Policy</a>
+                <a href="https://aughthour.com/terms-of-service/">Terms of Service</a>
+            </p>
+            <p style="margin-top: 1rem; opacity: 0.5; font-size: 0.9rem;">© 2025 Bell AI Fellow. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
