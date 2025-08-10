@@ -1,686 +1,356 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bell AI Fellows - Voice-First AI Fellowship</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            color: #1a1a1a;
-            background: #ffffff;
-            overflow-x: hidden;
-        }
-
-        /* Remove fade-in from CTA button - make it immediately visible */
-        .hero .cta-button {
-            opacity: 1;
-            transform: translateY(0);
-            animation: pulse 2s infinite;
-        }
-
-        /* Floating background elements - simplified and more visible */
-        .floating-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 1;
-            overflow: hidden;
-        }
-
-        .floating-shape {
-            position: absolute;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(15, 23, 42, 0.15), rgba(15, 23, 42, 0.05));
-            animation: floatMove 4s ease-in-out infinite;
-        }
-
-        .floating-shape:nth-child(1) {
-            width: 120px;
-            height: 120px;
-            top: 10%;
-            left: 15%;
-            animation-delay: 0s;
-        }
-
-        .floating-shape:nth-child(2) {
-            width: 80px;
-            height: 80px;
-            top: 70%;
-            right: 20%;
-            animation-delay: 1.5s;
-        }
-
-        .floating-shape:nth-child(3) {
-            width: 100px;
-            height: 100px;
-            bottom: 20%;
-            left: 60%;
-            animation-delay: 3s;
-        }
-
-        @keyframes floatMove {
-            0%, 100% { 
-                transform: translateY(0px) translateX(0px) scale(1); 
-            }
-            50% { 
-                transform: translateY(-15px) translateX(10px) scale(1.1); 
-            }
-        }
-
-        /* Fade in animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 0.8s ease-out forwards;
-        }
-
-        .fade-in-delay-1 { animation-delay: 0.2s; }
-        .fade-in-delay-2 { animation-delay: 0.4s; }
-        .fade-in-delay-3 { animation-delay: 0.6s; }
-
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Ensure CTA button is always visible */
-        .hero .cta-button {
-            opacity: 1 !important;
-            transform: translateY(0) !important;
-        }
-
-        /* Pulse animation for CTA */
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(15, 23, 42, 0.4); }
-            70% { box-shadow: 0 0 0 10px rgba(15, 23, 42, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(15, 23, 42, 0); }
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 35%, #334155 100%);
-            position: relative;
-            z-index: 1;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, rgba(147, 51, 234, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 40% 80%, rgba(236, 72, 153, 0.1) 0%, transparent 50%);
-            z-index: -1;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero h1 {
-            font-size: clamp(3rem, 6vw, 5rem);
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            color: white;
-            letter-spacing: -0.025em;
-            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .hero-subtitle {
-            font-size: clamp(1.25rem, 2.5vw, 1.75rem);
-            font-weight: 400;
-            margin-bottom: 3rem;
-            color: rgba(255, 255, 255, 0.9);
-            line-height: 1.4;
-        }
-
-        .cta-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%);
-            color: white;
-            padding: 18px 36px;
-            border: none;
-            border-radius: 16px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            text-decoration: none;
-            cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            box-shadow: 
-                0 10px 30px rgba(59, 130, 246, 0.3),
-                0 4px 15px rgba(139, 92, 246, 0.2);
-            backdrop-filter: blur(10px);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 
-                0 20px 40px rgba(59, 130, 246, 0.4),
-                0 8px 25px rgba(139, 92, 246, 0.3);
-            animation: none;
-        }
-
-        .phone-icon {
-            width: 20px;
-            height: 20px;
-            fill: currentColor;
-        }
-
-        .section {
-            padding: 80px 0;
-            border-bottom: 1px solid #f1f5f9;
-        }
-
-        .section:last-of-type {
-            border-bottom: none;
-        }
-
-        .section h2 {
-            font-size: clamp(2rem, 4vw, 2.75rem);
-            margin-bottom: 1.5rem;
-            color: #0f172a;
-            font-weight: 700;
-            letter-spacing: -0.025em;
-        }
-
-        .section h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: #1e293b;
-            font-weight: 600;
-        }
-
-        .section p {
-            font-size: 1.125rem;
-            margin-bottom: 1.5rem;
-            color: #475569;
-            line-height: 1.7;
-            max-width: 70ch;
-        }
-
-        .highlight {
-            background: linear-gradient(135deg, #0f172a, #1e293b);
-            color: white;
-            padding: 80px 0;
-        }
-
-        .highlight h2,
-        .highlight h3 {
-            color: white;
-        }
-
-        .highlight p,
-        .highlight li {
-            color: #ffffff;
-        }
-
-        /* Fix for list items in highlight section */
-        .highlight .list li {
-            color: #ffffff !important;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-
-        .feature-card {
-            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-            padding: 2.5rem;
-            border-radius: 24px;
-            border: 1px solid rgba(226, 232, 240, 0.8);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-            box-shadow: 
-                0 4px 20px rgba(0, 0, 0, 0.08),
-                0 1px 3px rgba(0, 0, 0, 0.1);
-        }
-
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
-            transition: left 0.6s;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-12px) scale(1.02);
-            box-shadow: 
-                0 25px 50px rgba(0, 0, 0, 0.15),
-                0 10px 20px rgba(59, 130, 246, 0.1);
-            border-color: rgba(59, 130, 246, 0.3);
-        }
-
-        .feature-card:hover::before {
-            left: 100%;
-        }
-
-        .feature-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            display: block;
-            transition: transform 0.3s ease;
-        }
-
-        .feature-card:hover .feature-icon {
-            transform: scale(1.1) rotate(5deg);
-        }
-
-        .feature-card h3 {
-            color: #0f172a;
-            margin-bottom: 1rem;
-        }
-
-        .feature-card p {
-            color: #64748b;
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-
-        .list {
-            list-style: none;
-            padding: 0;
-            max-width: none;
-        }
-
-        .list li {
-            padding: 1rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-            font-size: 1.125rem;
-            color: #475569;
-            border-bottom: 1px solid #f1f5f9;
-        }
-
-        .list li:last-child {
-            border-bottom: none;
-        }
-
-        .list li::before {
-            content: "→";
-            color: #0f172a;
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-            font-size: 1.25rem;
-        }
-
-        .highlight .list li {
-            border-bottom: 1px solid #334155;
-            color: #ffffff !important;
-        }
-
-        .highlight .list li::before {
-            color: #e2e8f0;
-        }
-
-        .apply-section {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 35%, #334155 100%);
-            position: relative;
-            color: white;
-            text-align: center;
-            padding: 140px 0;
-            overflow: hidden;
-        }
-
-        .apply-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 30% 20%, rgba(59, 130, 246, 0.2) 0%, transparent 50%),
-                radial-gradient(circle at 70% 80%, rgba(236, 72, 153, 0.15) 0%, transparent 50%);
-            z-index: 1;
-        }
-
-        .apply-section .container {
-            position: relative;
-            z-index: 2;
-        }
-
-        .apply-section h2 {
-            color: white;
-            margin-bottom: 2rem;
-        }
-
-        .apply-section p {
-            color: #e2e8f0;
-            font-size: 1.25rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .apply-section .cta-button {
-            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%);
-            color: white;
-            font-size: 1.1rem;
-            padding: 18px 36px;
-            box-shadow: 
-                0 10px 30px rgba(59, 130, 246, 0.3),
-                0 4px 15px rgba(139, 92, 246, 0.2);
-            backdrop-filter: blur(10px);
-            margin: 2rem 0;
-        }
-
-        .apply-section .cta-button:hover {
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 
-                0 20px 40px rgba(59, 130, 246, 0.4),
-                0 8px 25px rgba(139, 92, 246, 0.3);
-        }
-
-        .apply-section p:last-of-type {
-            margin-bottom: 1rem;
-            margin-top: 3rem;
-        }
-
-        .footer {
-            text-align: center;
-            padding: 60px 0;
-            background: #f8fafc;
-            border-top: 1px solid #e2e8f0;
-        }
-
-        .footer p {
-            color: #64748b;
-            margin-bottom: 1rem;
-            font-size: 1rem;
-        }
-
-        .footer a {
-            color: #0f172a;
-            text-decoration: none;
-            margin: 0 1rem;
-        }
-
-        .footer a:hover {
-            text-decoration: underline;
-        }
-
-        .two-column {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: start;
-        }
-
-        .stats {
-            display: flex;
-            gap: 3rem;
-            margin: 3rem 0;
-            justify-content: center;
-        }
-
-        .stat {
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .stat:hover {
-            transform: translateY(-5px);
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #0f172a;
-            display: block;
-            transition: all 0.3s ease;
-        }
-
-        .stat:hover .stat-number {
-            transform: scale(1.1);
-            color: #1e293b;
-        }
-
-        .stat-label {
-            color: #64748b;
-            font-size: 0.875rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            font-weight: 500;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 0 20px;
-            }
-            
-            .section {
-                padding: 60px 0;
-            }
-            
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .two-column {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .stats {
-                flex-direction: column;
-                gap: 2rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bell AI Fellows - Voice-First AI Fellowship</title>
+  <style>
+    /* Base reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; overflow-x: hidden; -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6; color: #1a1a1a; background: #fff;
+    }
+    img, svg { max-width: 100%; height: auto; display: inline-block; }
+
+    /* Layout */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .section { padding: 80px 0; border-bottom: 1px solid #f1f5f9; }
+    .section:last-of-type { border-bottom: none; }
+    .two-column {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 100vh; display: flex; align-items: center; justify-content: center;
+      text-align: center; position: relative; z-index: 1; overflow: hidden;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 35%, #334155 100%);
+    }
+    .hero::before {
+      content: ""; position: absolute; inset: 0; z-index: -1;
+      background:
+        radial-gradient(circle at 20% 30%, rgba(59,130,246,.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(147,51,234,.15) 0%, transparent 50%),
+        radial-gradient(circle at 40% 80%, rgba(236,72,153,.1) 0%, transparent 50%);
+    }
+    .hero-content { max-width: 800px; position: relative; z-index: 2; }
+    .hero h1 {
+      font-size: clamp(2.4rem, 6vw, 5rem); font-weight: 700; margin-bottom: 1.5rem;
+      color: #fff; letter-spacing: -0.025em; text-shadow: 0 4px 20px rgba(0,0,0,.3);
+    }
+    .hero-subtitle {
+      font-size: clamp(1.1rem, 2.5vw, 1.6rem); font-weight: 400; margin-bottom: 2rem;
+      color: rgba(255,255,255,.9); line-height: 1.45;
+    }
+    .info-card {
+      background: linear-gradient(135deg, rgba(255,255,255,.95) 0%, rgba(248,250,252,.95) 100%);
+      padding: 24px; border-radius: 20px; border: 1px solid rgba(226,232,240,.8);
+      max-width: 640px; margin: 0 auto 24px auto; text-align: left;
+      backdrop-filter: blur(10px); box-shadow: 0 10px 30px rgba(0,0,0,.1);
+    }
+    .info-card h3 { color: #0f172a; margin-bottom: 12px; font-size: 1.15rem; }
+    .info-card ul { list-style: disc; padding-left: 20px; color: #475569; }
+    .info-card li { margin-bottom: .75rem; }
+
+    /* CTA */
+    .cta-button {
+      display: inline-flex; align-items: center; gap: 12px;
+      background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%);
+      color: #fff; padding: 16px 28px; border: 0; border-radius: 16px;
+      font-size: 1.05rem; font-weight: 600; text-decoration: none; cursor: pointer;
+      transition: transform .25s ease, box-shadow .25s ease;
+      box-shadow: 0 10px 30px rgba(59,130,246,.3), 0 4px 15px rgba(139,92,246,.2);
+      backdrop-filter: blur(10px);
+    }
+    .cta-button:hover { transform: translateY(-3px) scale(1.02); }
+    .phone-icon { width: 20px; height: 20px; fill: currentColor; }
+
+    /* Headings and text */
+    .section h2 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem); margin-bottom: 1rem;
+      color: #0f172a; font-weight: 700; letter-spacing: -0.025em;
+    }
+    .section h3 { font-size: 1.35rem; margin-bottom: .75rem; color: #1e293b; font-weight: 600; }
+    .section p {
+      font-size: 1.05rem; margin-bottom: 1.25rem; color: #475569; line-height: 1.7; max-width: 70ch;
+    }
+
+    /* Cards grid */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* mobile-safe */
+      gap: 2rem; margin: 2rem 0 0 0;
+    }
+    .feature-card {
+      background: linear-gradient(135deg, #fff 0%, #f8fafc 100%);
+      padding: 2rem; border-radius: 24px; border: 1px solid rgba(226,232,240,.8);
+      position: relative; overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,.08), 0 1px 3px rgba(0,0,0,.1);
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    }
+    .feature-card:hover {
+      transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,.12);
+      border-color: rgba(59,130,246,.3);
+    }
+    .feature-icon { font-size: 2rem; margin-bottom: .5rem; display: block; }
+    .feature-card p { color: #64748b; font-size: .98rem; line-height: 1.6; }
+
+    /* Mentor photos */
+    .mentor-photo {
+      width: 120px; height: 120px; border-radius: 50%; object-fit: cover;
+      margin: 0 auto 1.5rem auto; display: block;
+      border: 4px solid rgba(59,130,246,.1);
+      transition: border-color .25s ease, transform .25s ease;
+    }
+    .feature-card:hover .mentor-photo {
+      border-color: rgba(59,130,246,.3);
+      transform: scale(1.05);
+    }
+    .mentor-card {
+      text-align: center;
+    }
+    .mentor-card h3 {
+      margin-bottom: 1rem !important;
+    }
+    .mentor-card p {
+      text-align: left;
+    }
+
+    /* Highlight section */
+    .highlight {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 35%, #334155 100%);
+      color: #fff; padding: 80px 0;
+    }
+    .highlight h2, .highlight h3 { color: #fff; }
+    .highlight p, .highlight li { color: #fff; }
+    .list { list-style: none; padding: 0; }
+    .list li {
+      padding: 1rem 0 1rem 1.5rem; position: relative; font-size: 1.05rem;
+      color: #475569; border-bottom: 1px solid #f1f5f9;
+    }
+    .list li:last-child { border-bottom: none; }
+    .list li::before {
+      content: "→"; color: #0f172a; font-weight: 700; position: absolute; left: 0; font-size: 1.1rem;
+    }
+    .highlight .list li { border-bottom: 1px solid #334155; color: #fff; }
+    .highlight .list li::before { color: #e2e8f0; }
+
+    /* Stats */
+    .stats { display: flex; gap: 3rem; margin: 2rem 0; justify-content: center; }
+    .stat { text-align: center; }
+    .stat-number { font-size: 2.2rem; font-weight: 700; color: #0f172a; display: block; }
+    .stat-label { color: #64748b; font-size: .875rem; text-transform: uppercase; letter-spacing: .05em; font-weight: 500; }
+
+    /* Apply section */
+    .apply-section {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 35%, #334155 100%);
+      color: #fff; text-align: center; padding: 120px 0; position: relative; overflow: hidden;
+    }
+    .apply-section::before {
+      content: ""; position: absolute; inset: 0; z-index: 1;
+      background:
+        radial-gradient(circle at 30% 20%, rgba(59,130,246,.2) 0%, transparent 50%),
+        radial-gradient(circle at 70% 80%, rgba(236,72,153,.15) 0%, transparent 50%);
+    }
+    .apply-section .container { position: relative; z-index: 2; }
+    .apply-section h2 { margin-bottom: 1rem; }
+    .apply-section p { color: #e2e8f0; font-size: 1.15rem; }
+
+    /* Footer */
+    .footer { text-align: center; padding: 60px 0; background: #f8fafc; border-top: 1px solid #e2e8f0; }
+    .footer p { color: #64748b; margin-bottom: 1rem; font-size: 1rem; }
+    .footer a { color: #0f172a; text-decoration: none; margin: 0 1rem; }
+    .footer a:hover { text-decoration: underline; }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .two-column { grid-template-columns: 1fr; gap: 2rem; }
+    }
+    @media (max-width: 768px) {
+      .container { padding: 0 20px; }
+      .section { padding: 60px 0; }
+      .stats { flex-direction: column; gap: 1.5rem; }
+      .info-card { padding: 18px; }
+      .cta-button { padding: 14px 22px; font-size: 1rem; }
+    }
+  </style>
 </head>
 <body>
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="fade-in">🔔 Bell AI Fellows</h1>
-                <p class="hero-subtitle fade-in fade-in-delay-1">Join our Voice-First AI Fellowship for Builders, Creators, and Dreamers at the Edge of Conversation, Emotion & Automation</p>
-                <div class="fade-in fade-in-delay-2" style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%); padding: 32px; border-radius: 20px; border: 1px solid rgba(226, 232, 240, 0.8); margin: 2rem 0; text-align: left; max-width: 600px; margin-left: auto; margin-right: auto; backdrop-filter: blur(10px); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);">
-                    <h3 style="color: #0f172a; margin-bottom: 1rem; font-size: 1.25rem;">🎙️ What happens when you call:</h3>
-                    <ul style="list-style: none; padding: 0; margin: 0; color: #475569; line-height: 1.6;">
-                        <li style="margin-bottom: 0.75rem;">• You'll reach our AI interviewer for a 5-minute conversation</li>
-                        <li style="margin-bottom: 0.75rem;">• Questions like: "What's a project that sparked your curiosity?" and "How do you think voice could change how we connect?"</li>
-                        <li style="margin-bottom: 0.75rem;">• We're looking for creative instinct, technical curiosity, and emotional intelligence</li>
-                        <li style="margin-bottom: 0.75rem;">• You'll hear back within 48 hours</li>
-                    </ul>
-                </div>
-                <a href="#apply" class="cta-button fade-in fade-in-delay-3">
-                    <svg class="phone-icon" viewBox="0 0 24 24">
-                        <path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-                    </svg>
-                    Start Voice Interview
-                </a>
-            </div>
-        </div>
-    </section>
-
+  <section class="hero">
     <div class="container">
-        <section class="section">
-            <h2>About the Bell AI Fellowship</h2>
-            <p>Named after Alexander Graham Bell, inventor of the telephone, we are creating a new kind of digital experience—where voice is not just an interface, but a medium for connection, ritual, and transformation.</p>
-            <p>This is your invitation to join a highly selective, hands-on fellowship for early-career technologists, creators, and designers who want to shape how humans interact with AI through sound, story, and emotion.</p>
-            <p><strong>This isn't a job. It's a call to invent a new medium</strong>—rooted in play, powered by empathy, and delivered through the most human interface we have: the voice.</p>
-        </section>
+      <div class="hero-content">
+        <h1>🔔 Bell AI Fellows</h1>
+        <p class="hero-subtitle">
+          Voice-First AI Fellowship for Builders, Creators, and Dreamers at the Edge of Conversation, Emotion & Automation
+        </p>
 
-        <section class="section">
-            <div class="two-column">
-                <div>
-                    <h2>Fellowship Details</h2>
-                    <p>Our inaugural cohort brings together 4-6 exceptional individuals for an intensive 3-month program.</p>
-                </div>
-                <div>
-                    <ul class="list">
-                        <li><strong>Duration:</strong> 3 months (August 25 - November 25, 2025)</li>
-                        <li><strong>Commitment:</strong> 20 hours per week, part-time</li>
-                        <li><strong>Cohort Size:</strong> 4-6 carefully selected fellows</li>
-                        <li><strong>Application Deadline:</strong> August 15th, 2025</li>
-                        <li><strong>Investment:</strong> Gain experience, network, portfolio, and access to cutting-edge AI tools - no tuition required</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="two-column">
-                <div>
-                    <h2>Who We're Looking For</h2>
-                    <p>We're assembling a small, extraordinary cohort. What matters most is your creative instinct, technical curiosity, and emotional intelligence.</p>
-                </div>
-                <div>
-                    <ul class="list">
-                        <li>A technical builder or software engineer interested in AI voice applications and experience with relevant tools or languages</li>
-                        <li>A content creator excited to tell stories or capture emotion through audio</li>
-                        <li>An experience or game designer who wants to build interactive, conversational rituals</li>
-                        <li>A UX thinker who believes voice is the most underexplored dimension of design</li>
-                        <li>Or a curious, self-starting creative technologist who wants to push boundaries</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2>Meet Your Mentors</h2>
-            <div class="features-grid" style="grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); margin-top: 2rem;">
-                <div class="feature-card">
-                    <h3 style="margin-bottom: 0.5rem;">Tenni Theurer</h3>
-                    <p style="margin-bottom: 1rem; font-size: 0.95rem;">Product-driven entrepreneur who's led teams at Yahoo, Visa, and Verizon. Co-founded multiple startups and holds six patents in web and digital payments.</p>
-                    <a href="https://www.linkedin.com/in/tennitheurer/" target="_blank" style="color: #0f172a; text-decoration: none; font-weight: 600; font-size: 0.9rem;">View LinkedIn Profile →</a>
-                </div>
-                
-                <div class="feature-card">
-                    <h3 style="margin-bottom: 0.5rem;">Sunil Paul</h3>
-                    <p style="margin-bottom: 1rem; font-size: 0.95rem;">Serial entrepreneur and early investor who co-founded Sidecar (precursor to Lyft/Uber), was a partner at Spring Ventures, and is known for spotting breakthrough trends early.</p>
-                    <a href="https://www.linkedin.com/in/sunilpaul/" target="_blank" style="color: #0f172a; text-decoration: none; font-weight: 600; font-size: 0.9rem;">View LinkedIn Profile →</a>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <section class="section highlight">
-        <div class="container">
-            <h2>What You'll Work On</h2>
-            <p>Fellows will build and contribute to live, growing systems used by real communities. Depending on your focus area, you might:</p>
-            <ul class="list">
-                <li>Design and prototype voice agents that lead gratitude rituals or creative collaborations</li>
-                <li>Connect automation flows (SMS → Voice → Web) using low/no-code tools and LLM APIs</li>
-                <li>Build voice agents for specific use cases: wellness coaches, creative collaborators, or community facilitators</li>
-                <li>Conduct user testing and iterate on emotionally intelligent interactions</li>
-                <li>Help shape the grammar of voice-first storytelling</li>
-            </ul>
+        <div class="info-card">
+          <h3>🎙️ What to expect:</h3>
+          <ul>
+            <li>You'll reach our AI interviewer for a 5-minute conversation</li>
+            <li>Questions like: "What's a project that sparked your curiosity?" and "How do you think voice could change how we connect?"</li>
+            <li>We're looking for creative instinct, technical curiosity, and emotional intelligence</li>
+            <li>You'll hear back within 48 hours</li>
+          </ul>
         </div>
+
+        <a href="#apply" class="cta-button">
+          <svg class="phone-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+          </svg>
+          Start Voice Interview
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <section class="section">
+      <h2>About the Bell AI Fellowship</h2>
+      <p>Named after Alexander Graham Bell, inventor of the telephone, we are creating a new kind of digital experience, where voice is not just an interface, but a medium for connection, ritual, and transformation.</p>
+      <p>This is your invitation to join a highly selective, hands-on fellowship for early-career technologists, creators, and designers who want to shape how humans interact with AI through sound, story, and emotion.</p>
+      <p><strong>This isn't a job. It's a call to invent a new medium</strong>, rooted in play, powered by empathy, and delivered through the most human interface we have: the voice.</p>
     </section>
 
+    <section class="section">
+      <div class="two-column">
+        <div>
+          <h2>Fellowship Details</h2>
+          <p>Our inaugural cohort brings together 4 to 6 exceptional individuals for an intensive 3-month program.</p>
+        </div>
+        <div>
+          <ul class="list">
+            <li><strong>Duration:</strong> 3 months (August 25 to November 25, 2025)</li>
+            <li><strong>Commitment:</strong> 20 hours per week, part-time</li>
+            <li><strong>Cohort Size:</strong> 4 to 6 carefully selected fellows</li>
+            <li><strong>Application Deadline:</strong> August 15, 2025</li>
+            <li><strong>Investment:</strong> Gain experience, network, portfolio, and access to cutting-edge AI tools — no tuition required</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="two-column">
+        <div>
+          <h2>Who We're Looking For</h2>
+          <p>We're assembling a small, extraordinary cohort. What matters most is your creative instinct, technical curiosity, and emotional intelligence.</p>
+        </div>
+        <div>
+          <ul class="list">
+            <li>A technical builder or software engineer interested in AI voice applications and experience with relevant tools or languages</li>
+            <li>A content creator excited to tell stories or capture emotion through audio</li>
+            <li>An experience or game designer who wants to build interactive, conversational rituals</li>
+            <li>A UX thinker who believes voice is the most underexplored dimension of design</li>
+            <li>Or a curious, self-starting creative technologist who wants to push boundaries</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Meet Your Mentors</h2>
+      <!-- No inline grid width. Mobile-safe via CSS above. -->
+      <div class="features-grid">
+        <div class="feature-card mentor-card">
+          <img src="./images/sunil-paul.jpg" alt="Sunil Paul" class="mentor-photo">
+          <h3 style="margin-bottom: .5rem;">Sunil Paul</h3>
+          <p style="margin-bottom: 1rem; font-size: .95rem;">Serial entrepreneur and investor, pioneering mobility and climate ventures. Founded four companies with 10x+ returns. Investor and board member for five IPOs and four unicorns.</p>
+          <a href="https://www.linkedin.com/in/sunilpaul/" target="_blank" style="color: #0f172a; text-decoration: none; font-weight: 600; font-size: .9rem;">View LinkedIn Profile →</a>
+        </div>
+        <div class="feature-card mentor-card">
+          <img src="./images/tenni-theurer.jpg" alt="Tenni Theurer" class="mentor-photo">
+          <h3 style="margin-bottom: .5rem;">Tenni Theurer</h3>
+          <p style="margin-bottom: 1rem; font-size: .95rem;">Product-driven builder who’s led $1.6B businesses at Yahoo, Visa, and Verizon, launched Visa’s first digital wallet, and scaled teams from startups to enterprises.</p>
+          <a href="https://www.linkedin.com/in/tennitheurer/" target="_blank" style="color: #0f172a; text-decoration: none; font-weight: 600; font-size: .9rem;">View LinkedIn Profile →</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section class="section highlight">
     <div class="container">
-        <section class="section">
-            <h2>What You'll Gain</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <span class="feature-icon">🚀</span>
-                    <h3>Real-World Portfolio</h3>
-                    <p>Projects with reach and real human impact. Build experiences that matter to real communities and users.</p>
-                </div>
-
-                <div class="feature-card">
-                    <span class="feature-icon">🎯</span>
-                    <h3>Expert Mentorship</h3>
-                    <p>Learn from tech veterans with deep experience across startups, exits, and product innovation.</p>
-                </div>
-
-                <div class="feature-card">
-                    <span class="feature-icon">🌟</span>
-                    <h3>Creative Freedom</h3>
-                    <p>A sandbox to push boundaries, not just ship tickets. Shape the future of human-AI interaction.</p>
-                </div>
-
-                <div class="feature-card">
-                    <span class="feature-icon">🔗</span>
-                    <h3>Network Access</h3>
-                    <p>Connection to opportunities across our vast network of aligned startups and mission-driven organizations.</p>
-                </div>
-
-                <div class="feature-card">
-                    <span class="feature-icon">🏢</span>
-                    <h3>Company Building</h3>
-                    <p>Learn what it takes to go from first prototype to funded venture with experienced founders.</p>
-                </div>
-
-                <div class="feature-card">
-                    <span class="feature-icon">⚡</span>
-                    <h3>Cutting-Edge AI</h3>
-                    <p>Stay on top of evolving AI models and capabilities with access to the latest tools and technologies.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2>Apprenticeship in Company Creation</h2>
-            <p>This fellowship also offers a rare inside look at how early-stage companies are actually built. You'll be working alongside experienced founders who have built multiple startups, seen exits, and made dozens of successful investments.</p>
-            <p>You'll learn how to identify ideas worth pursuing, rapidly test them with real users, and build infrastructure that can scale—all while staying grounded in human need and emotional design.</p>
-        </section>
+      <h2>What You'll Work On</h2>
+      <p>Fellows will build and contribute to live, growing systems used by real communities. Depending on your focus area, you might:</p>
+      <ul class="list">
+        <li>Design and prototype voice agents that lead gratitude rituals or creative collaborations</li>
+        <li>Connect automation flows (SMS → Voice → Web) using low/no-code tools and LLM APIs</li>
+        <li>Build voice agents for specific use cases: wellness coaches, creative collaborators, or community facilitators</li>
+        <li>Conduct user testing and iterate on emotionally intelligent interactions</li>
+        <li>Help design voice-first AI where humans lead and AI assists</li>
+      </ul>
     </div>
+  </section>
 
-    <section class="apply-section" id="apply">
-        <div class="container">
-            <h2>🎧 Ready to Begin?</h2>
-            <p>Call us to activate your application for our inaugural cohort.</p>
-            <a href="tel:+16502524135" class="cta-button">
-                <svg class="phone-icon" viewBox="0 0 24 24">
-                    <path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-                </svg>
-                +1 (650) 252-4135
-            </a>
-            <p style="margin-top: 2rem; opacity: 0.8;">You'll instantly reach an AI-led voice interview. No resume required.</p>
-            <p style="margin-top: 1rem; opacity: 0.8;"><strong>Applications close August 15th • Cohort starts August 25th</strong></p>
+  <div class="container">
+    <section class="section">
+      <h2>What You'll Gain</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <span class="feature-icon">🚀</span>
+          <h3>Real-World Portfolio</h3>
+          <p>Projects with reach and real human impact. Build experiences that matter to real communities and users.</p>
         </div>
+        <div class="feature-card">
+          <span class="feature-icon">🎯</span>
+          <h3>Expert Mentorship</h3>
+          <p>Learn from tech veterans with deep experience across startups, exits, and product innovation.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">🌟</span>
+          <h3>Creative Freedom</h3>
+          <p>A sandbox to push boundaries, not just ship tickets. Shape the future of human-AI interaction.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">🔗</span>
+          <h3>Network Access</h3>
+          <p>Connection to opportunities across our network of aligned startups and mission-driven organizations.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">🏢</span>
+          <h3>Company Building</h3>
+          <p>Learn what it takes to go from first prototype to funded venture with experienced founders.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">⚡</span>
+          <h3>Cutting-Edge AI</h3>
+          <p>Stay on top of evolving AI models and capabilities with access to the latest tools and technologies.</p>
+        </div>
+      </div>
     </section>
 
-    <footer class="footer">
-        <div class="container">
-            <p>
-                <a href="https://aughthour.com/privacy-policy/">Privacy Policy</a>
-                <a href="https://aughthour.com/terms-of-service/">Terms of Service</a>
-            </p>
-            <p style="margin-top: 1rem; opacity: 0.6; font-size: 0.9rem;">© 2025 Bell AI Fellows</p>
-        </div>
-    </footer>
+    <section class="section">
+      <h2>Apprenticeship in Company Creation</h2>
+      <p>This fellowship also offers a rare inside look at how early-stage companies are built. You'll work alongside experienced founders who have built multiple startups, seen exits, and made dozens of successful investments.</p>
+      <p>You'll learn how to identify ideas worth pursuing, rapidly test them with real users, and build infrastructure that can scale, while staying grounded in human need and emotional design.</p>
+    </section>
+  </div>
+
+  <section class="apply-section" id="apply">
+    <div class="container">
+      <h2>🎧 Ready to Begin?</h2>
+      <p style="margin-top: .75rem; margin-bottom: 1.5rem; opacity: .8;">Call us to activate your application for our inaugural cohort.</p>
+      <a href="tel:+16502524135" class="cta-button">
+        <svg class="phone-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+        </svg>
+        +1 (650) 252-4135
+      </a>
+      <p style="margin-top: 1.5rem; opacity: .8;">You'll instantly reach an AI-led voice interview. No resume required.</p>
+      <p style="margin-top: .75rem; opacity: .8;"><strong>Applications close August 15 • Cohort starts August 25</strong></p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>
+        <a href="https://aughthour.com/privacy-policy/">Privacy Policy</a>
+        <a href="https://aughthour.com/terms-of-service/">Terms of Service</a>
+      </p>
+      <p style="margin-top: 1rem; opacity: .6; font-size: .9rem;">© 2025 Bell AI Fellows</p>
+    </div>
+  </footer>
 </body>
 </html>
