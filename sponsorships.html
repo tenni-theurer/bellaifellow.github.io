@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="favicon.png" type="image/png">
+  <title>Sponsor Bell AI Fellows - Voice-First AI Fellowship</title>
+  <style>
+    /* Base reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; overflow-x: hidden; -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6; color: #1a1a1a; background: #fff;
+    }
+    img, svg { max-width: 100%; height: auto; display: inline-block; }
+
+    /* Layout */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .section { padding: 80px 0; border-bottom: 1px solid #f1f5f9; }
+    .section:last-of-type { border-bottom: none; }
+    .two-column {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 70vh; display: flex; align-items: center; justify-content: center;
+      text-align: center; position: relative; z-index: 1; overflow: hidden;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 35%, #334155 100%);
+    }
+    .hero::before {
+      content: ""; position: absolute; inset: 0; z-index: -1;
+      background:
+        radial-gradient(circle at 20% 30%, rgba(59,130,246,.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(147,51,234,.15) 0%, transparent 50%);
+    }
+    .hero-content { max-width: 800px; position: relative; z-index: 2; }
+    .hero h1 {
+      font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 700; margin-bottom: 1.5rem;
+      color: #fff; letter-spacing: -0.025em; text-shadow: 0 4px 20px rgba(0,0,0,.3);
+    }
+    .hero-subtitle {
+      font-size: clamp(1.1rem, 2.5vw, 1.4rem); font-weight: 400; margin-bottom: 2rem;
+      color: rgba(255,255,255,.9); line-height: 1.45;
+    }
+
+    /* Navigation */
+    .nav {
+      position: absolute; top: 2rem; left: 2rem; z-index: 10;
+    }
+    .nav a {
+      color: rgba(255,255,255,.8); text-decoration: none; font-weight: 500;
+      transition: color .25s ease;
+    }
+    .nav a:hover { color: #fff; }
+
+    /* CTA */
+    .cta-button {
+      display: inline-flex; align-items: center; gap: 12px;
+      background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%);
+      color: #fff; padding: 16px 28px; border: 0; border-radius: 16px;
+      font-size: 1.05rem; font-weight: 600; text-decoration: none; cursor: pointer;
+      transition: transform .25s ease, box-shadow .25s ease;
+      box-shadow: 0 10px 30px rgba(59,130,246,.3), 0 4px 15px rgba(139,92,246,.2);
+    }
+    .cta-button:hover { transform: translateY(-3px) scale(1.02); }
+
+    /* Headings and text */
+    .section h2 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem); margin-bottom: 1rem;
+      color: #0f172a; font-weight: 700; letter-spacing: -0.025em;
+    }
+    .section h3 { font-size: 1.35rem; margin-bottom: .75rem; color: #1e293b; font-weight: 600; }
+    .section p {
+      font-size: 1.05rem; margin-bottom: 1.25rem; color: #475569; line-height: 1.7; max-width: 70ch;
+    }
+
+    /* Tier cards */
+    .tier-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem; margin: 3rem 0;
+    }
+    @media (max-width: 768px) {
+      .tier-grid { grid-template-columns: 1fr; }
+    }
+    .tier-card {
+      background: linear-gradient(135deg, #fff 0%, #f8fafc 100%);
+      padding: 2.5rem 2rem; border-radius: 24px; 
+      position: relative; overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,.08), 0 1px 3px rgba(0,0,0,.1);
+      transition: transform .25s ease, box-shadow .25s ease;
+      border: 2px solid transparent;
+    }
+    .tier-card:hover {
+      transform: translateY(-8px); 
+      box-shadow: 0 20px 40px rgba(0,0,0,.12);
+    }
+    .tier-card.featured {
+      border: 2px solid #3b82f6;
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    }
+    .tier-card.premium {
+      border: 2px solid #8b5cf6;
+      background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
+    }
+    .tier-price {
+      font-size: 2rem; font-weight: 700; color: #0f172a; 
+      margin-bottom: .5rem; display: block;
+    }
+    .tier-name {
+      font-size: 1.25rem; font-weight: 600; color: #374151; 
+      margin-bottom: 1.5rem;
+    }
+    .tier-benefits {
+      list-style: none; padding: 0;
+    }
+    .tier-benefits li {
+      padding: .5rem 0; color: #64748b; font-size: .95rem;
+      border-bottom: 1px solid #f1f5f9;
+      position: relative; padding-left: 1.5rem;
+    }
+    .tier-benefits li:last-child { border-bottom: none; }
+    .tier-benefits li::before {
+      content: "✓"; color: #10b981; font-weight: bold;
+      position: absolute; left: 0;
+    }
+
+
+    /* Stats */
+    .stats-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem; margin: 2rem 0; text-align: center;
+    }
+    .stat {
+      background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+      padding: 2rem; border-radius: 16px;
+    }
+    .stat-number { 
+      font-size: 2.5rem; font-weight: 700; color: #0f172a; 
+      display: block; margin-bottom: .5rem;
+    }
+    .stat-label { 
+      color: #64748b; font-size: .9rem; font-weight: 500;
+    }
+
+    /* Impact section */
+    .impact-section {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 35%, #334155 100%);
+      color: #fff; padding: 80px 0;
+    }
+    .impact-section h2, .impact-section h3 { color: #fff; }
+    .impact-section p { color: #e2e8f0; }
+
+    /* Contact form */
+    .contact-form {
+      background: #f8fafc; border-radius: 20px; padding: 2.5rem;
+      margin: 2rem 0;
+    }
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    .form-group label {
+      display: block; margin-bottom: .5rem; font-weight: 600;
+      color: #374151;
+    }
+    .form-group input, .form-group textarea, .form-group select {
+      width: 100%; padding: 12px 16px; border: 2px solid #e5e7eb;
+      border-radius: 12px; font-size: 1rem; transition: border-color .25s ease;
+    }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+      outline: none; border-color: #3b82f6;
+    }
+
+    @media (max-width: 900px) {
+      .two-column { grid-template-columns: 1fr; gap: 2rem; }
+    }
+    @media (max-width: 768px) {
+      .container { padding: 0 20px; }
+      .section { padding: 60px 0; }
+      .stats-grid { grid-template-columns: 1fr; gap: 1rem; }
+      .nav { position: static; padding: 1rem 0; text-align: center; }
+      .tier-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="index.html">← Back to Fellowship</a>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Partner With Us</h1>
+        <p class="hero-subtitle">
+            Get first access to breakthrough voice AI applications while backing the founders building tomorrow's billion-dollar companies
+        </p>
+        <a href="#contact" class="cta-button">
+          Partner With Us
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <section class="section">
+      <h2>Why Sponsor Bell AI Fellows?</h2>
+      <p>Named after Alexander Graham Bell, our fellowship is pioneering the future of human-AI interaction through voice. We're not just training Fellows—we're incubating the next wave of fundable voice-first companies.</p>
+      
+      <div class="stats-grid">
+        <div class="stat">
+          <span class="stat-number">14</span>
+          <span class="stat-label">Exceptional Fellows</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">3</span>
+          <span class="stat-label">Month Intensive</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">2</span>
+          <span class="stat-label">Experienced Mentors</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Portfolio Ready</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+        <h2>Why Voice AI, Why Now?</h2>
+        <p>
+            The voice and speech recognition market is projected to reach
+            <strong>$53.7B by 2030</strong>
+            (<a href="https://www.grandviewresearch.com/industry-analysis/voice-recognition-market">Grand View Research</a>).
+          </p>
+      
+          <p>
+            The AI voice generator market is growing about <strong>37% CAGR</strong>, reaching
+            <strong>$20.4B by 2030</strong>
+            (<a href="https://www.marketsandmarkets.com/Market-Reports/ai-voice-generator-market-144271159.html">MarketsandMarkets</a>).
+          </p>
+      
+          <p>
+            Consumers show strong pull:
+            <strong>71% prefer using a voice assistant for search over typing</strong>
+            (<a href="https://www.pwc.com/us/en/services/consulting/library/consumer-intelligence-series/voice-assistants.html">PwC Consumer Intelligence Series</a>).
+          </p>
+      
+          <p class="note">Voice is faster, hands-free, and natural. This is the moment for voice.</p>
+    </section>
+
+    <section class="section">
+      <h2>Partnership Opportunities</h2>
+      <div class="tier-grid">
+        <div class="tier-card premium">
+          <span class="tier-price">$50,000</span>
+          <div class="tier-name">Exclusive Sponsor</div>
+          <ul class="tier-benefits">
+            <li><b>Exclusive sponsorship and co-branding</b></li>
+            <li><b>First-look at all venture opportunities</b></li>
+            <li><b>Speaking opportunity at demo day</b></li>
+            <li><b>Named cohort (e.g., "Bell AI x [Company]")</b></li>
+            <li>Custom challenge prompt design</li>
+            <li>Featured project integrations</li>
+            <li>Direct mentor participation</li>
+            <li>Option to propose challenge prompt</li>
+            <li>Recognition as leader in ethical AI innovation</li>
+            <li>Priority partnership discussions</li>
+          </ul>
+        </div>
+
+        <div class="tier-card featured">
+          <span class="tier-price">$25,000+</span>
+          <div class="tier-name">Lead Sponsor</div>
+          <ul class="tier-benefits">
+            <li><b>Category exclusivity</b></li>
+            <li><b>Speaking opportunity at demo day</b></li>
+            <li><b>Named cohort (e.g., "Bell AI x [Company]")</b></li>
+            <li>Featured project integrations</li>
+            <li>Direct mentor participation</li>
+            <li>Option to propose challenge prompt</li>
+            <li>Recognition as leader in ethical AI innovation</li>
+            <li>Priority partnership discussions</li>
+          </ul>
+        </div>
+
+        <div class="tier-card">
+          <span class="tier-price">$10,000–$24,999</span>
+          <div class="tier-name">Core Sponsor</div>
+          <ul class="tier-benefits">
+            <li>Featured project integration opportunities</li>
+            <li>Demo day visibility and networking</li>
+            <li>Logo placement on all materials</li>
+            <li>Access to Fellow presentations</li>
+            <li>Recognition as leader in ethical AI innovation</li>
+            <li>Technology partnership opportunities</li>
+          </ul>
+        </div>
+
+        <div class="tier-card">
+          <span class="tier-price">$5,000–$9,999</span>
+          <div class="tier-name">Supporting Sponsor</div>
+          <ul class="tier-benefits">
+            <li>Logo placement and recognition</li>
+            <li>Insights access to program learnings</li>
+            <li>Community exposure</li>
+            <li>Demo day invitation</li>
+            <li>Recognition as leader in ethical AI innovation</li>
+            <li>Network access</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="two-column">
+        <div>
+          <h2>Your Investment Impact</h2>
+          <p>Your sponsorship investment delivers measurable returns through direct partnerships, talent access, and market positioning.</p>
+          <p>Sponsorship directly funds Fellow stipends and program operations, ensuring we attract the most talented builders regardless of their financial situation.</p>
+          <p>More importantly, you're investing in the future of human-centered AI—applications that foster connection, creativity, and human flourishing rather than replacement.</p>
+        </div>
+        <div>
+          <h3>Program Budget Breakdown</h3>
+          <div style="background: #f8fafc; padding: 1.5rem; border-radius: 12px; margin-top: 1rem;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: .75rem;">
+              <span>Fellow Stipends (14 × $3,000)</span>
+              <strong>$42,000</strong>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: .75rem; padding-bottom: .75rem; border-bottom: 1px solid #e2e8f0;">
+              <span>Operations & Technology</span>
+              <strong>$8,000</strong>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-weight: 700; font-size: 1.1rem;">
+              <span>Total Program Cost</span>
+              <span style="color: #0f172a;">$50,000</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section class="impact-section">
+    <div class="container">
+      <h2>What You'll Get Access To</h2>
+      <div class="two-column" style="margin-top: 2rem;">
+        <div>
+          <h3>🚀 Emerging Technologies</h3>
+          <p>Priority access to products built with LLMs, voice synthesis, SMS/MMS automation, and low-code tools that could transform your industry.</p>
+          
+          <h3 style="margin-top: 2rem;">🎯 Top Talent Pipeline</h3>
+          <p>Direct connection to exceptional builders, creators, and designers who understand both technical implementation and human-centered design.</p>
+        </div>
+        <div>
+          <h3>💡 Innovation Insights</h3>
+          <p>Front-row seat to how voice-first AI applications are developed, tested, and refined with real users in real communities.</p>
+          
+          <h3 style="margin-top: 2rem;">🤝 Strategic Partnerships</h3>
+          <p>Opportunity to integrate your APIs, platforms, or services into Fellow projects, creating mutual value and learning opportunities.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <section class="section" id="contact">
+      <h2>Start a Conversation</h2>
+      <p>Ready to support the future of voice-first AI? Reach out directly to discuss partnership opportunities and learn more about how we can work together. If you don't have our contact info, connect with us on LinkedIn:</p>
+      
+      <div class="two-column" style="margin-top: 3rem;">
+        <div class="feature-card" style="text-align: center; padding: 2.5rem;">
+          <img src="./images/sunil-paul.jpg" alt="Sunil Paul" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin: 0 auto 1.5rem auto; border: 3px solid rgba(59,130,246,.2);">
+          <h3 style="margin-bottom: 1rem;">Sunil Paul</h3>
+          <p style="margin-bottom: 1.5rem; color: #64748b; font-size: .95rem;">Serial entrepreneur and investor</p>
+          <a href="https://www.linkedin.com/in/sunilpaul/" target="_blank" class="cta-button" style="font-size: .9rem; padding: 12px 20px;">
+            Connect on LinkedIn
+          </a>
+        </div>
+        
+        <div class="feature-card" style="text-align: center; padding: 2.5rem;">
+          <img src="./images/tenni-theurer.jpg" alt="Tenni Theurer" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin: 0 auto 1.5rem auto; border: 3px solid rgba(59,130,246,.2);">
+          <h3 style="margin-bottom: 1rem;">Tenni Theurer</h3>
+          <p style="margin-bottom: 1.5rem; color: #64748b; font-size: .95rem;">Product leader and builder</p>
+          <a href="https://www.linkedin.com/in/tennitheurer/" target="_blank" class="cta-button" style="font-size: .9rem; padding: 12px 20px;">
+            Connect on LinkedIn
+          </a>
+        </div>
+      </div>
+      
+    </section>
+  </div>
+
+  <footer style="text-align: center; padding: 60px 0; background: #f8fafc; border-top: 1px solid #e2e8f0;">
+    <div class="container">
+      <p style="color: #64748b; margin-bottom: 1rem;">Join us in shaping the next generation of voice-first AI interaction.</p>
+      <p style="opacity: .6; font-size: .9rem;">© 2025 Bell AI Fellows</p>
+    </div>
+  </footer>
+</body>
+</html>
