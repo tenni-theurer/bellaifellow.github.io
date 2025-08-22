@@ -175,13 +175,19 @@
       .info-card { padding: 18px; }
       .cta-button { padding: 14px 22px; font-size: 1rem; }
     }
+
+    /* Mobile logo sizing */
+    @media (max-width: 768px) {
+      .hero-logo { max-width: 150px !important; /* Smaller on mobile */ }
+  }
   </style>
 </head>
 <body>
   <section class="hero">
     <div class="container">
       <div class="hero-content">
-        <h1>🔔 Bell AI Fellows</h1>
+        <img src="./images/bellai-white-logo.png" alt="Bell AI Fellows Logo" class="hero-logo" style="max-width: 200px; margin-bottom: 1rem;">
+        <h1>Bell AI Fellows</h1>
         <p class="hero-subtitle">
           Voice-First AI Fellowship for Builders, Creators, and Dreamers at the Edge of Conversation, Emotion & Automation
         </p>
@@ -192,7 +198,7 @@
             <li>You'll reach our AI interviewer for a 5-minute conversation</li>
             <li>Questions like: "What's a project that sparked your curiosity?" and "How do you think voice could change how we connect?"</li>
             <li>We're looking for creative instinct, technical curiosity, and emotional intelligence</li>
-            <li>You'll hear back within 48 hours</li>
+            <li>You'll hear back within 48 hours. If you move forward, you'll be invited to a short follow-up task to complete</li>
           </ul>
         </div>
 
