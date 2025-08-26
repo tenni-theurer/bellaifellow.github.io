@@ -17,6 +17,31 @@
 
     /* Layout */
     .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    
+    /* Header */
+    .header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .header .container {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 12px 24px; height: 60px;
+    }
+    .header-brand {
+      font-size: 1.25rem; font-weight: 700; color: #fff;
+      text-decoration: none; letter-spacing: -0.01em;
+    }
+    .header-cta {
+      background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%);
+      color: #fff; padding: 12px 20px; border: 0; border-radius: 12px;
+      font-size: 0.95rem; font-weight: 600; text-decoration: none; cursor: pointer;
+      transition: transform .25s ease, box-shadow .25s ease;
+      box-shadow: 0 4px 15px rgba(59,130,246,.3);
+      display: flex; align-items: center; gap: 8px;
+    }
+    .header-cta:hover { transform: translateY(-2px); }
+    .header-phone-icon { width: 16px; height: 16px; fill: currentColor; }
     .section { padding: 80px 0; border-bottom: 1px solid #f1f5f9; }
     .section:last-of-type { border-bottom: none; }
     .two-column {
@@ -28,6 +53,7 @@
       min-height: 100vh; display: flex; align-items: center; justify-content: center;
       text-align: center; position: relative; z-index: 1; overflow: hidden;
       background: linear-gradient(135deg, #0f172a 0%, #1e293b 35%, #334155 100%);
+      padding-top: 60px; /* Account for fixed header */
     }
     .hero::before {
       content: ""; position: absolute; inset: 0; z-index: -1;
@@ -38,12 +64,17 @@
     }
     .hero-content { max-width: 800px; position: relative; z-index: 2; }
     .hero h1 {
-      font-size: clamp(2.4rem, 6vw, 5rem); font-weight: 700; margin-bottom: 1.5rem;
+      font-size: clamp(2rem, 5vw, 4rem); font-weight: 700; margin-bottom: 1.5rem;
       color: #fff; letter-spacing: -0.025em; text-shadow: 0 4px 20px rgba(0,0,0,.3);
     }
     .hero-subtitle {
       font-size: clamp(1.1rem, 2.5vw, 1.6rem); font-weight: 400; margin-bottom: 2rem;
       color: rgba(255,255,255,.9); line-height: 1.45;
+    }
+    .hero-logo {
+      max-width: 120px;
+      margin-bottom: 0.5rem;
+      opacity: 0.9;
     }
     .info-card {
       background: linear-gradient(135deg, rgba(255,255,255,.95) 0%, rgba(248,250,252,.95) 100%);
@@ -160,10 +191,31 @@
     .apply-section p { color: #e2e8f0; font-size: 1.15rem; }
 
     /* Footer */
-    .footer { text-align: center; padding: 60px 0; background: #f8fafc; border-top: 1px solid #e2e8f0; }
-    .footer p { color: #64748b; margin-bottom: 1rem; font-size: 1rem; }
-    .footer a { color: #0f172a; text-decoration: none; margin: 0 1rem; }
-    .footer a:hover { text-decoration: underline; }
+    .footer { 
+      text-align: center; padding: 32px 0 24px 0; background: #f8fafc; 
+      border-top: 1px solid #e2e8f0; 
+    }
+    .footer-content {
+      display: flex; flex-direction: column; align-items: center; gap: 12px;
+    }
+    .footer-privacy {
+      color: #64748b; font-size: 0.9rem; margin: 0; max-width: 600px;
+      line-height: 1.5;
+    }
+    .footer-links { 
+      display: flex; gap: 32px; align-items: center; justify-content: center;
+    }
+    .footer-links a { 
+      color: #475569; text-decoration: none; font-size: 0.9rem; font-weight: 500;
+      transition: color 0.2s ease;
+    }
+    .footer-links a:hover { color: #0f172a; }
+    .footer-divider {
+      width: 1px; height: 16px; background: #cbd5e1;
+    }
+    .footer-copyright { 
+      color: #94a3b8; font-size: 0.85rem; margin: 0;
+    }
 
     /* Responsive */
     @media (max-width: 900px) {
@@ -175,22 +227,34 @@
       .stats { flex-direction: column; gap: 1.5rem; }
       .info-card { padding: 18px; }
       .cta-button { padding: 14px 22px; font-size: 1rem; }
+      .hero-logo { max-width: 100px !important; }
+      .header .container { padding: 10px 20px; height: 50px; }
+      .header-brand { font-size: 1.1rem; }
+      .header-cta { padding: 10px 16px; font-size: 0.9rem; }
+      .hero { padding-top: 50px; }
     }
-
-    /* Mobile logo sizing */
-    @media (max-width: 768px) {
-      .hero-logo { max-width: 150px !important; /* Smaller on mobile */ }
-  }
   </style>
 </head>
 <body>
+  <header class="header">
+    <div class="container">
+      <a href="#" class="header-brand">Bell AI Fellows</a>
+      <a href="#apply" class="header-cta">
+        <svg class="header-phone-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+        </svg>
+        Apply Now
+      </a>
+    </div>
+  </header>
+
   <section class="hero">
     <div class="container">
       <div class="hero-content">
-        <img src="./images/bellai-white-logo.png" alt="Bell AI Fellows Logo" class="hero-logo" style="max-width: 200px; margin-bottom: 1rem;">
-        <h1>Bell AI Fellows</h1>
+        <img src="./images/bellai-white-logo.png" alt="Bell AI Fellows Logo" class="hero-logo">
+        <h1>Voice-First AI Fellowship</h1>
         <p class="hero-subtitle">
-          Voice-First AI Fellowship for Builders, Creators, and Dreamers at the Edge of Conversation, Emotion & Automation
+          For Builders, Creators, and Dreamers at the Edge of Conversation, Emotion & Automation
         </p>
 
         <div class="info-card">
@@ -217,7 +281,7 @@
     <section class="section">
       <h2>About the Bell AI Fellowship</h2>
       <p>Named after Alexander Graham Bell, inventor of the telephone, we are creating a new kind of digital experience, where voice is not just an interface, but a medium for connection, ritual, and transformation.</p>
-      <p>This is your invitation to join a highly selective, hands-on fellowship for early-career technologists, creators, and designers who want to shape how humans interact with AI through sound, story, and emotion.</p>
+      <p>This is your invitation to join a highly selective, hands-on fellowship for technologists, creators, and designers at any stage of career who want to shape how humans interact with AI through sound, story, and emotion.</p>
       <p><strong>This isn't a job. It's a call to invent a new medium</strong>, rooted in play, powered by empathy, and delivered through the most human interface we have: the voice.</p>
     </section>
 
@@ -229,11 +293,12 @@
         </div>
         <div>
           <ul class="list">
-            <li><strong>Duration:</strong> 3 months (September 2 to November 25, 2025)</li>
+            <li><strong>Duration:</strong> 3 months (September 3 to November 25, 2025)</li>
             <li><strong>Commitment:</strong> 20 hours per week, part-time</li>
+            <li><strong>Stipend:</strong> $1,000 per month</li>
             <li><strong>Cohort Size:</strong> 4 to 6 carefully selected fellows</li>
             <li><strong>Location:</strong> Primarily remote, with the ability to attend 3 in-person sessions in the Bay Area during the program</li>
-            <li><strong>Application Deadline:</strong> August 26, 2025</li>
+            <li><strong>Application Deadline:</strong> August 28, 2025</li>
             <li><strong>Investment:</strong> Gain experience, network, portfolio, and access to cutting-edge AI tools — no tuition required</li>
           </ul>
         </div>
@@ -271,7 +336,7 @@
         <div class="feature-card mentor-card">
           <img src="./images/tenni-theurer.jpg" alt="Tenni Theurer" class="mentor-photo">
           <h3 style="margin-bottom: .5rem;">Tenni Theurer</h3>
-          <p style="margin-bottom: 1rem; font-size: .95rem;">Product-driven builder who’s led $1.6B businesses at Yahoo, Visa, and Verizon, launched Visa’s first digital wallet, and scaled teams from startups to enterprises.</p>
+          <p style="margin-bottom: 1rem; font-size: .95rem;">Product-driven builder with experience leading $1.6B businesses and 500M+ users at Yahoo, Visa, and Verizon. From engineer to product leader, GM, and founder — scaling teams across startups and enterprises.</p>
           <a href="https://www.linkedin.com/in/tennitheurer/" target="_blank" style="color: #0f172a; text-decoration: none; font-weight: 600; font-size: .9rem;">View LinkedIn Profile →</a>
         </div>
       </div>
@@ -347,14 +412,21 @@
         +1 (650) 252-4135
       </a>
       <p style="margin-top: 1.5rem; opacity: .8;">You'll instantly reach an AI-led voice interview. No resume required.</p>
-      <p style="margin-top: .75rem; opacity: .8;"><strong>Applications close August 26 • Cohort starts September 2</strong></p>
+      <p style="margin-top: .75rem; opacity: .8;"><strong>Applications close August 28 • Cohort starts September 3</strong></p>
       </div>
   </section>
 
   <footer class="footer">
     <div class="container">
-      <p>We take privacy seriously. Your responses are stored to improve your experience, but never shared without your permission.</p>
-      <p style="margin-top: 1rem; opacity: .6; font-size: .9rem;">© 2025 Bell AI Fellows</p>
+      <div class="footer-content">
+        <p class="footer-privacy">We take privacy seriously. Your responses are stored to improve your experience, but never shared without your permission.</p>
+        <div class="footer-links">
+          <a href="https://aughthour.com/privacy-policy/" target="_blank">Privacy Policy</a>
+          <div class="footer-divider"></div>
+          <a href="https://www.aughthour.com/terms" target="_blank">Terms of Service</a>
+        </div>
+        <p class="footer-copyright">© 2025 Bell AI Fellows</p>
+      </div>
     </div>
   </footer>
 </body>
