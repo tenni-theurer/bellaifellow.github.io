@@ -50,10 +50,10 @@
 
     /* Hero */
     .hero {
-      min-height: 100vh; display: flex; align-items: center; justify-content: center;
+      min-height: calc(100vh - 60px); display: flex; align-items: center; justify-content: center;
       text-align: center; position: relative; z-index: 1; overflow: hidden;
       background: linear-gradient(135deg, #0f172a 0%, #1e293b 35%, #334155 100%);
-      padding-top: 60px; /* Account for fixed header */
+      padding: 80px 0 60px 0; /* Top padding for header, bottom padding for content */
     }
     .hero::before {
       content: ""; position: absolute; inset: 0; z-index: -1;
@@ -191,12 +191,31 @@
     .apply-section p { color: #e2e8f0; font-size: 1.15rem; }
 
     /* Footer */
-    .footer { text-align: center; padding: 40px 0; background: #f8fafc; border-top: 1px solid #e2e8f0; }
-    .footer p { color: #64748b; margin-bottom: 0.75rem; font-size: 1rem; }
-    .footer a { color: #0f172a; text-decoration: none; margin: 0 1rem; font-weight: 500; }
-    .footer a:hover { text-decoration: underline; }
-    .footer-links { margin: 0.75rem 0; }
-    .footer-copyright { margin-top: 1rem; opacity: 0.6; font-size: 0.9rem; }
+    .footer { 
+      text-align: center; padding: 32px 0 24px 0; background: #f8fafc; 
+      border-top: 1px solid #e2e8f0; 
+    }
+    .footer-content {
+      display: flex; flex-direction: column; align-items: center; gap: 12px;
+    }
+    .footer-privacy {
+      color: #64748b; font-size: 0.9rem; margin: 0; max-width: 600px;
+      line-height: 1.5;
+    }
+    .footer-links { 
+      display: flex; gap: 32px; align-items: center; justify-content: center;
+    }
+    .footer-links a { 
+      color: #475569; text-decoration: none; font-size: 0.9rem; font-weight: 500;
+      transition: color 0.2s ease;
+    }
+    .footer-links a:hover { color: #0f172a; }
+    .footer-divider {
+      width: 1px; height: 16px; background: #cbd5e1;
+    }
+    .footer-copyright { 
+      color: #94a3b8; font-size: 0.85rem; margin: 0;
+    }
 
     /* Responsive */
     @media (max-width: 900px) {
@@ -212,7 +231,9 @@
       .header .container { padding: 10px 20px; height: 50px; }
       .header-brand { font-size: 1.1rem; }
       .header-cta { padding: 10px 16px; font-size: 0.9rem; }
-      .hero { padding-top: 50px; }
+      .hero { 
+        min-height: calc(100vh - 50px); padding: 70px 0 40px 0; 
+      }
     }
   </style>
 </head>
@@ -317,7 +338,7 @@
         <div class="feature-card mentor-card">
           <img src="./images/tenni-theurer.jpg" alt="Tenni Theurer" class="mentor-photo">
           <h3 style="margin-bottom: .5rem;">Tenni Theurer</h3>
-          <p style="margin-bottom: 1rem; font-size: .95rem;">Product-driven builder with experience leading $1.6B businesses and 500M+ users at Yahoo, Visa, and Verizon. From engineer to product, GM, and founder — scaling teams across startups and enterprises.</p>
+          <p style="margin-bottom: 1rem; font-size: .95rem;">Product-driven builder with experience leading $1.6B businesses and 500M+ users at Yahoo, Visa, and Verizon. From engineer to product leader, GM, and founder — scaling teams across startups and enterprises.</p>
           <a href="https://www.linkedin.com/in/tennitheurer/" target="_blank" style="color: #0f172a; text-decoration: none; font-weight: 600; font-size: .9rem;">View LinkedIn Profile →</a>
         </div>
       </div>
@@ -399,12 +420,15 @@
 
   <footer class="footer">
     <div class="container">
-      <p>We take privacy seriously. Your responses are stored to improve your experience, but never shared without your permission.</p>
-      <div class="footer-links">
-        <a href="https://aughthour.com/privacy-policy/" target="_blank">Privacy Policy</a>
-        <a href="https://www.aughthour.com/terms" target="_blank">Terms of Service</a>
+      <div class="footer-content">
+        <p class="footer-privacy">We take privacy seriously. Your responses are stored to improve your experience, but never shared without your permission.</p>
+        <div class="footer-links">
+          <a href="https://aughthour.com/privacy-policy/" target="_blank">Privacy Policy</a>
+          <div class="footer-divider"></div>
+          <a href="https://www.aughthour.com/terms" target="_blank">Terms of Service</a>
+        </div>
+        <p class="footer-copyright">© 2025 Bell AI Fellows</p>
       </div>
-      <p class="footer-copyright">© 2025 Bell AI Fellows</p>
     </div>
   </footer>
 </body>
