@@ -175,6 +175,166 @@
     .stat-number { font-size: 2.2rem; font-weight: 700; color: #0f172a; display: block; }
     .stat-label { color: #64748b; font-size: .875rem; text-transform: uppercase; letter-spacing: .05em; font-weight: 500; }
 
+    /* Timeline Styles - FIXED */
+    .timeline-section {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 35%, #334155 100%);
+      color: #fff;
+      padding: 80px 0;
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+    }
+
+    .timeline-wrapper {
+      position: relative;
+      padding: 40px 20px;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .timeline-events {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      position: relative;
+      z-index: 2;
+      padding: 0 20px;
+    }
+
+    /* Fixed timeline line positioning */
+    .timeline-line {
+      position: absolute;
+      top: 105px; /* Adjusted to align with icon centers */
+      left: calc(12.5% + 30px); /* Start from center of first icon */
+      right: calc(12.5% + 30px); /* End at center of last icon */
+      height: 4px;
+      background: linear-gradient(90deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%);
+      border-radius: 2px;
+      z-index: 1;
+    }
+
+    .timeline-event {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: relative;
+    }
+
+    .timeline-date {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #e2e8f0;
+    }
+
+    .timeline-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 15px;
+      box-shadow: 0 0 0 4px #0f172a, 0 8px 20px rgba(59, 130, 246, 0.3);
+      transition: transform 0.3s ease;
+      position: relative;
+      z-index: 3;
+    }
+
+    .timeline-icon:hover {
+      transform: scale(1.1);
+    }
+
+    .timeline-icon svg {
+      width: 28px;
+      height: 28px;
+      fill: white;
+    }
+
+    .timeline-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #fff;
+      line-height: 1.3;
+    }
+
+    .timeline-description {
+      font-size: 0.85rem;
+      color: #cbd5e1;
+      line-height: 1.4;
+    }
+
+    .timeline-section h2 {
+      color: #fff;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    /* Program Details Section */
+    .program-details {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 40px;
+      text-align: center;
+      margin-top: 60px;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .program-details h3 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+
+    .program-details p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #e2e8f0;
+      margin-bottom: 30px;
+    }
+
+    .fellowship-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      color: #cbd5e1;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 500;
+    }
+
     /* Apply section */
     .apply-section {
       background: linear-gradient(135deg, #0f172a 0%, #1e293b 35%, #334155 100%);
@@ -234,6 +394,39 @@
       .hero { 
         min-height: calc(100vh - 50px); padding: 70px 0 40px 0; 
       }
+      
+      /* Timeline mobile styles */
+      .timeline-events {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 0;
+      }
+      
+      .timeline-line {
+        display: none;
+      }
+      
+      .timeline-event {
+        max-width: 100%;
+      }
+      
+      .fellowship-stats {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 20px;
+      }
+      
+      .program-details {
+        padding: 30px 20px;
+        margin-top: 40px;
+      }
+    }
+
+    /* Medium screens - adjust timeline for better spacing */
+    @media (max-width: 1024px) and (min-width: 769px) {
+      .timeline-line {
+        left: calc(12.5% + 20px);
+        right: calc(12.5% + 20px);
+      }
     }
   </style>
 </head>
@@ -241,11 +434,11 @@
   <header class="header">
     <div class="container">
       <a href="#" class="header-brand">Bell AI Fellows</a>
-      <a href="#apply" class="header-cta">
+      <a href="mailto:contact@bellaifellow.com?subject=Interest in Joining the Bell AI Fellowship Community" class="header-cta">
         <svg class="header-phone-icon" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+          <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
         </svg>
-        Apply Now
+        Stay Connected
       </a>
     </div>
   </header>
@@ -259,21 +452,24 @@
           For Builders, Creators, and Dreamers at the Edge of Conversation, Emotion & Automation
         </p>
 
-        <div class="info-card">
-          <h3>🎙️ What to expect:</h3>
-          <ul>
-            <li>You'll reach our AI interviewer for a 5-minute conversation</li>
-            <li>Questions like: "What's a project that sparked your curiosity?" and "How do you think voice could change how we connect?"</li>
-            <li>We're looking for creative instinct, technical curiosity, and emotional intelligence</li>
-            <li>You'll hear back within 48 hours. If you move forward, you'll be invited to a short follow-up task to complete</li>
-          </ul>
+        <div class="info-card" style="background: #ffffff; border: 2px solid #dc2626;">
+          <h3 style="color: #dc2626; display: flex; align-items: center; gap: 8px; font-weight: 700;">
+            <span>⏰</span>
+            Applications for Fall 2025 are now closed
+          </h3>
+          <p style="color: #1f2937; margin: 12px 0 16px 0; font-size: 1rem; line-height: 1.5; font-weight: 500;">
+            Thank you for the incredible response! Our inaugural cohort has been selected and begins September 3rd. 
+          </p>
+          <p style="color: #1f2937; margin: 0; font-size: 0.95rem; line-height: 1.5;">
+            <strong style="color: #059669;">Interested in future cohorts?</strong> Join our community below to be the first to know about upcoming opportunities and exclusive events.
+          </p>
         </div>
 
-        <a href="#apply" class="cta-button">
+        <a href="mailto:contact@bellaifellow.com?subject=Interest in Joining the Bell AI Fellowship Community" class="cta-button">
           <svg class="phone-icon" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
           </svg>
-          Start Voice Interview
+          Stay Connected
         </a>
       </div>
     </div>
@@ -327,7 +523,6 @@
 
     <section class="section">
       <h2>Meet Your Mentors</h2>
-      <!-- No inline grid width. Mobile-safe via CSS above. -->
       <div class="features-grid">
         <div class="feature-card mentor-card">
           <img src="./images/sunil-paul.jpg" alt="Sunil Paul" class="mentor-photo">
@@ -395,7 +590,91 @@
         </div>
       </div>
     </section>
+  </div>
 
+  <!-- Timeline Section -->
+  <section class="timeline-section">
+    <div style="text-align: center; padding: 0 20px;">
+      <h2>Fellowship Timeline</h2>
+    </div>
+    
+    <div class="timeline-wrapper">
+      <div class="timeline-line"></div>
+      
+      <div class="timeline-events">
+        <div class="timeline-event">
+          <div class="timeline-date">August 28</div>
+          <div class="timeline-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/>
+            </svg>
+          </div>
+          <div class="timeline-title">Applications Close</div>
+          <div class="timeline-description">Final deadline for voice interview applications</div>
+        </div>
+
+        <div class="timeline-event">
+          <div class="timeline-date">September 3</div>
+          <div class="timeline-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </div>
+          <div class="timeline-title">Fellowship Begins</div>
+          <div class="timeline-description">Cohort kickoff & first in-person session</div>
+        </div>
+
+        <div class="timeline-event">
+          <div class="timeline-date">Sept - Nov</div>
+          <div class="timeline-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+          </div>
+          <div class="timeline-title">Build & Create</div>
+          <div class="timeline-description">20 hours/week building voice-first AI experiences</div>
+        </div>
+
+        <div class="timeline-event">
+          <div class="timeline-date">November 25</div>
+          <div class="timeline-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+            </svg>
+          </div>
+          <div class="timeline-title">Program Completion</div>
+          <div class="timeline-description">Final presentations & portfolio showcase</div>
+        </div>
+      </div>
+
+      <!-- Program Details Section -->
+      <div class="program-details">
+        <h3>3-Month Intensive Journey</h3>
+        <p>Throughout the program, fellows participate in weekly mentorship sessions, hands-on voice AI development, and community building exercises. Work alongside experienced founders to shape the future of human-AI interaction through voice, story, and emotion.</p>
+        
+        <div class="fellowship-stats">
+          <div class="stat-item">
+            <span class="stat-number">3</span>
+            <span class="stat-label">Months</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">4-6</span>
+            <span class="stat-label">Fellows</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">20</span>
+            <span class="stat-label">Hours/Week</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">$1K</span>
+            <span class="stat-label">Monthly Stipend</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
     <section class="section">
       <h2>Apprenticeship in Company Creation</h2>
       <p>This fellowship also offers a rare inside look at how early-stage companies are built. You'll work alongside experienced founders who have built multiple startups, seen exits, and made dozens of successful investments.</p>
@@ -403,19 +682,48 @@
     </section>
   </div>
 
-  <section class="apply-section" id="apply">
+  <section class="apply-section" id="stay-connected">
     <div class="container">
-      <h2>🎧 Ready to Begin?</h2>
-      <p style="margin-top: .75rem; margin-bottom: 1.5rem; opacity: .8;">Call us to activate your application for our inaugural cohort.</p>
-      <a href="tel:+16502524135" class="cta-button">
-        <svg class="phone-icon" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-        </svg>
-        +1 (650) 252-4135
-      </a>
-      <p style="margin-top: 1.5rem; opacity: .8;">You'll instantly reach an AI-led voice interview. No resume required.</p>
-      <p style="margin-top: .75rem; opacity: .8;"><strong>Applications close August 28 • Cohort starts September 3</strong></p>
+      <h2>🌟 Stay Connected</h2>
+      <p style="margin-top: .75rem; margin-bottom: 1.5rem; opacity: .9; max-width: 600px; margin-left: auto; margin-right: auto;">
+        While applications for our Fall 2025 cohort are closed, we're building something bigger. Join our community to be first in line for future opportunities, exclusive events, and insights from the voice-first AI frontier.
+      </p>
+      
+      <div style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border: 1px solid rgba(226, 232, 240, 0.8); border-radius: 20px; padding: 40px; max-width: 500px; margin: 0 auto 30px auto;">
+        <h3 style="color: #0f172a; margin-bottom: 20px; font-size: 1.3rem;">Get Early Access</h3>
+        <p style="color: #475569; font-size: 1rem; margin-bottom: 25px; line-height: 1.5;">
+          Be the first to know about:
+        </p>
+        <ul style="color: #475569; font-size: 0.95rem; line-height: 1.6; list-style: none; padding: 0; margin-bottom: 25px;">
+          <li style="margin-bottom: 8px; padding-left: 20px; position: relative;">
+            <span style="position: absolute; left: 0; color: #059669;">✓</span>
+            Future fellowship cohorts
+          </li>
+          <li style="margin-bottom: 8px; padding-left: 20px; position: relative;">
+            <span style="position: absolute; left: 0; color: #059669;">✓</span>
+            Voice AI workshops & events
+          </li>
+          <li style="margin-bottom: 8px; padding-left: 20px; position: relative;">
+            <span style="position: absolute; left: 0; color: #059669;">✓</span>
+            Exclusive community discussions
+          </li>
+          <li style="margin-bottom: 8px; padding-left: 20px; position: relative;">
+            <span style="position: absolute; left: 0; color: #059669;">✓</span>
+            Early access to tools & resources
+          </li>
+        </ul>
       </div>
+      
+      <a href="mailto:contact@bellaifellow.com?subject=Interest in Joining the Bell AI Fellowship Community" class="cta-button">
+        <svg class="phone-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+        </svg>
+        Stay Connected
+      </a>
+      <p style="margin-top: 1.5rem; opacity: .9; font-size: 0.95rem; color: #e2e8f0;">
+        Clicking the button above opens your email app with a message to contact@bellaifellow.com
+      </p>
+    </div>
   </section>
 
   <footer class="footer">
