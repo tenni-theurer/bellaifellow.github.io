@@ -17,15 +17,15 @@
 
     /* Layout */
     .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-    .section { padding: 80px 0; border-bottom: 1px solid #f1f5f9; }
+    .section { padding: 50px 0; border-bottom: 1px solid #f1f5f9; }
     .section:last-of-type { border-bottom: none; }
     .two-column {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start;
     }
 
     /* Hero */
     .hero {
-      min-height: 70vh; display: flex; align-items: center; justify-content: center;
+      min-height: 55vh; display: flex; align-items: center; justify-content: center;
       text-align: center; position: relative; z-index: 1; overflow: hidden;
       background: linear-gradient(135deg, #0f172a 0%, #1e293b 35%, #334155 100%);
     }
@@ -68,19 +68,19 @@
 
     /* Headings and text */
     .section h2 {
-      font-size: clamp(1.8rem, 4vw, 2.6rem); margin-bottom: 1rem;
+      font-size: clamp(1.8rem, 4vw, 2.6rem); margin-bottom: 0.75rem;
       color: #0f172a; font-weight: 700; letter-spacing: -0.025em;
     }
-    .section h3 { font-size: 1.35rem; margin-bottom: .75rem; color: #1e293b; font-weight: 600; }
+    .section h3 { font-size: 1.35rem; margin-bottom: .5rem; color: #1e293b; font-weight: 600; }
     .section p {
-      font-size: 1.05rem; margin-bottom: 1.25rem; color: #475569; line-height: 1.7; max-width: 70ch;
+      font-size: 1.05rem; margin-bottom: 1rem; color: #475569; line-height: 1.7; max-width: 70ch;
     }
 
     /* Tier cards */
     .tier-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 2rem; margin: 3rem 0;
+      gap: 1.5rem; margin: 2rem 0;
     }
     @media (max-width: 768px) {
       .tier-grid { grid-template-columns: 1fr; }
@@ -131,11 +131,11 @@
     /* Stats */
     .stats-grid {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem; margin: 2rem 0; text-align: center;
+      gap: 1.5rem; margin: 1.5rem 0; text-align: center;
     }
     .stat {
       background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-      padding: 2rem; border-radius: 16px;
+      padding: 1.5rem; border-radius: 16px;
     }
     .stat-number { 
       font-size: 2.5rem; font-weight: 700; color: #0f172a; 
@@ -148,10 +148,44 @@
     /* Impact section */
     .impact-section {
       background: linear-gradient(135deg, #0f172a 0%, #1e293b 35%, #334155 100%);
-      color: #fff; padding: 80px 0;
+      color: #fff; padding: 50px 0;
     }
     .impact-section h2, .impact-section h3 { color: #fff; }
     .impact-section p { color: #e2e8f0; }
+
+    /* Links */
+    a {
+      color: #3b82f6;
+      text-decoration: none;
+      transition: color .25s ease;
+    }
+    a:hover {
+      color: #1d4ed8;
+      text-decoration: underline;
+    }
+    a:visited {
+      color: #6366f1;
+    }
+    
+    /* Special link styling for inline text links */
+    p a {
+      color: #2563eb;
+      font-weight: 500;
+      border-bottom: 1px solid transparent;
+      transition: all .25s ease;
+    }
+    p a:hover {
+      color: #1d4ed8;
+      border-bottom-color: #1d4ed8;
+      text-decoration: none;
+    }
+    p a:visited {
+      color: #7c3aed;
+    }
+    p a:visited:hover {
+      color: #5b21b6;
+      border-bottom-color: #5b21b6;
+    }
 
     /* Contact form */
     .contact-form {
@@ -240,7 +274,7 @@
           <p>
             The AI voice generator market is growing about <strong>37% CAGR</strong>, reaching
             <strong>$20.4B by 2030</strong>
-            (<a href="https://www.marketsandmarkets.com/Market-Reports/ai-voice-generator-market-144271159.html">MarketsandMarkets</a>).
+            (<a href="https://www.marketsandmarkets.com/Market-Reports/ai-voice-generator-market-144271159.html">MarketsandMarkets™</a>).
           </p>
       
           <p>
@@ -288,7 +322,7 @@
         </div>
 
         <div class="tier-card">
-          <span class="tier-price">$10,000–$24,999</span>
+          <span class="tier-price">$10,000–$25,000</span>
           <div class="tier-name">Core Sponsor</div>
           <ul class="tier-benefits">
             <li>Featured project integration opportunities</li>
@@ -301,7 +335,7 @@
         </div>
 
         <div class="tier-card">
-          <span class="tier-price">$5,000–$9,999</span>
+          <span class="tier-price">$5,000–$10,000</span>
           <div class="tier-name">Supporting Sponsor</div>
           <ul class="tier-benefits">
             <li>Logo placement and recognition</li>
