@@ -224,6 +224,33 @@
       .nav { position: static; padding: 1rem 0; text-align: center; }
       .tier-grid { grid-template-columns: 1fr; }
     }
+
+    /* Footer */
+    .footer { 
+      text-align: center; padding: 32px 0 24px 0; background: #f8fafc; 
+      border-top: 1px solid #e2e8f0; 
+    }
+    .footer-content {
+      display: flex; flex-direction: column; align-items: center; gap: 12px;
+    }
+    .footer-privacy {
+      color: #64748b; font-size: 0.9rem; margin: 0; max-width: 600px;
+      line-height: 1.5;
+    }
+    .footer-links { 
+      display: flex; gap: 32px; align-items: center; justify-content: center;
+    }
+    .footer-links a { 
+      color: #475569; text-decoration: none; font-size: 0.9rem; font-weight: 500;
+      transition: color 0.2s ease;
+    }
+    .footer-links a:hover { color: #0f172a; }
+    .footer-divider {
+      width: 1px; height: 16px; background: #cbd5e1;
+    }
+    .footer-copyright { 
+      color: #94a3b8; font-size: 0.85rem; margin: 0;
+    }
   </style>
 </head>
 <body>
@@ -435,10 +462,27 @@
     </section>
   </div>
 
-  <footer style="text-align: center; padding: 60px 0; background: #f8fafc; border-top: 1px solid #e2e8f0;">
+  <footer class="footer">
     <div class="container">
-      <p style="color: #64748b; margin-bottom: 1rem;">Join us in shaping the next generation of voice-first AI interaction.</p>
-      <p style="opacity: .6; font-size: .9rem;">© 2025 Bell AI Fellows</p>
+      <div class="footer-content">
+        <p class="footer-privacy">
+          We take privacy seriously. Your responses are stored to improve your experience, but never shared without your permission.
+        </p>
+        <div class="footer-links">
+          <a href="https://aughthour.com/privacy.html" target="_blank" rel="noopener">Privacy Policy</a>
+          <div class="footer-divider"></div>
+          <a href="https://www.aughthour.com/terms.html" target="_blank" rel="noopener">Terms of Service</a>
+          <div class="footer-divider"></div>
+          <a href="https://simpletexting.com/terms/" target="_blank" rel="noopener">SMS Terms</a>
+          <div class="footer-divider"></div>
+          <a href="https://simpletexting.com/privacy-policy/" target="_blank" rel="noopener">SMS Privacy Policy</a>
+        </div>
+        <p class="footer-copyright">
+          © 2025 Bell AI Fellows
+          <br>
+          <small>Voice and messaging services powered by Twilio, Vapi, and SimpleTexting.</small>
+        </p>
+      </div>
     </div>
   </footer>
 </body>
