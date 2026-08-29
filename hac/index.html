@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="HAC — Homebrew AI Club. Judgment and taste can't be taught, only caught: a show-and-tell for people running real AI, testing monthly vs. bimonthly." />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>&#128268;</text></svg>">
+<title>HAC — Homebrew AI Club</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  html, body { width: 100%; overflow-x: hidden; }
+  body {
+    font-family: "SF Mono", "Menlo", "Consolas", "Liberation Mono", monospace;
+    background: #0a0e0a;
+    color: #c8f0c8;
+    line-height: 1.7;
+  }
+  .container { max-width: 720px; margin: 0 auto; padding: 0 28px; }
+
+  a { color: #7fffb0; text-decoration: none; border-bottom: 1px solid rgba(127,255,176,0.35); }
+  a:hover { border-bottom-color: #7fffb0; }
+
+  /* scanline / crt flavor, subtle */
+  body::before {
+    content: "";
+    position: fixed; inset: 0;
+    background: repeating-linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.015) 0px,
+      rgba(255,255,255,0.015) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+    pointer-events: none;
+    z-index: 1000;
+  }
+
+  header {
+    padding: 72px 0 40px;
+    border-bottom: 1px dashed rgba(127,255,176,0.25);
+  }
+  .prompt {
+    color: #6fae82;
+    font-size: 0.85rem;
+    margin-bottom: 18px;
+    letter-spacing: 0.02em;
+  }
+  .prompt::before { content: "$ "; color: #4f8f66; }
+  h1 {
+    font-size: clamp(2rem, 6vw, 2.8rem);
+    font-weight: 700;
+    color: #eafff0;
+    letter-spacing: -0.01em;
+    margin-bottom: 14px;
+  }
+  h1 .amp { color: #7fffb0; }
+  .tagline {
+    font-size: 1.05rem;
+    color: #a9e8bb;
+    max-width: 520px;
+  }
+  .tagline .cursor {
+    display: inline-block;
+    width: 0.55em; height: 1.05em;
+    background: #7fffb0;
+    vertical-align: text-bottom;
+    margin-left: 2px;
+    animation: blink 1.1s steps(1) infinite;
+  }
+  @keyframes blink { 50% { opacity: 0; } }
+
+  section { padding: 44px 0; border-bottom: 1px dashed rgba(127,255,176,0.15); }
+  section:last-of-type { border-bottom: none; }
+
+  h2 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: #6fae82;
+    margin-bottom: 20px;
+  }
+  h2::before { content: "// "; color: #3f7a52; }
+
+  p { color: #c8f0c8; margin-bottom: 14px; max-width: 620px; }
+  p.lede { font-size: 1.05rem; color: #eafff0; }
+  strong { color: #eafff0; font-weight: 600; }
+  em { color: #7fffb0; font-style: normal; }
+
+  .not-list {
+    list-style: none;
+    margin: 18px 0;
+  }
+  .not-list li {
+    padding: 6px 0 6px 26px;
+    position: relative;
+    color: #a9e8bb;
+  }
+  .not-list li::before {
+    content: "✗";
+    position: absolute; left: 0;
+    color: #5a5a5a;
+  }
+  .yes-list { list-style: none; margin: 18px 0; }
+  .yes-list li {
+    padding: 6px 0 6px 26px;
+    position: relative;
+    color: #eafff0;
+  }
+  .yes-list li::before {
+    content: "✓";
+    position: absolute; left: 0;
+    color: #7fffb0;
+  }
+
+  .runorder {
+    border: 1px solid rgba(127,255,176,0.25);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 8px;
+  }
+  .runorder-row {
+    display: grid;
+    grid-template-columns: 92px 1fr;
+    gap: 16px;
+    padding: 14px 18px;
+    border-bottom: 1px dashed rgba(127,255,176,0.15);
+  }
+  .runorder-row:last-child { border-bottom: none; }
+  .runorder-time { color: #4f8f66; font-size: 0.85rem; }
+  .runorder-what { color: #eafff0; }
+  .runorder-what span { color: #7fae8f; font-size: 0.9rem; display: block; margin-top: 2px; }
+  .flag {
+    display: inline-block;
+    font-size: 0.72rem;
+    color: #0a0e0a;
+    background: #7fffb0;
+    padding: 1px 6px;
+    border-radius: 3px;
+    margin-left: 8px;
+    letter-spacing: 0.03em;
+    vertical-align: 1px;
+  }
+
+  .facts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px 32px;
+    margin-top: 8px;
+  }
+  .fact dt { color: #6fae82; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px; }
+  .fact dd { color: #eafff0; }
+
+  .cta {
+    text-align: left;
+    padding: 56px 0 80px;
+  }
+  .cta p.lede { margin-bottom: 26px; }
+  .btn {
+    display: inline-block;
+    background: #7fffb0;
+    color: #0a0e0a;
+    font-weight: 700;
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 14px 26px;
+    border-radius: 4px;
+    border-bottom: none;
+    letter-spacing: 0.01em;
+  }
+  .btn:hover { background: #a3ffc6; }
+  .cta-note {
+    margin-top: 18px;
+    font-size: 0.85rem;
+    color: #6fae82;
+    max-width: 480px;
+  }
+
+  footer {
+    padding: 28px 0 60px;
+    font-size: 0.8rem;
+    color: #4f7a5c;
+  }
+  footer a { color: #6fae82; border-bottom-color: rgba(111,174,130,0.3); }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <header>
+    <div class="prompt">bellaifellow / hac</div>
+    <h1>HAC<span class="amp">.</span> Homebrew AI Club</h1>
+    <p class="tagline">Judgment and Taste. Can't be TAUGHT. Must be CAUGHT. — How? From watching real people run real AI.<span class="cursor"></span></p>
+  </header>
+
+  <section>
+    <h2>what is HAC?</h2>
+    <p class="lede">A show-and-tell for people actually running AI agents, tools, and loops — where you build judgment by watching how other people use them, and develop taste by getting feedback from others.</p>
+    <p>You don't get judgment and taste from a tutorial. You get it from watching people trying, succeeding, failing, and most importantly, discussing in real time — and from doing the same with yours. Three people demo their real setup, live: the agent, the pipeline, the prompt stack, the workflow they built for themselves. Then everyone names one thing that broke or disappointed them this month. No slides. No pitch decks. Just what's on your machine.</p>
+    <p>It's the Homebrew Computer Club, updated: a room of people with different skills, tinkering together, comparing notes on what actually works — and building taste for what's real versus what just sounds good.</p>
+  </section>
+
+  <section>
+    <h2>what it isn't</h2>
+    <ul class="not-list">
+      <li><strong>No, it's not a course.</strong> No syllabus, no sequence, nothing to catch up on.</li>
+      <li><strong>No, there's no lecture.</strong> Nobody stands at the front and explains AI to you.</li>
+      <li><strong>No, this isn't for beginners.</strong> Plenty of tutorials exist for that. Be ready to build.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>a typical night</h2>
+    <div class="runorder">
+      <div class="runorder-row">
+        <div class="runorder-time">1</div>
+        <div class="runorder-what">Three demos<span>~15 min each, live — the actual tool running, not a recording</span></div>
+      </div>
+      <div class="runorder-row">
+        <div class="runorder-time">2</div>
+        <div class="runorder-what">What Broke<span>Everyone names one failure or disappointment from this month.</span></div>
+      </div>
+      <div class="runorder-row">
+        <div class="runorder-time">3</div>
+        <div class="runorder-what">Open discussion<span>Go deep on a specific project, get unstuck, watch how someone else thinks it through</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>the basics</h2>
+    <dl class="facts">
+      <div class="fact"><dt>Cadence</dt><dd>Testing — monthly or bimonthly</dd></div>
+      <div class="fact"><dt>Length</dt><dd>90 minutes, hard stop</dd></div>
+      <div class="fact"><dt>Cost</dt><dd>TBD</dd></div>
+      <div class="fact"><dt>Who's running it</dt><dd>Sunil Paul &amp; Tenni Theurer</dd></div>
+      <div class="fact"><dt>Part of</dt><dd><a href="https://bellaifellow.com">Bell AI Fellowship</a></dd></div>
+      <div class="fact"><dt>Where / when</dt><dd>TBD — decided by who signs up</dd></div>
+    </dl>
+  </section>
+
+  <section class="cta">
+    <h2>this month's roster</h2>
+    <p class="lede">We're gauging interest before locking a date. If you've got a setup worth showing — or you just want to see what other people built — tell us you're in.</p>
+    <a class="btn" href="mailto:sunil@bellaifellow.com?subject=HAC%20-%20I%27m%20in&body=Name%3A%0A%0AWhat%20are%20you%20building%20or%20running%20with%20AI%20right%20now%2C%20if%20anything%3A%0A%0AOne%20thing%20about%20it%20that%20is%20actually%20working%3A%0A%0AOne%20thing%20about%20it%20that%20is%20not%3A%0A%0ACity%20%2F%20timezone%3A%0A%0ADo%20you%20want%20to%20demo%20it%3F%0A%0AWhat%20are%20the%20most%20convenient%20days%2Ftimes%20for%20you%3F%0A%0AWhat%20days%2Ftimes%20will%20definitely%20not%20work%20for%20you%3F%0A%0AMonthly%20or%20bimonthly%20-%20which%20fits%20you%20better%3A%0A">I'm in →</a>
+    <p class="cta-note">Opens an email to sunil@bellaifellow.com with a few quick questions prefilled — just answer inline and send.</p>
+  </section>
+
+  <footer>
+    <div class="container" style="padding:0;">
+      HAC is a track of the <a href="https://bellaifellow.com">Bell AI Fellowship</a>.
+    </div>
+  </footer>
+
+</div>
+
+</body>
+</html>
