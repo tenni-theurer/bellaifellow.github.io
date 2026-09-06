@@ -206,6 +206,16 @@
       margin-bottom: 0;
     }
 
+    /* Track cards */
+    a.track-card { display: block; text-decoration: none; color: inherit; }
+    a.track-card:hover .track-cta { color: #1a1a1a; }
+    .track-cta {
+      margin-top: 1.25rem;
+      font-size: 0.85rem; font-weight: 600;
+      color: #888; letter-spacing: 0.04em;
+      transition: color 0.2s;
+    }
+
     /* Founders */
     .founders {
       display: flex; gap: 4rem; margin-top: 2.5rem;
@@ -322,7 +332,7 @@
       <div class="hero-label">Bell AI Fellowship</div>
       <h1>Anything is learnable now.</h1>
       <p class="hero-subtitle">
-        For the first time, you can sit down with an intelligence that knows almost everything and ask it to teach you anything. The barrier to knowledge has collapsed. But access isn't learning.
+        For the first time, you can sit down with an intelligence that knows almost everything and ask it to teach you anything. What it can't hand you is judgment — knowing what to ask, what to trust, what to delegate, and what to keep for yourself. That's what we work on.
       </p>
     </div>
     <a href="#content" class="hero-scroll">
@@ -334,23 +344,65 @@
   <section class="section" id="content">
     <div class="container">
       <p class="lead">
-        We started Bell AI as a voice-first fellowship in 2025. Voice AI remains one of the richest frontiers in technology - conversational interfaces, emotional intelligence, real-time interaction. We still believe in it deeply.
+        This year, AI agents stopped being a demo. OpenAI's own agents autonomously broke into Hugging Face — the first cyberattack run by no human at all — and two months later OpenAI declared the age of AGI had arrived. Whatever you make of either headline, the ground has shifted: the question is no longer whether you can use AI. Anyone can.
       </p>
       <p>
-        But what we discovered running that first cohort surprised us. The fellows who learned the most weren't the ones with the best tutorials or the most access to tools. They were the ones who built something and then turned around and taught it to someone else.
+        The question is whether you can use it <em>well</em> — and that is a different skill entirely. Judgment about what to trust. Discernment between what's real and what merely sounds good. Taste in what's worth building. Wisdom about what to delegate to a machine and what to keep for yourself. None of it comes from a tutorial, because none of it is information. It's cultivated — by reading, building, arguing, and watching other people do the same.
       </p>
       <div class="pullquote">
-        You don't actually understand something until you can explain it. And you don't retain it until you've applied it under pressure.
+        How should humans train themselves in the face of a "thinking machine"?
       </div>
       <p>
-        This is not a new idea. Richard Feynman built his entire teaching philosophy around it. Medical schools have practiced "learn one, do one, teach one" for generations. What's new is the leverage. LLMs have made it possible to learn almost anything - but only if you engage with the content. Courses, tutorials, and bootcamps give you access. Community accountability and the discipline of teaching give you learning.
+        That's the question the fellowship exists to answer. This fall we're running three tracks, each a different way in: watch real practitioners run real AI, read the original texts underneath today's AI arguments, or study how societies have shaped every powerful technology before this one.
       </p>
     </div>
   </section>
 
-  <section class="section section-alt">
+  <section class="section section-alt" id="tracks">
+    <div class="container-wide">
+      <h2>Fall 2026 — Three Tracks</h2>
+      <div class="phases">
+        <a class="phase track-card" href="/hac/" style="border-top-color:#1f8f5f;">
+          <div class="phase-number">Catch it</div>
+          <div class="phase-label">Homebrew AI Club</div>
+          <p>
+            A show-and-tell for people running real AI agents, tools, and loops. Three live demos, everyone names what broke this month, then open discussion. Judgment and taste, caught from watching people who have them.
+          </p>
+          <div class="track-cta">See HAC →</div>
+        </a>
+        <a class="phase track-card" href="/civilization/" style="border-top-color:#7a2e1d;">
+          <div class="phase-number">Read for it</div>
+          <div class="phase-label">AI and Civilization</div>
+          <p>
+            A close-reading seminar on the original texts behind today's AI arguments — Descartes, Turing, Hobbes, Wiener, Schelling. Short, hard readings; two hours on what they actually say. Slow reading for the fastest technology.
+          </p>
+          <div class="track-cta">See the seminar →</div>
+        </a>
+        <a class="phase track-card" href="/shaping/" style="border-top-color:#2b5e8c;">
+          <div class="phase-number">Learn from history</div>
+          <div class="phase-label">How Society Shapes Technology</div>
+          <p>
+            Thirteen cases from 120 years of technology governance — what got sped up, slowed down, or stopped, and why. Then the mapping: where AI's trajectory will actually be decided.
+          </p>
+          <div class="track-cta">See the cases →</div>
+        </a>
+      </div>
+      <div class="container">
+        <p>
+          Each track is small, in person, and scheduled by who signs up. Pick the one that fits how you learn — or tell us you want more than one.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
     <div class="container-wide">
       <h2>Learn One, Do One, Teach One</h2>
+      <div class="container" style="padding:0 0 1rem 0;">
+        <p>
+          The method underneath every track hasn't changed since our first cohort: you don't understand something until you can explain it, and you don't retain it until you've applied it under pressure.
+        </p>
+      </div>
       <div class="phases">
         <div class="phase">
           <div class="phase-number">Step One</div>
@@ -387,11 +439,12 @@
 
   <section class="section" style="text-align: center; padding: 80px 0;">
     <div class="container">
-      <h2 style="margin-bottom: 1rem;">Ready to build?</h2>
+      <h2 style="margin-bottom: 1rem;">Ready?</h2>
       <p style="max-width: 480px; margin: 0 auto 2rem;">
-        We're looking for curious builders ready to learn, build, and teach. Tell us what you're working on.
+        Pick a track above and tell us you're in — or write to us about what you're working on.
       </p>
-      <a href="mailto:contact@bellaifellow.com" style="display: inline-block; font-size: 1.05rem; color: #fff; background: #1a1a1a; text-decoration: none; padding: 16px 44px; letter-spacing: 0.03em; transition: background 0.2s;">contact@bellaifellow.com</a>
+      <a href="#tracks" style="display: inline-block; font-size: 1.05rem; color: #fff; background: #1a1a1a; text-decoration: none; padding: 16px 44px; letter-spacing: 0.03em; transition: background 0.2s; margin-right: 12px;">See the tracks</a>
+      <a href="mailto:contact@bellaifellow.com" style="display: inline-block; font-size: 1.05rem; color: #1a1a1a; background: transparent; border: 1px solid #1a1a1a; text-decoration: none; padding: 15px 44px; letter-spacing: 0.03em;">contact@bellaifellow.com</a>
     </div>
   </section>
 

@@ -1,0 +1,150 @@
+/* Bell AI Fellowship — shared family for track pages (fall 2026)
+   One system, per-track accents: each page sets --accent / --accent-soft
+   and may override --display-font on headings. */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+html, body { width: 100%; overflow-x: hidden; -webkit-text-size-adjust: 100%; }
+
+:root {
+  --paper: #fdfcf9;
+  --panel: #f5f3ec;
+  --ink: #1c1a17;
+  --ink-soft: #4a463e;
+  --ink-faint: #8a8378;
+  --rule: #e2ddd0;
+  --accent: #1a1a1a;        /* per-page override */
+  --accent-soft: #555;      /* per-page override */
+  --serif: Georgia, 'Iowan Old Style', 'Times New Roman', serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --mono: "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  --display-font: var(--serif);
+}
+
+body {
+  font-family: var(--sans);
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.75;
+  font-size: 17px;
+}
+.container { max-width: 700px; margin: 0 auto; padding: 0 28px; }
+
+a { color: var(--accent); text-decoration: none; border-bottom: 1px solid color-mix(in srgb, var(--accent) 30%, transparent); }
+a:hover { border-bottom-color: var(--accent); }
+
+/* ---- Top band: fellowship identity + sibling tracks ---- */
+.band {
+  background: #0f1118;
+  padding: 14px 28px;
+}
+.band-inner {
+  max-width: 700px; margin: 0 auto;
+  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+}
+.band a { border-bottom: none; }
+.band-logo { width: 22px; height: auto; opacity: 0.9; display: block; }
+.band-brand {
+  font-size: 0.72rem; font-weight: 500;
+  color: rgba(255,255,255,0.55);
+  letter-spacing: 0.12em; text-transform: uppercase;
+}
+.band-tracks { margin-left: auto; display: flex; gap: 18px; }
+.band-tracks a {
+  font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+}
+.band-tracks a:hover, .band-tracks a.current { color: rgba(255,255,255,0.85); }
+
+/* ---- Header ---- */
+header.page { padding: 76px 0 48px; border-bottom: 1px solid var(--rule); }
+.eyebrow {
+  font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--accent-soft); margin-bottom: 22px; font-weight: 600;
+}
+h1 {
+  font-family: var(--display-font);
+  font-size: clamp(2.3rem, 6.5vw, 3.3rem);
+  font-weight: 400; line-height: 1.1; letter-spacing: -0.015em;
+  margin-bottom: 20px;
+}
+.subtitle {
+  font-family: var(--serif); font-style: italic;
+  font-size: 1.25rem; color: var(--accent); margin-bottom: 26px;
+}
+.standfirst { font-size: 1.08rem; color: var(--ink-soft); max-width: 560px; }
+
+/* ---- Sections ---- */
+section { padding: 52px 0; border-bottom: 1px solid var(--rule); }
+section:last-of-type { border-bottom: none; }
+h2 {
+  font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--accent-soft); margin-bottom: 22px; font-weight: 600;
+}
+h3 { font-family: var(--display-font); font-size: 1.25rem; font-weight: 600; margin-bottom: 8px; }
+p { color: var(--ink-soft); margin-bottom: 16px; max-width: 620px; }
+p.lede { font-size: 1.12rem; color: var(--ink); }
+strong { color: var(--ink); font-weight: 600; }
+em.accent { color: var(--accent); font-style: normal; }
+
+blockquote {
+  font-family: var(--serif); font-style: italic;
+  font-size: 1.3rem; line-height: 1.55; color: var(--ink);
+  border-left: 3px solid var(--accent);
+  padding: 6px 0 6px 22px; margin: 28px 0;
+}
+
+/* ---- Lists ---- */
+.not-list, .yes-list, .rules { list-style: none; margin: 18px 0; }
+.not-list li, .yes-list li, .rules li {
+  padding: 7px 0 7px 28px; position: relative; color: var(--ink-soft);
+}
+.not-list li::before { content: "✗"; position: absolute; left: 0; color: var(--ink-faint); }
+.yes-list li::before { content: "✓"; position: absolute; left: 0; color: var(--accent); }
+.rules li::before { content: "—"; position: absolute; left: 0; color: var(--accent); }
+
+/* ---- Numbered feature rows (questions, run order, cases) ---- */
+.rows { border: 1px solid var(--rule); border-radius: 6px; overflow: hidden; margin-top: 8px; background: #fff; }
+.row {
+  display: grid; grid-template-columns: 64px 1fr; gap: 16px;
+  padding: 18px 20px; border-bottom: 1px solid var(--rule);
+}
+.row:last-child { border-bottom: none; }
+.row-num {
+  font-family: var(--mono); font-size: 0.8rem; color: var(--accent);
+  padding-top: 3px; letter-spacing: 0.05em;
+}
+.row-title { color: var(--ink); font-weight: 600; }
+.row-body { color: var(--ink-soft); font-size: 0.95rem; margin-top: 3px; }
+
+/* ---- Facts grid ---- */
+.facts { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 32px; margin-top: 8px; }
+.fact dt {
+  color: var(--accent-soft); font-size: 0.72rem; text-transform: uppercase;
+  letter-spacing: 0.1em; margin-bottom: 4px; font-weight: 600;
+}
+.fact dd { color: var(--ink); }
+
+/* ---- CTA ---- */
+.cta { padding: 56px 0 72px; }
+.cta p.lede { margin-bottom: 26px; }
+.btn {
+  display: inline-block;
+  background: var(--accent); color: #fff;
+  font-weight: 600; font-size: 1rem;
+  padding: 15px 30px; border-radius: 5px; border-bottom: none;
+  letter-spacing: 0.01em;
+}
+.btn:hover { filter: brightness(1.15); border-bottom: none; }
+.cta-note { margin-top: 16px; font-size: 0.85rem; color: var(--ink-faint); max-width: 480px; }
+
+footer.page {
+  padding: 28px 0 60px; font-size: 0.8rem; color: var(--ink-faint);
+  border-top: 1px solid var(--rule);
+}
+
+@media (max-width: 640px) {
+  .facts { grid-template-columns: 1fr; }
+  .row { grid-template-columns: 44px 1fr; }
+  .band-tracks { margin-left: 0; }
+}
