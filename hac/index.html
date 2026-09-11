@@ -1,186 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="description" content="The Homebrew AI Club (HAC) — build judgment through demos. A working session for people running real AI agents, tools, and loops." />
-<link rel="icon" href="../favicon.png" type="image/png">
-<title>Homebrew AI Club (HAC) — Bell AI Fellowship</title>
-<link rel="stylesheet" href="../assets/site.css">
-<style>
-  :root {
-    --accent: #1f8f5f;
-    --accent-soft: #3da97a;
-    --display-font: var(--mono);
-  }
-  h1 { font-size: clamp(2rem, 6vw, 2.7rem); font-weight: 700; letter-spacing: -0.01em; }
-  .subtitle { font-family: var(--mono); font-style: normal; font-size: 1.02rem; }
-  h2 { font-family: var(--mono); }
-  h2::before { content: "// "; color: var(--accent-soft); }
-  .prompt { font-family: var(--mono); color: var(--ink-faint); font-size: 0.85rem; margin-bottom: 18px; }
-  .prompt::before { content: "$ "; color: var(--accent); }
-  .row-num { font-weight: 700; }
-  h1 .hl { color: var(--accent); }
-  h1 .paren { color: var(--ink-faint); font-weight: 400; }
-</style>
-</head>
-<body>
-
-<nav class="band">
-  <div class="band-inner">
-    <a href="../"><img src="../images/bellai-white-logo.png" alt="" class="band-logo"></a>
-    <a href="../" class="band-brand">Bell AI Fellowship</a>
-    <div class="band-tracks">
-      <a href="./" class="current">Homebrew AI Club</a>
-      <a href="../civilization/">AI &amp; Civilization</a>
-      <a href="../shaping/">Shaping Technology</a>
-      <a href="../schedule/">Schedule</a>
-    </div>
-  </div>
-</nav>
-
-<div class="container">
-
-  <header class="page">
-    <div class="prompt">bellaifellow / hac — the practice path</div>
-    <h1><span class="hl">H</span>omebrew <span class="hl">A</span>I <span class="hl">C</span>lub <span class="paren">(HAC)</span></h1>
-    <p class="subtitle">Build judgment through demos.</p>
-    <p class="standfirst">A working session for people running real AI agents, tools, and loops — where judgment gets built by doing the work, showing it, and digging into what breaks.</p>
-    <a class="btn btn-top" href="https://tally.so/r/Pd7d75" target="_blank" rel="noopener">Apply →</a>
-  </header>
-
-  <section>
-    <h2>what is HAC?</h2>
-    <p class="lede">Members demo their real setups, live: the agent, the pipeline, the prompt stack, the workflow they built for themselves. Then everyone names what worked and what broke since last time. Then we dig in together.</p>
-    <p>You don't get judgment from a tutorial. You get it from running things, breaking them, and working out — with people doing the same — why one setup holds and another falls apart. No slides. No pitch decks. Just what's on your machine.</p>
-    <p><strong>How it works:</strong> HAC trains judgment through doing, and the method is peer-to-peer. There's no instructor and no curriculum. You build something, show it to people building their own things, and the room's collective experience gets pointed at your problem — and yours at theirs. What you leave with is a sharper sense of what actually works, learned from people who tried it.</p>
-    <p>It's the Homebrew Computer Club, updated: a room of people with different skills, tinkering together, comparing notes on what actually works — and building taste for what's real versus what just sounds good.</p>
-  </section>
-
-  <section>
-    <h2>two cohorts</h2>
-    <p>The same format, calibrated to the room. The cohorts alternate weeks, so yours meets every other week — twice a month — and you're always with peers.</p>
-    <div class="rows">
-      <div class="row">
-        <div class="row-num">int</div>
-        <div><div class="row-title">Intermediate</div>
-        <div class="row-body">You use AI daily and have wired up a few things — a custom GPT, a script, an automation — but you're not running agents in production. Demos are pitched so you can follow them and learn from them.</div></div>
-      </div>
-      <div class="row">
-        <div class="row-num">adv</div>
-        <div><div class="row-title">Advanced</div>
-        <div class="row-body">You run agents, pipelines, or loops every day. Demos go to full depth — architecture, failure modes, the parts that are still in development.</div></div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <h2>what it isn't</h2>
-    <ul class="not-list">
-      <li><strong>Not a course.</strong> No syllabus, no sequence, nothing to catch up on.</li>
-      <li><strong>Not a lecture.</strong> Nobody stands at the front and explains AI to you.</li>
-      <li><strong>Not a spectator sport.</strong> Everyone shows work eventually. That's how the room builds its taste — including yours.</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>a typical session</h2>
-    <div class="rows">
-      <div class="row">
-        <div class="row-num">1</div>
-        <div><div class="row-title">Three demos</div>
-        <div class="row-body">~15 min each, live — the actual tool running, not a recording</div></div>
-      </div>
-      <div class="row">
-        <div class="row-num">2</div>
-        <div><div class="row-title">What worked. What broke.</div>
-        <div class="row-body">Everyone names one thing that paid off since last time and one that didn't. The wins tell you what's worth copying; the failures save you the weeks it would have cost to find out yourself.</div></div>
-      </div>
-      <div class="row">
-        <div class="row-num">3</div>
-        <div><div class="row-title">Open discussion</div>
-        <div class="row-body">Go deep on a specific project, get unstuck, or take on whatever just landed in AI — a new model, a new tool, a story worth arguing about</div></div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <h2>sections</h2>
-    <p>Thursday evenings are the main run — the two cohorts trade off week by week. A midday video series is on the waitlist for people who can't do evenings.</p>
-    <div class="sections">
-      <div class="sect">
-        <div class="sect-head">
-          <span class="sect-name">Advanced — Thursday evenings</span>
-          <span class="badge open">Applications open</span>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="description" content="The Homebrew AI Club (HAC) — build judgment through demos. A working session for people running real AI agents, tools, and loops."/>
+        <link rel="icon" href="../favicon.png" type="image/png">
+        <title>Homebrew AI Club (HAC) — Bell AI Fellowship</title>
+        <link rel="stylesheet" href="../assets/site.css">
+        <style>:root { --accent: #1f8f5f; --accent-soft: #3da97a; --display-font: var(--mono); } h1 { font-size: clamp(2rem, 6vw, 2.7rem); font-weight: 700; letter-spacing: -0.01em; } .subtitle { font-family: var(--mono); font-style: normal; font-size: 1.02rem; } h2 { font-family: var(--mono); } h2::before { content: "// "; color: var(--accent-soft); } .prompt { font-family: var(--mono); color: var(--ink-faint); font-size: 0.85rem; margin-bottom: 18px; } .prompt::before { content: "$ "; color: var(--accent); } .row-num { font-weight: 700; } h1 .hl { color: var(--accent); } h1 .paren { color: var(--ink-faint); font-weight: 400; }</style>
+    </head>
+    <body>
+        <nav class="band">
+            <div class="band-inner">
+                <a href="../"><img src="../images/bellai-white-logo.png" alt="" class="band-logo"></a>
+                <a href="../" class="band-brand">Bell AI Fellowship</a>
+                <div class="band-tracks">
+                    <a href="./" class="current">Homebrew AI Club</a>
+                    <a href="../civilization/">AI &amp; Civilization</a>
+                    <a href="../shaping/">Shaping Technology</a>
+                    <a href="../schedule/">Schedule</a>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <header class="page">
+                <div class="prompt">bellaifellow / hac — the practice path</div>
+                <h1><span class="hl">H</span>omebrew <span class="hl">A</span>I <span class="hl">C</span>lub <span class="paren">(HAC)</span></h1>
+                <p class="subtitle">Build judgment through demos.</p>
+                <p class="standfirst">A working session for people to build their AI experience, expertise and judgment. We do it by doing the work and showing it to people who will celebrate your wins and tell you what&apos;s wrong with it.</p>
+                <a class="btn btn-top" href="https://tally.so/r/Pd7d75" target="_blank" rel="noopener">Apply →</a>
+            </header>
+            <section>
+                <h2>what is HAC?</h2>
+                <p class="lede">Members demo their real setups, live: the agent, the pipeline, the prompt stack, the experiment they ran. We discuss what worked and what broke since last time, and we dig in together.</p>
+                <p>Judgment comes from running things, breaking them, and working out the kinks, with people doing the same. Why does one setup hold and another fall apart? The focus is what is on your machine and discussion, not lectures or slideware.</p>
+                <p><strong>How it works:</strong> HAC trains judgment through doing, and the method is peer-to-peer. There&apos;s no instructor and no curriculum. You build something, show it to people building their own things, and the room&apos;s collective experience gets pointed at your problem &#8212; and yours at theirs. What you leave with is a sharper sense of what works, learned from people who tried it. We curate the participants to be peers who can teach as well as learn.</p>
+                <p>It's the Homebrew Computer Club, updated: a room of people with different skills, tinkering together, comparing notes on what works, and building discernment and taste for what deserves to grow versus what just sounds good.</p>
+            </section>
+            <section>
+                <h2>two cohorts</h2>
+                <p>The same format, calibrated to the room. The cohorts alternate weeks, so yours meets every other week &#8212; twice a month &#8212; and you&apos;re always with peers. Participants come from all levels from CTOs and CEOs of technology companies to individual consultants and freelancers, to students and recent graduates.</p>
+                <div class="rows">
+                    <div class="row">
+                        <div class="row-num">int</div>
+                        <div>
+                            <div class="row-title">Intermediate</div>
+                            <div class="row-body">You use AI daily. Maybe you&apos;ve done more than prompting like made a custom GPT, a script, or an automation.&nbsp; Demos of better prompts and tools are pitched so you can follow them and learn from them.</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="row-num">adv</div>
+                        <div>
+                            <div class="row-title">Advanced</div>
+                            <div class="row-body">You run agents, pipelines, or loops every day. Maybe you're doing AI-based experiments and research. Demos go to full depth: architecture, failure modes, the parts that are still in development.</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h2>what it isn't</h2>
+                <ul class="not-list">
+                    <li>
+                        <strong>Not a course.</strong> No syllabus, no sequence, nothing to catch up on.
+                    </li>
+                    <li>
+                        <strong>Not a lecture.</strong> Nobody stands at the front and explains AI to you.
+                    </li>
+                    <li>
+                        <strong>Not a spectator sport.</strong> Everyone shows work eventually. That's how the room builds its taste — including yours.
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h2>a typical session</h2>
+                <div class="rows">
+                    <div class="row">
+                        <div class="row-num">1</div>
+                        <div>
+                            <div class="row-title">Three demos</div>
+                            <div class="row-body">~15 min each, live, the actual instance running (or breaking!)</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="row-num">2</div>
+                        <div>
+                            <div class="row-title">What worked. What broke.</div>
+                            <div class="row-body">Everyone names one thing that paid off since last time and one that didn't. Both are useful: you find out what's worth copying, and what would have cost you weeks to learn the hard way.</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="row-num">3</div>
+                        <div>
+                            <div class="row-title">Open discussion</div>
+                            <div class="row-body">Go deep on a specific project, get unstuck, or take on whatever just landed in AI — a new model, a new tool, a story worth arguing about</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h2>sections</h2>
+                <p>Thursday evenings are the main run — the two cohorts trade off week by week. A midday video series is on the waitlist for people who can't do evenings.</p>
+                <div class="sections">
+                    <div class="sect">
+                        <div class="sect-head">
+                            <span class="sect-name">Advanced — Thursday evenings</span>
+                            <span class="badge open">Applications open</span>
+                        </div>
+                        <p class="sect-when">6:30–8:00pm · in person, San Francisco</p>
+                        <p class="sect-meta">Every other Thursday. Ten to twenty seats. Address comes with your confirmation.</p>
+                        <p class="sect-dates">Oct 1 · Oct 15 · Oct 29 · Nov 12 · Dec 3 · Dec 17</p>
+                    </div>
+                    <div class="sect">
+                        <div class="sect-head">
+                            <span class="sect-name">Intermediate — Thursday evenings</span>
+                            <span class="badge open">Applications open</span>
+                        </div>
+                        <p class="sect-when">6:30–8:00pm · over video</p>
+                        <p class="sect-meta">Every other Thursday, on the weeks Advanced isn't meeting. Ten to twenty seats. Demos are screen-shared, which works well for this cohort.</p>
+                        <p class="sect-dates">Oct 8 · Oct 22 · Nov 5 · Nov 19 · Dec 10</p>
+                    </div>
+                    <div class="sect waitlist">
+                        <div class="sect-head">
+                            <span class="sect-name">Advanced — Wednesday lunch</span>
+                            <span class="badge wait">Waitlist</span>
+                        </div>
+                        <p class="sect-when">12:00–1:00pm Pacific · over video</p>
+                        <p class="sect-meta">Every other Wednesday, one hour: two demos instead of three. Opens if six people join the waitlist. No payment until it's confirmed.</p>
+                        <p class="sect-dates">Sep 30 · Oct 14 · Oct 28 · Nov 11 · Dec 2 · Dec 16</p>
+                    </div>
+                    <div class="sect waitlist">
+                        <div class="sect-head">
+                            <span class="sect-name">Intermediate — Wednesday lunch</span>
+                            <span class="badge wait">Waitlist</span>
+                        </div>
+                        <p class="sect-when">12:00–1:00pm Pacific · over video</p>
+                        <p class="sect-meta">Every other Wednesday, alternating with the Advanced lunch section. Same terms — it opens only if six people want it.</p>
+                        <p class="sect-dates">Oct 7 · Oct 21 · Nov 4 · Nov 18 · Dec 9</p>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h2>the basics</h2>
+                <dl class="facts">
+                    <div class="fact">
+                        <dt>Cadence</dt>
+                        <dd>Every other week — two sessions a month</dd>
+                    </div>
+                    <div class="fact">
+                        <dt>Length</dt>
+                        <dd>90 minutes, hard stop</dd>
+                    </div>
+                    <div class="fact">
+                        <dt>Format</dt>
+                        <dd>Advanced in person in San Francisco; Intermediate over video</dd>
+                    </div>
+                    <div class="fact">
+                        <dt>Cost</dt>
+                        <dd>$180 for the fall series</dd>
+                    </div>
+                    <div class="fact">
+                        <dt>Seats</dt>
+                        <dd>Ten to twenty per cohort</dd>
+                    </div>
+                    <div class="fact">
+                        <dt>Who's running it</dt>
+                        <dd>Sunil Paul &amp; Tenni Theurer</dd>
+                    </div>
+                    <div class="fact">
+                        <dt>Part of</dt>
+                        <dd>
+                            <a href="../">Bell AI Fellowship</a>
+                        </dd>
+                    </div>
+                </dl>
+            </section>
+            <section class="cta">
+                <h2>apply</h2>
+                <p class="lede">Each application is read, and admission isn't automatic. We're matching people to the right cohort and building a room where the demos are worth your evening, so places go by fit.</p>
+                <p>No interview, five minutes:</p>
+                <ul class="rules">
+                    <li>How you're using AI today</li>
+                    <li>What you want to be able to use it for</li>
+                    <li>A bit about your background</li>
+                    <li>Your LinkedIn, if you'd like to share it — optional</li>
+                    <li>Whether you'd demo, and which section fits</li>
+                </ul>
+                <p>If the fee would keep you out, please say so in your application. We set places aside for exactly that, and it won't count against you.</p>
+                <a class="btn" href="https://tally.so/r/Pd7d75" target="_blank" rel="noopener">Apply →</a>
+                <p class="cta-note">Opens the application form in a new tab — about five minutes.</p>
+            </section>
+            <footer class="page">
+                The Homebrew AI Club is the practice path of the <a href="../">Bell AI Fellowship</a>.
+            </footer>
         </div>
-        <p class="sect-when">6:30–8:00pm · in person, San Francisco</p>
-        <p class="sect-meta">Every other Thursday. Ten to twenty seats. Address comes with your confirmation.</p>
-        <p class="sect-dates">Oct 1 · Oct 15 · Oct 29 · Nov 12 · Dec 3 · Dec 17</p>
-      </div>
-      <div class="sect">
-        <div class="sect-head">
-          <span class="sect-name">Intermediate — Thursday evenings</span>
-          <span class="badge open">Applications open</span>
-        </div>
-        <p class="sect-when">6:30–8:00pm · over video</p>
-        <p class="sect-meta">Every other Thursday, on the weeks Advanced isn't meeting. Ten to twenty seats. Demos are screen-shared, which works well for this cohort.</p>
-        <p class="sect-dates">Oct 8 · Oct 22 · Nov 5 · Nov 19 · Dec 10</p>
-      </div>
-      <div class="sect waitlist">
-        <div class="sect-head">
-          <span class="sect-name">Advanced — Wednesday lunch</span>
-          <span class="badge wait">Waitlist</span>
-        </div>
-        <p class="sect-when">12:00–1:00pm Pacific · over video</p>
-        <p class="sect-meta">Every other Wednesday, one hour: two demos instead of three. Opens if six people join the waitlist. No payment until it's confirmed.</p>
-        <p class="sect-dates">Sep 30 · Oct 14 · Oct 28 · Nov 11 · Dec 2 · Dec 16</p>
-      </div>
-      <div class="sect waitlist">
-        <div class="sect-head">
-          <span class="sect-name">Intermediate — Wednesday lunch</span>
-          <span class="badge wait">Waitlist</span>
-        </div>
-        <p class="sect-when">12:00–1:00pm Pacific · over video</p>
-        <p class="sect-meta">Every other Wednesday, alternating with the Advanced lunch section. Same terms — it opens only if six people want it.</p>
-        <p class="sect-dates">Oct 7 · Oct 21 · Nov 4 · Nov 18 · Dec 9</p>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <h2>the basics</h2>
-    <dl class="facts">
-      <div class="fact"><dt>Cadence</dt><dd>Every other week — two sessions a month</dd></div>
-      <div class="fact"><dt>Length</dt><dd>90 minutes, hard stop</dd></div>
-      <div class="fact"><dt>Format</dt><dd>Advanced in person in San Francisco; Intermediate over video</dd></div>
-      <div class="fact"><dt>Cost</dt><dd>$180 for the fall series</dd></div>
-      <div class="fact"><dt>Seats</dt><dd>Ten to twenty per cohort</dd></div>
-      <div class="fact"><dt>Who's running it</dt><dd>Sunil Paul &amp; Tenni Theurer</dd></div>
-      <div class="fact"><dt>Part of</dt><dd><a href="../">Bell AI Fellowship</a></dd></div>
-    </dl>
-  </section>
-
-  <section class="cta">
-    <h2>apply</h2>
-    <p class="lede">This is an application, not a sign-up. Each one is read — we're matching people to the right cohort and building a room where the demos are worth your evening, so places are offered on fit rather than first come, first served.</p>
-    <p>No interview, five minutes:</p>
-    <ul class="rules">
-      <li>How you're using AI today</li>
-      <li>What you want to be able to use it for</li>
-      <li>A bit about your background</li>
-      <li>Your LinkedIn, if you'd like to share it — optional</li>
-      <li>Whether you'd demo, and which section fits</li>
-    </ul>
-    <p>If the fee would keep you out, please say so in your application. We set places aside for exactly that, and it won't count against you.</p>
-    <a class="btn" href="https://tally.so/r/Pd7d75" target="_blank" rel="noopener">Apply →</a>
-    <p class="cta-note">Opens the application form in a new tab — about five minutes.</p>
-  </section>
-
-  <footer class="page">
-    The Homebrew AI Club is the practice path of the <a href="../">Bell AI Fellowship</a>.
-  </footer>
-
-</div>
-
-</body>
+    </body>
 </html>
