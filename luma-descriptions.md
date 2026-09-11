@@ -88,7 +88,7 @@ Capacity 20
 
 **Description:**
 
-Three people demo what they actually built, running live — the agent, the pipeline, the prompt stack, the workflow they wired up for themselves. Then everyone names one thing that worked this month and one thing that broke. Then we dig in.
+Three people demo what they actually built, running live — the agent, the pipeline, the prompt stack, the workflow they wired up for themselves. Then everyone names one thing that worked since last time and one thing that broke. Then we dig in.
 
 No slides. No pitch decks. Just what's on your machine.
 
@@ -124,7 +124,7 @@ You use AI every day. You've wired up a few things — a custom GPT, a script, a
 
 This is the room in between.
 
-Members demo what they actually built, running live. Then everyone names one thing that worked this month and one thing that broke. Then we dig in together. No slides, no pitch decks — just what's on people's machines, screen-shared.
+Members demo what they actually built, running live. Then everyone names one thing that worked since last time and one thing that broke. Then we dig in together. No slides, no pitch decks — just what's on people's machines, screen-shared.
 
 **This is the Intermediate cohort**, pitched so you can follow every demo and steal from it. Nobody talks down to you, and nobody assumes you've built a multi-agent system. (There's an Advanced cohort meeting in person on the alternating Thursdays — if you run agents and pipelines daily, apply to that one.)
 
@@ -180,7 +180,7 @@ Add registration question: *Which cohort — Intermediate or Advanced?*
 
 A midday version of the Homebrew AI Club, over video, for people whose evenings are spoken for.
 
-One hour, every other Wednesday: two live demos of what members actually built and are running, then what worked and what broke this month. Same room, same peer-to-peer method, tighter format — two demos instead of three.
+One hour, every other Wednesday: two live demos of what members actually built and are running, then what worked and what broke since last time. Same room, same peer-to-peer method, tighter format — two demos instead of three.
 
 Two cohorts alternate weeks. **Advanced** is for people running agents, pipelines, and loops daily, where demos go to full depth. **Intermediate** is for people who've wired up a few things — a custom GPT, a script, an automation — but aren't running agents in production, where demos are pitched so you can follow them and steal from them. Tell us which fits when you register.
 
