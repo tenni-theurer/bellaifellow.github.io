@@ -37,7 +37,7 @@ This is the principles path of the Bell AI Fellowship. The premise of all three 
 
 **The commitment.** Six consecutive Sundays, two hours each, plus one to two hours of reading a week. Fixed cohort — no drop-ins, no make-ups. Eight to fifteen seats.
 
-**Applying.** This is an application, not a sign-up. Every one is read, and seats are offered by what makes a strong room rather than by who registered first. Your card is authorized when you apply and charged only if you're offered a seat; if not, the hold is released. Tuition is $180 for the arc. If that would keep you out, say so in your application — we set places aside for exactly that, and it won't count against you.
+**Applying.** This is an application, not a sign-up. Each one is read, and seats are offered by what makes a strong room rather than by who registered first. Your card is authorized when you apply and charged only if you're offered a seat; if not, the hold is released. Tuition is $180 for the arc. If that would keep you out, say so in your application — we set places aside for exactly that, and it won't count against you.
 
 Full detail: https://bellaifellow.com/civilization/
 
@@ -74,7 +74,7 @@ This is the precedent path of the Bell AI Fellowship: in the AGI age, your judgm
 
 **The commitment.** Six consecutive Mondays, two hours each, plus one short case brief to read beforehand.
 
-**Applying.** This is an application, not a sign-up. Every one is read. Your card is authorized when you apply and charged only if you're offered a place. Tuition is $180 for the six sessions. If that would keep you out, say so in your application — we set places aside for exactly that.
+**Applying.** This is an application, not a sign-up. Each one is read. Your card is authorized when you apply and charged only if you're offered a place. Tuition is $180 for the six sessions. If that would keep you out, say so in your application — we set places aside for exactly that.
 
 Full detail: https://bellaifellow.com/shaping/
 
@@ -106,7 +106,7 @@ This is the practice path of the Bell AI Fellowship: in the AGI age, your judgme
 
 **The commitment.** Every other Thursday, 90 minutes, hard stop. Six sessions through December.
 
-**Applying.** This is an application, not a sign-up. Every one is read — we're matching people to the right cohort and building a room where the demos are worth your evening. Your card is authorized when you apply and charged only if you're offered a place. $180 for the fall series. If that would keep you out, say so in your application.
+**Applying.** This is an application, not a sign-up. Each one is read — we're matching people to the right cohort and building a room where the demos are worth your evening. Your card is authorized when you apply and charged only if you're offered a place. $180 for the fall series. If that would keep you out, say so in your application.
 
 Full detail: https://bellaifellow.com/hac/
 
@@ -136,7 +136,7 @@ This is the practice path of the Bell AI Fellowship: in the AGI age, your judgme
 
 **The commitment.** Every other Thursday, 90 minutes, hard stop. Five sessions through December, over video.
 
-**Applying.** This is an application, not a sign-up. Every one is read, and we match people to the cohort that fits. Your card is authorized when you apply and charged only if you're offered a place. If the fee would keep you out, say so in your application — we set places aside for exactly that.
+**Applying.** This is an application, not a sign-up. Each one is read, and we match people to the cohort that fits. Your card is authorized when you apply and charged only if you're offered a place. If the fee would keep you out, say so in your application — we set places aside for exactly that.
 
 Full detail: https://bellaifellow.com/hac/
 

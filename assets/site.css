@@ -170,3 +170,6 @@ footer.page {
   .row { grid-template-columns: 44px 1fr; }
   .band-tracks { margin-left: 0; }
 }
+
+/* Header apply button */
+.btn-top { margin-top: 26px; }
