@@ -16,128 +16,273 @@
 <meta name="twitter:title" content="Bell AI Fellowship — Build your judgment" />
 <meta name="twitter:description" content="In the age of AI, your judgment is the most valuable thing you have. Three paths to build it, fall 2026: practice, principles, precedent. Applications close September 22." />
 <meta name="twitter:image" content="https://bellaifellow.com/images/bellai-logo.png" />
-        <style>/* Base reset */* { margin: 0; padding: 0; box-sizing: border-box; } html { scroll-behavior: smooth; } html, body { width: 100%; overflow-x: hidden; -webkit-text-size-adjust: 100%; } body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.8; color: #1a1a1a; background: #fff; } /* Layout */.container { max-width: 800px; margin: 0 auto; padding: 0 32px; } .container-wide { max-width: 960px; margin: 0 auto; padding: 0 32px; } /* Sticky nav */.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(15, 17, 24, 0.95); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); padding: 0 32px; transform: translateY(-100%); transition: transform 0.3s ease; } .nav.visible { transform: translateY(0); } .nav-inner { max-width: 960px; margin: 0 auto; display: flex; align-items: center; height: 56px; gap: 12px; } .nav-logo { width: 28px; height: auto; opacity: 0.9; } .nav-brand { font-size: 0.8rem; font-weight: 500; color: rgba(255,255,255,0.5); letter-spacing: 0.1em; text-transform: uppercase; } /* Hero - full width, dramatic */.hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; background: #0f1118; padding: 80px 32px; position: relative; overflow: hidden; } .hero::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse 80% 50% at 50% 35%, rgba(100, 110, 160, 0.12) 0%, transparent 70%),
-        radial-gradient(ellipse 60% 40% at 30% 60%, rgba(80, 90, 130, 0.08) 0%, transparent 60%); } .hero-inner { max-width: 900px; position: relative; z-index: 1; } .hero-logo { width: 110px; height: auto; margin-bottom: 20px; opacity: 0.9; } .hero-label { font-size: 0.8rem; font-weight: 500; color: rgba(255,255,255,0.35); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 56px; } .hero h1 { font-family: Georgia, 'Times New Roman', serif; font-size: clamp(2.8rem, 5.5vw, 4.2rem); font-weight: 400; font-style: italic; color: #fff; line-height: 1.25; margin-bottom: 2.5rem; letter-spacing: -0.02em; max-width: 820px; margin-left: auto; margin-right: auto; } .hero-subtitle { font-size: 1.4rem; color: rgba(255,255,255,0.75); line-height: 1.7; max-width: 560px; margin: 0 auto; } /* Scroll indicator */.hero-scroll { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px; text-decoration: none; } .hero-scroll-text { font-size: 0.65rem; font-weight: 500; color: rgba(255,255,255,0.2); letter-spacing: 0.15em; text-transform: uppercase; } .hero-scroll-arrow { width: 20px; height: 20px; border-right: 1.5px solid rgba(255,255,255,0.2); border-bottom: 1.5px solid rgba(255,255,255,0.2); transform: rotate(45deg); animation: scrollBounce 2s ease-in-out infinite; } @keyframes scrollBounce { 0%, 100% {  transform: rotate(45deg) translateY(0);  opacity: 0.4; }  50% {  transform: rotate(45deg) translateY(6px);  opacity: 1; } } /* Sections */.section { padding: 100px 0; } .section-alt { background: #f8f8f6; } .section h2 { font-family: Georgia, 'Times New Roman', serif; font-size: clamp(1.7rem, 3.5vw, 2.4rem); font-weight: 400; color: #1a1a1a; margin-bottom: 1.75rem; letter-spacing: -0.015em; } .section p { font-size: 1.1rem; color: #555; line-height: 1.85; margin-bottom: 1.5rem; } .section p:last-child { margin-bottom: 0; } .section p a { color: #1a1a1a; text-decoration: none; border-bottom: 1px solid #bbb; padding-bottom: 1px; transition: border-color 0.2s; } .section p a:hover { border-color: #1a1a1a; } /* Lead paragraph */.lead { font-size: 1.2rem; color: #333; line-height: 1.8; } /* Pull quote */.pullquote { font-family: Georgia, 'Times New Roman', serif; font-size: clamp(1.3rem, 2.5vw, 1.6rem); font-style: italic; color: #1a1a1a; line-height: 1.6; padding: 2.5rem 0; margin: 1.5rem 0; border-top: 1px solid #e5e5e0; border-bottom: 1px solid #e5e5e0; text-align: center; } .quote-cite { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-style: normal; font-size: 0.85rem; color: #999; margin-top: 1rem; letter-spacing: 0.04em; } .quote-cite a { color: #777; text-decoration: none; border-bottom: 1px solid #ccc; padding-bottom: 1px; transition: color 0.2s, border-color 0.2s; } .quote-cite a:hover { color: #1a1a1a; border-color: #1a1a1a; } .pullquote.long { font-size: clamp(1.1rem, 1.9vw, 1.3rem); line-height: 1.7; text-align: left; } /* Phases */.phases { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin: 3rem 0 3rem 0; } .phase { padding: 2.5rem 2rem; border: 1px solid #e0dfdc; border-right: none; position: relative; border-top: 3px solid #ccc; background: #fff; transition: border-top-color 0.25s ease, box-shadow 0.25s ease; } .phase:nth-child(1) { border-top-color: #bbb; } .phase:nth-child(2) { border-top-color: #999; } .phase:nth-child(3) { border-top-color: #666; } .phase:last-child { border-right: 1px solid #e0dfdc; } .phase:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.06); } .phase:nth-child(1):hover { border-top-color: #888; } .phase:nth-child(2):hover { border-top-color: #666; } .phase:nth-child(3):hover { border-top-color: #333; } .phase-number { font-size: 0.7rem; font-weight: 600; color: #aaa; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 12px; } .phase-label { font-family: Georgia, 'Times New Roman', serif; font-size: 1.5rem; font-weight: 400; font-style: italic; color: #1a1a1a; margin-bottom: 1rem; } .phase p { font-size: 0.98rem; color: #666; line-height: 1.75; margin-bottom: 0; } /* Track cards */a.track-card { display: block; text-decoration: none; color: inherit; } a.track-card:hover .track-cta { color: #1a1a1a; } .track-cta { margin-top: 1.25rem; font-size: 0.85rem; font-weight: 600; color: #888; letter-spacing: 0.04em; transition: color 0.2s; } /* Founders */.founders { display: flex; gap: 4rem; margin-top: 2.5rem; } .founder { flex: 1; } .founder-photo { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 1.5rem; } .founder-name { font-family: Georgia, 'Times New Roman', serif; font-size: 1.25rem; font-weight: 400; font-style: italic; color: #1a1a1a; margin-bottom: 0.75rem; } .founder p { font-size: 0.95rem; color: #666; line-height: 1.75; margin-bottom: 0.75rem; } .founder-link { font-size: 0.85rem; color: #999; text-decoration: none; border-bottom: 1px solid #ddd; padding-bottom: 1px; transition: color 0.2s, border-color 0.2s; } .founder-link:hover { color: #1a1a1a; border-color: #1a1a1a; } /* Footer */.footer { text-align: center; padding: 48px 0 36px 0; border-top: 1px solid #eee; } .footer-contact { margin-bottom: 20px; } .footer-contact a { font-size: 0.9rem; color: #555; text-decoration: none; border-bottom: 1px solid #ddd; padding-bottom: 1px; transition: color 0.2s, border-color 0.2s; } .footer-contact a:hover { color: #1a1a1a; border-color: #1a1a1a; } .footer-links { display: flex; gap: 32px; justify-content: center; margin-bottom: 16px; } .footer-links a { color: #aaa; text-decoration: none; font-size: 0.8rem; letter-spacing: 0.02em; } .footer-links a:hover { color: #666; } .footer-copyright { color: #ccc; font-size: 0.75rem; letter-spacing: 0.02em; } .hero-cta { display: inline-block; margin-top: 2.2rem; padding: 15px 40px; background: #fff; color: #0f1118; font-size: 1rem; font-weight: 600; letter-spacing: 0.02em; text-decoration: none; border-radius: 4px; transition: background 0.2s; } .hero-cta:hover { background: #e8e8f0; } /* Responsive */@media (max-width: 768px) { .container, .container-wide {  padding: 0 24px; }  .nav {  padding: 0 24px; }  .hero {  min-height: 85vh;  padding: 60px 24px; }  .hero h1 {  font-size: clamp(2.2rem, 8vw, 3rem);  white-space: normal; }  .hero-logo {  width: 80px; }  .section {  padding: 72px 0; }  .phases {  grid-template-columns: 1fr;  gap: 0; }  .phase {  border-right: 1px solid #e0dfdc;  border-bottom: none; }  .phase:last-child {  border-bottom: 1px solid #e0dfdc; }  .founders {  flex-direction: column;  gap: 3rem; } }</style>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+        <link rel="stylesheet" href="assets/site.css">
+        <style>
+/* ---- Homepage layout (Editorial direction, 2026-09-13) ---- */
+.hp-wrap { max-width: 1296px; margin: 0 auto; padding: 0 72px; }
+.hp-serif { font-family: var(--serif); }
+.hp-kicker { font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600; font-family: var(--sans); }
+.hp-meta { font-size: 13px; line-height: 1.6; color: #6b655a; font-family: var(--sans); }
+.hp-link { font-size: 13px; font-weight: 600; border-bottom: none; }
+.hp-link:hover { text-decoration: underline; text-underline-offset: 3px; border-bottom: none; }
+.hp-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 32px; }
+.hp-h2 { font-family: var(--serif); font-size: 40px; font-weight: 400; margin: 0; letter-spacing: -0.015em; line-height: 1.1; text-transform: none; color: var(--ink); }
+.hp-lead { font-size: 17px; color: var(--ink-soft); margin: 0; line-height: 1.6; max-width: none; }
+.hp-p { font-size: 15px; line-height: 1.6; color: var(--ink-soft); margin: 0; max-width: none; }
+.hp-p strong { color: var(--ink); font-weight: 600; }
+
+/* Hero */
+.hp-hero { padding: 112px 0 80px; align-items: end; }
+.hp-hero-main { grid-column: span 8; }
+.hp-hero-main .hp-kicker { color: var(--ink-faint); margin-bottom: 36px; }
+.hp-hero h1 { font-family: var(--serif); font-size: clamp(2.75rem, 6.4vw, 92px); line-height: 1.02; font-weight: 300; letter-spacing: -0.025em; margin: 0; text-wrap: balance; }
+.hp-hero-side { grid-column: span 4; display: flex; flex-direction: column; gap: 16px; padding-bottom: 8px; border-left: 1px solid var(--rule); padding-left: 28px; }
+.hp-hero-side .hp-serif { font-size: 24px; line-height: 1.3; font-style: italic; font-weight: 300; margin: 0; color: var(--ink); }
+
+/* Fact strip */
+.hp-strip { border-top: 1px solid var(--ink); border-bottom: 1px solid var(--rule); display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px; padding: 18px 0; }
+.hp-strip > div { display: flex; flex-direction: column; gap: 2px; }
+.hp-strip .hp-kicker { color: var(--ink-faint); }
+.hp-strip span:last-child { font-size: 15px; font-weight: 500; line-height: 1.45; color: var(--ink); }
+
+/* Paths */
+.hp-paths { padding: 72px 0 80px; display: flex; flex-direction: column; gap: 44px; }
+.hp-paths-head { align-items: baseline; }
+.hp-paths-head .hp-h2 { grid-column: span 4; }
+.hp-paths-head .hp-lead { grid-column: span 7; }
+.hp-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; }
+.hp-card { display: flex; flex-direction: column; gap: 14px; padding: 4px 40px; border-right: 1px solid var(--rule); color: var(--ink); border-bottom: none; }
+.hp-card:first-child { padding-left: 0; }
+.hp-card:last-child { padding-right: 0; border-right: none; }
+.hp-card h3 { font-family: var(--serif); font-size: 30px; font-weight: 400; line-height: 1.12; margin: 0; letter-spacing: -0.01em; }
+.hp-card-foot { margin-top: auto; display: flex; flex-direction: column; gap: 10px; padding-top: 14px; }
+.hp-card:hover h3 { color: var(--card-accent); }
+.hp-card:hover .hp-link { text-decoration: underline; text-underline-offset: 3px; }
+.hp-note { border-top: 1px solid var(--rule); padding-top: 28px; }
+.hp-note .hp-p { grid-column: span 6; }
+
+/* Approach band (photo slot: when a session photo exists, give it 5 columns at left, full bleed) */
+.hp-band { background: var(--ink); color: var(--paper); padding: 104px 0; }
+.hp-band .hp-kicker { grid-column: span 3; color: #b8ad98; }
+.hp-band-text { grid-column: span 8; display: flex; flex-direction: column; gap: 28px; }
+.hp-band-text .hp-serif { font-size: clamp(1.6rem, 2.8vw, 40px); line-height: 1.25; font-weight: 300; margin: 0; letter-spacing: -0.01em; color: var(--paper); max-width: none; }
+.hp-band-text .hp-lead { color: #c9c0ad; max-width: 640px; }
+
+/* Testimonial */
+.hp-say { padding: 88px 0 80px; display: flex; flex-direction: column; gap: 40px; }
+.hp-quote { grid-column: span 7; display: flex; flex-direction: column; gap: 18px; max-width: 640px; }
+.hp-quote .hp-kicker { color: #1f8f5f; }
+.hp-quote blockquote { font-family: var(--serif); font-size: 28px; line-height: 1.35; font-style: italic; font-weight: 300; margin: 0; padding: 0; border: none; color: var(--ink); text-wrap: pretty; }
+.hp-quote cite { font-style: normal; font-size: 13px; color: var(--ink-soft); }
+.hp-quote cite strong { color: var(--ink); }
+
+/* Ready */
+.hp-ready { background: var(--panel); padding: 56px 48px; align-items: center; }
+.hp-ready-text { grid-column: span 7; display: flex; flex-direction: column; gap: 16px; }
+.hp-ready-cta { grid-column: 9 / span 4; display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
+.hp-btn { display: inline-block; background: var(--ink); color: var(--paper); padding: 20px 40px; font-size: 16px; font-weight: 600; border-bottom: none; font-family: var(--sans); }
+.hp-btn:hover { filter: brightness(1.25); border-bottom: none; }
+
+/* Founders */
+.hp-founders { padding: 80px 0; display: flex; flex-direction: column; gap: 40px; }
+.hp-founders-head { align-items: baseline; border-top: 1px solid var(--ink); padding-top: 22px; }
+.hp-founders-head .hp-h2 { grid-column: span 4; }
+.hp-founders-head .hp-lead { grid-column: span 7; }
+.hp-founder-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 64px; }
+.hp-founder { display: flex; gap: 28px; align-items: flex-start; }
+.hp-founder-photo { width: 140px; height: 187px; overflow: hidden; border-radius: 2px; flex-shrink: 0; background: var(--rule); }
+.hp-founder-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.hp-founder-body { display: flex; flex-direction: column; gap: 10px; }
+.hp-founder h3 { font-family: var(--serif); font-size: 28px; font-weight: 400; margin: 0; }
+.hp-founder .hp-p { line-height: 1.65; }
+
+/* Footer */
+.hp-footer { border-top: 1px solid var(--rule); padding: 28px 0 40px; font-size: 13px; color: var(--ink-faint); }
+.hp-footer .hp-wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.hp-footer-brand { display: flex; align-items: center; gap: 12px; }
+.hp-footer-brand img { width: 22px; height: 22px; opacity: 0.7; }
+.hp-footer-links { display: flex; gap: 24px; }
+.hp-footer-links a { color: var(--ink-faint); border-bottom: none; }
+.hp-footer-links a:hover { color: var(--ink); }
+
+@media (max-width: 1100px) {
+  .hp-wrap { padding: 0 40px; }
+  .hp-hero { padding: 72px 0 56px; }
+  .hp-hero-main, .hp-hero-side { grid-column: span 12; }
+  .hp-hero-side { border-left: none; padding-left: 0; border-top: 1px solid var(--rule); padding-top: 24px; }
+  .hp-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hp-paths-head .hp-h2, .hp-paths-head .hp-lead, .hp-founders-head .hp-h2, .hp-founders-head .hp-lead { grid-column: span 12; }
+  .hp-band .hp-kicker, .hp-band-text { grid-column: span 12; }
+  .hp-band { padding: 72px 0; }
+  .hp-quote { grid-column: span 12; }
+  .hp-ready-text, .hp-ready-cta { grid-column: span 12; }
+  .hp-founder-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+@media (max-width: 760px) {
+  .hp-wrap { padding: 0 24px; }
+  .hp-cards { grid-template-columns: 1fr; }
+  .hp-card { padding: 28px 0; border-right: none; border-top: 1px solid var(--rule); }
+  .hp-card:first-child { border-top: none; padding-top: 0; }
+  .hp-card:last-child { padding-bottom: 0; }
+  .hp-note .hp-p { grid-column: span 12; }
+  .hp-strip { grid-template-columns: 1fr; gap: 16px; }
+  .hp-ready { padding: 40px 24px; }
+  .hp-founder { flex-direction: column; }
+  .hp-h2 { font-size: 32px; }
+  .hp-quote blockquote { font-size: 24px; }
+}
+        </style>
     </head>
     <body>
-        <!-- Sticky nav - appears on scroll -->
-        <nav class="nav" id="nav">
-            <div class="nav-inner">
-                <img src="./images/bellai-white-logo.png" alt="Bell AI" class="nav-logo">
-                <span class="nav-brand">Bell AI Fellowship</span>
+        <nav class="band">
+            <div class="band-inner">
+                <a href="./"><img src="./images/bellai-logo.png" alt="" class="band-logo"></a>
+                <a href="./" class="band-brand">Bell AI Fellowship</a>
+                <div class="band-tracks">
+                    <a href="/hac/">Homebrew AI Club</a>
+                    <a href="/civilization/">AI and Civilization</a>
+                    <a href="/shaping/">How Society Shapes Technology</a>
+                    <a href="/schedule/">Schedule</a>
+                    <a href="https://tally.so/r/Pd7d75" target="_blank" rel="noopener" class="band-apply">Apply for Fall 2026</a>
+                </div>
             </div>
         </nav>
-        <section class="hero" id="hero">
-            <div class="hero-inner">
-                <img src="./images/bellai-white-logo.png" alt="Bell AI Fellowship" class="hero-logo">
-                <h1>Your judgment is the most valuable thing in the age of AI</h1>
-                <p class="hero-subtitle">
-        This is the place you build it. </p>
-            <a class="hero-cta" href="https://tally.so/r/Pd7d75" target="_blank" rel="noopener">Apply for Fall 2026</a>
-            </div>
-            <a href="#tracks" class="hero-scroll"> <span class="hero-scroll-text">Scroll</span> <div class="hero-scroll-arrow"></div> </a>
-        </section>
-        <section class="section section-alt" id="tracks">
-            <div class="container-wide">
-                <h2>How Judgment Gets Built</h2>
-                <div class="container" style="padding: 0 0 1.5rem 0;">
-                    <p>
-          Courses keep your skills current, but how do you build your judgment and keep it current? That's what this Fellowship is for. You grapple with real things, question them, talk them through with others, and learn from what works and what doesn't. </p>
-                    <p>
-          We have three paths. Pick any one of them &#8212; or all three. </p>
+
+        <div class="hp-wrap">
+            <section class="hp-grid hp-hero" id="hero">
+                <div class="hp-hero-main">
+                    <div class="hp-kicker">Fall 2026 · Practice · Principles · Precedent</div>
+                    <h1>Your judgment is the most valuable thing in the age of AI.</h1>
                 </div>
-                <div class="phases">
-                    <a class="phase track-card" href="/hac/" style="border-top-color:#1f8f5f;"> <div class="phase-number">Practice</div> <div class="phase-label">Homebrew AI Club</div> <p>
-A working session for people running real AI agents, tools, and loops. Members demo their setups live, tell what worked and what broke, and we dig into it together.
-</p><p>This path gives you the hands-on experience you need to grow.</p> <div class="track-cta">See HAC →</div> </a>
-                    <a class="phase track-card" href="/civilization/" style="border-top-color:#7a2e1d;"> <div class="phase-number">Principles</div> <div class="phase-label">AI and Civilization</div> <p>
-A deep-reading seminar on the texts today&apos;s AI arguments came from &#8212; among them Descartes, Turing, Hobbes, Wiener, Schelling. We read, discuss and argue over the content to understand ideas.</p><p>This path builds frameworks for decisions and knowledge.</p> <div class="track-cta">See the seminar →</div> </a>
-                    <a class="phase track-card" href="/shaping/" style="border-top-color:#2b5e8c;"> <div class="phase-number">Precedent</div> <div class="phase-label">How Society Shapes Technology</div> <p>
-Examine cases from 120 years of technology development &#8212; how they were sped up, redirected, or stopped, and why. Work through the record, argue the mapping: where will AI&apos;s trajectory actually be decided?
-</p><p>This path teaches from past experiences.</p> <div class="track-cta">See the cases →</div> </a>
+                <div class="hp-hero-side">
+                    <p class="hp-serif">This is the place you build it.</p>
+                    <p class="hp-p">A fellowship in San Francisco, with video cohorts, for people who want better judgment about AI: what to use, what to trust, what to build. Three paths. $180 each, with financial assistance on the application.</p>
+                    <p class="hp-meta">Every application is read. You hear back either way.</p>
                 </div>
-                <div class="container">
-                    <p>
-          Each section is selective and curated — some sessions in person in San Francisco, some over video. </p>
+            </section>
+
+            <div class="hp-strip">
+                <div><span class="hp-kicker">Tuition</span><span>$180 per path, flat<br>Financial assistance available</span></div>
+                <div><span class="hp-kicker">Where</span><span>In person in San Francisco<br>Video: Intermediate club scheduled, others by waitlist</span></div>
+                <div><span class="hp-kicker">Who</span><span>Engineers, founders, researchers, teachers, policy and product people<br>No coding needed for the seminar or the cases</span></div>
+                <div><span class="hp-kicker">Deadline</span><span>Applications close September 22<br>One five-minute form covers all three paths</span></div>
+            </div>
+
+            <section class="hp-paths" id="tracks">
+                <div class="hp-grid hp-paths-head">
+                    <h2 class="hp-h2">How judgment gets built</h2>
+                    <p class="hp-lead">Judgment is built by grappling with real things, questioning them, and talking them through with others. Each path does that from a different angle. Pick one, or all three.</p>
+                </div>
+                <div class="hp-cards">
+                    <a class="hp-card" href="/hac/" style="--card-accent:#1f8f5f;">
+                        <div class="hp-kicker" style="color:#1f8f5f;">I · Practice</div>
+                        <h3>Homebrew AI Club</h3>
+                        <p class="hp-p">A working session for people running real AI agents, tools, and loops. Members demo their setups live, say what worked and what broke, and we dig into it together.</p>
+                        <p class="hp-p"><strong>Advanced</strong> is for people who run agents, pipelines, or loops every day; demos go to full depth. <strong>Intermediate</strong> is for people who use AI daily and have gone past prompting.</p>
+                        <div class="hp-card-foot">
+                            <p class="hp-meta">Every other Thursday, 6:30–8pm PT<br>Advanced: six sessions, Oct 1 to Dec 17 · In person in SF<br>Intermediate: five sessions, Oct 8 to Dec 10 · By video, screen-shared demos<br>Advanced video by waitlist: Wednesdays 12–1pm PT<br>Ten to twenty seats per cohort · Dates on the schedule</p>
+                            <span class="hp-link">See the club →</span>
+                        </div>
+                    </a>
+                    <a class="hp-card" href="/civilization/" style="--card-accent:#7a2e1d;">
+                        <div class="hp-kicker" style="color:#7a2e1d;">II · Principles</div>
+                        <h3>AI and Civilization</h3>
+                        <p class="hp-p">A deep-reading seminar on the texts today's AI arguments came from: Descartes, Turing, Hobbes, Wiener, Schelling. Short readings, sent ahead. Two hours at the table working out what they say.</p>
+                        <p class="hp-p">No lecture and no expert at the head of the table. A moderator keeps the argument honest; everyone has read the same pages. No technical background needed; the readings are the only prerequisite.</p>
+                        <div class="hp-card-foot">
+                            <p class="hp-meta">Sundays 4–6pm PT<br>Six sessions, Sept 27 to Nov 1 · In person in SF<br>Video by waitlist: Wednesdays 6:30–8:30pm PT, one slot shared with the cases<br>Eight to fifteen seats</p>
+                            <span class="hp-link">See the seminar →</span>
+                        </div>
+                    </a>
+                    <a class="hp-card" href="/shaping/" style="--card-accent:#2b5e8c;">
+                        <div class="hp-kicker" style="color:#2b5e8c;">III · Precedent</div>
+                        <h3>How Society Shapes Technology</h3>
+                        <p class="hp-p">Cases from 120 years of technologies being sped up, redirected, or stopped, and why. Work through the record, then argue where AI's path will be decided.</p>
+                        <p class="hp-p">Built for people who bring a field with them: law, policy, teaching, medicine, product. The history is the shared ground; your expertise is the contribution.</p>
+                        <div class="hp-card-foot">
+                            <p class="hp-meta">Mondays 6:30–8:30pm PT<br>Six sessions, Sept 28 to Nov 2 · In person in SF<br>Video by waitlist: Wednesdays 6:30–8:30pm PT, one slot shared with the seminar<br>Fixed cohort, same people every week</p>
+                            <span class="hp-link">See the cases →</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="hp-grid hp-note">
+                    <p class="hp-p"><strong>Not in San Francisco?</strong> The club's Intermediate cohort already meets by video. The seminar, the cases, and the Advanced club each open a Wednesday video cohort <strong>once six people ask for it</strong> on the application. The seminar and the cases share one evening slot; whichever fills first runs. Times are Pacific. Nobody pays until a cohort is confirmed.</p>
+                    <p class="hp-p"><strong>Mixed cohorts, on purpose.</strong> Engineers and researchers sit with product leaders, founders, teachers, and policy people. The cohorts work because the people in them know different things.</p>
+                </div>
+            </section>
+        </div>
+
+        <section class="hp-band" id="content">
+            <div class="hp-wrap hp-grid">
+                <div class="hp-kicker">Our approach</div>
+                <div class="hp-band-text">
+                    <p class="hp-serif">Everything else about AI, you can rent. The models, the tools, the agents are the same for you as for everyone else, and they get better whether you do or not. Your judgment is the part that's yours.</p>
+                    <p class="hp-lead">There is no course for judgment. It gets built with experience and in company, which is why the method matters as much as the material.</p>
                 </div>
             </div>
         </section>
-        <section class="section" id="content">
-            <div class="container">
-                <h2>Our Approach</h2>
-                <p class="lead">
-        Everything else about AI, you can rent. The models, the tools, the agents — they're the same for you as for everyone else, and they get better whether you do or not. Your judgment is the part that's actually yours: what to ask, what to trust, what to hand off, what to keep for yourself. Call it discernment, wisdom, taste — it's the skill underneath every other skill now, and it appreciates with use. </p>
-                <p>
-        Each path works on that judgment from a different angle. In the <a href="/hac/">Homebrew AI Club</a>, it comes from practice: running agents and tools yourself, seeing what other people run, and learning as much from what breaks as from what works. In <a href="/civilization/">AI and Civilization</a>, it comes from principles: today's arguments about machine minds, control, and trust were first made by Descartes, Turing, Wiener, and their peers, and reading the originals helps you weigh today's pressing questions. In <a href="/shaping/">How Society Shapes Technology</a>, it comes from precedent: 120 years of technologies sped up, redirected, or stopped shows what decides a technology's path, and what will decide AI's. </p>
-                <p>
-        Practice, principles, precedent — three angles on the same skill: knowing what to use, what to trust, what to build, and where this is all going. </p>
-                <div class="pullquote">
-                    How should humans train themselves in the face of a "thinking machine"?
-</div>
-                <p>
-        That's the question this fellowship exists to answer. There's no course for judgment. It gets built with experience and community. As important as the content of what we teach are the methods. </p>
-            </div>
-        </section>
-        <section class="section section-alt">
-            <div class="container">
-                <h2>What Participants Say</h2>
-                <div class="pullquote long">
-                    "I was already building with AI tools before the Bell AI Fellowship. What it changed was the approach. I came out running on a system I built myself, and I use it every day now, with clients, in engagements, and in whatever comes next. A complete pivot in how I work."
-                    <div class="quote-cite">— <a href="https://www.albersadvisory.biz/" target="_blank" rel="noopener">Michael Albers</a>, former Chief Product Officer, Yahoo!/AOL</div>
-                </div>
-                <p>
-                    Michael's story is not unusual. Across our cohorts, members have landed new jobs, started companies, and raised funding after the work they did here. And they came away with a stronger sense of judgment and a better grasp of the role AI plays in their lives and in society.
-                </p>
-            </div>
-        </section>
-        <section class="section" style="text-align: center; padding: 80px 0;">
-            <div class="container">
-                <h2 style="margin-bottom: 1rem;">Ready?</h2>
-                <p style="max-width: 480px; margin: 0 auto 2rem;">
-        Pick the path that fits how you learn, and apply. Applications take five minutes and close September 22. </p>
-                <a href="#tracks" style="display: inline-block; font-size: 1.05rem; color: #fff; background: #1a1a1a; text-decoration: none; padding: 16px 44px; letter-spacing: 0.03em; transition: background 0.2s;">See the three paths</a>
-                <a href="https://tally.so/r/Pd7d75" target="_blank" rel="noopener" style="display: inline-block; font-size: 1.05rem; color: #1a1a1a; background: transparent; border: 1px solid #1a1a1a; text-decoration: none; padding: 15px 44px; letter-spacing: 0.03em; margin-left: 12px;">Apply</a>
-            </div>
-        </section>
-        <section class="section">
-            <div class="container">
-                <h2>Who We Are</h2>
-                <div class="founders">
-                    <div class="founder">
-                        <img src="./images/sunil-paul.jpg" alt="Sunil Paul" class="founder-photo">
-                        <div class="founder-name">Sunil Paul</div>
-                        <p>
-            Serial entrepreneur and investor. Founded four venture-backed companies; investor or board member for five IPOs and four unicorns. Analyzed technology policy at the congressional Office of Technology Assessment and charted climate-tech trajectories with the Gigaton Throwdown. Co-founded Bell AI to build the kind of learning community he wishes existed when he was starting out. </p>
-                        <a href="https://www.linkedin.com/in/sunilpaul/" target="_blank" rel="noopener" class="founder-link">LinkedIn</a>
-                    </div>
-                    <div class="founder">
-                        <img src="./images/tenni-theurer.jpg" alt="Tenni Theurer" class="founder-photo">
-                        <div class="founder-name">Tenni Theurer</div>
-                        <p>
-            Product builder who has led $1.6B businesses and products reaching 500M+ users at Yahoo, Visa, and Verizon. Engineer turned product leader, GM, and founder. Co-founded Bell AI because good judgment about AI is built the way she has always worked — hands-on, with other people. </p>
-                        <a href="https://www.linkedin.com/in/tennitheurer/" target="_blank" rel="noopener" class="founder-link">LinkedIn</a>
+
+        <div class="hp-wrap">
+            <section class="hp-say">
+                <h2 class="hp-h2">What participants say</h2>
+                <div class="hp-grid">
+                    <div class="hp-quote">
+                        <div class="hp-kicker">On Homebrew AI Club</div>
+                        <blockquote>“I was already building with AI tools before the Bell AI Fellowship. What it changed was the approach. I came out running on a system I built myself, and I use it every day now.”</blockquote>
+                        <cite><strong><a href="https://www.albersadvisory.biz/" target="_blank" rel="noopener">Michael Albers</a></strong> · former Chief Product Officer, Yahoo!/AOL</cite>
                     </div>
                 </div>
-            </div>
-        </section>
-        <footer class="footer">
-            <div class="container">
-                <div class="footer-links">
+            </section>
+
+            <section class="hp-grid hp-ready" id="apply">
+                <div class="hp-ready-text">
+                    <h2 class="hp-h2">Ready?</h2>
+                    <p class="hp-lead">Pick the path, or paths, that fit how you learn. One five-minute form covers all three. Every application is read. Places go to the people who will make the strongest cohort, and a strong cohort is a varied one, and a deep one.</p>
+                    <p class="hp-meta">$180 per path · Financial assistance on the form · Applications close September 22 · You hear back either way within a few days</p>
+                </div>
+                <div class="hp-ready-cta">
+                    <a class="hp-btn" href="https://tally.so/r/Pd7d75" target="_blank" rel="noopener">Apply for Fall 2026</a>
+                    <a class="hp-link" href="/schedule/">See the full schedule →</a>
+                </div>
+            </section>
+
+            <section class="hp-founders">
+                <div class="hp-grid hp-founders-head">
+                    <h2 class="hp-h2">Who we are</h2>
+                    <p class="hp-lead">A founder and investor who began as a congressional technology-policy analyst, and a product leader from Yahoo, Visa, and Verizon.</p>
+                </div>
+                <div class="hp-founder-grid">
+                    <div class="hp-founder">
+                        <div class="hp-founder-photo"><img src="./images/sunil-paul.jpg" alt="Sunil Paul" style="object-position: 70% 30%;"></div>
+                        <div class="hp-founder-body">
+                            <h3>Sunil Paul</h3>
+                            <p class="hp-p">Serial entrepreneur and investor. Founded four venture-backed companies; investor or board member for five IPOs and four unicorns. Analyzed technology policy at the congressional Office of Technology Assessment and charted climate-tech trajectories with the Gigaton Throwdown. Co-founded Bell AI to build the kind of learning community he wishes existed when he was starting out.</p>
+                            <a href="https://www.linkedin.com/in/sunilpaul/" target="_blank" rel="noopener" class="hp-link">LinkedIn →</a>
+                        </div>
+                    </div>
+                    <div class="hp-founder">
+                        <div class="hp-founder-photo"><img src="./images/tenni-theurer.jpg" alt="Tenni Theurer" style="object-position: 50% 12%; transform: scale(1.38); transform-origin: 50% 28%;"></div>
+                        <div class="hp-founder-body">
+                            <h3>Tenni Theurer</h3>
+                            <p class="hp-p">Product builder who has led $1.6B businesses and products reaching 500M+ users at Yahoo, Visa, and Verizon. Engineer turned product leader, GM, and founder. Co-founded Bell AI because good judgment about AI is built the way she has always worked: hands-on, with other people.</p>
+                            <a href="https://www.linkedin.com/in/tennitheurer/" target="_blank" rel="noopener" class="hp-link">LinkedIn →</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <footer class="hp-footer">
+            <div class="hp-wrap">
+                <div class="hp-footer-brand"><img src="./images/bellai-logo.png" alt=""><span>2026 Bell AI Fellowship · San Francisco</span></div>
+                <div class="hp-footer-links">
                     <a href="https://aughthour.com/privacy.html" target="_blank" rel="noopener">Privacy</a>
                     <a href="https://www.aughthour.com/terms.html" target="_blank" rel="noopener">Terms</a>
                 </div>
-                <p class="footer-copyright">2026 Bell AI Fellowship</p>
             </div>
         </footer>
-        <script>
-    // Sticky nav on scroll past hero
-    const nav = document.getElementById('nav');
-    const hero = document.getElementById('hero');
-    const observer = new IntersectionObserver(
-      ([entry]) => { nav.classList.toggle('visible', !entry.isIntersecting); },
-      { threshold: 0 }
-    );
-    observer.observe(hero);
-  </script>
     </body>
 </html>

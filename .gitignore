@@ -2,3 +2,5 @@ _pgbackup/
 pinegrow.json
 .DS_Store
 _pginfo/
+.claude/
+.~lock.*
