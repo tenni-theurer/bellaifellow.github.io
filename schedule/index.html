@@ -21,6 +21,7 @@
   .swatch { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
   .sw-civ { background: #7a2e1d; } .sw-shaping { background: #2b5e8c; } .sw-hac { background: #1f8f5f; }
   .sw-wait { background: repeating-linear-gradient(45deg, #999, #999 3px, transparent 3px, transparent 6px); border: 1px solid #bbb; }
+  .sw-tbd { background: #fff; border: 1px dotted #555; }
 
   /* week rhythm */
   .rhythm { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 0.95rem; }
@@ -43,6 +44,9 @@
   .chip.shaping { background: #2b5e8c; }
   .chip.hac { background: #1f8f5f; }
   .chip.wait { background: #fff; border: 1px dashed currentColor; }
+  .chip.tbd { background: #fff; border: 1px dotted currentColor; }
+  .chip.civ.tbd { color: #7a2e1d; }
+  .chip.shaping.tbd { color: #2b5e8c; }
   .chip.civ.wait { color: #7a2e1d; }
   .chip.shaping.wait { color: #2b5e8c; }
   .chip.hac.wait { color: #1f8f5f; }
@@ -75,7 +79,7 @@
   <header class="page">
     <div class="eyebrow">Fall 2026</div>
     <h1>The Schedule</h1>
-    <p class="standfirst">Every section of all three paths, in one place. Solid blocks are running now; dashed blocks are waitlist sections that open only if enough people ask for them.</p>
+    <p class="standfirst">Every section of all three paths, in one place. Solid blocks are running now. Dotted blocks are the Wednesday-evening video seminar: one of the two runs, whichever has more applicants on September 22. Dashed blocks are waitlist sections that open only if enough people ask for them.</p>
   </header>
 
   <section>
@@ -84,7 +88,7 @@
       <tr><th>Day</th><th>What runs</th><th>Where</th></tr>
       <tr><td class="day">Sunday</td><td><a href="../civilization/" class="civ-c"><strong>AI and Civilization</strong></a> · 4:00–6:00pm · weekly, six weeks</td><td>In person, SF</td></tr>
       <tr><td class="day">Monday</td><td><a href="../shaping/" class="shaping-c"><strong>How Society Shapes Technology</strong></a> · 6:30–8:30pm · weekly, six weeks</td><td>In person, SF</td></tr>
-      <tr><td class="day">Wednesday</td><td><em>Lunch, 12:00–1:00pm</em> — <a href="../hac/" class="hac-c"><strong>Homebrew AI Club</strong></a>, cohorts alternating <span style="color:var(--ink-faint)">(waitlist)</span><br><em>Evening, 6:30–8:30pm</em> — a video cohort of one seminar <span style="color:var(--ink-faint)">(waitlist)</span></td><td>Video</td></tr>
+      <tr><td class="day">Wednesday</td><td><em>Lunch, 12:00–1:00pm</em> — <a href="../hac/" class="hac-c"><strong>Homebrew AI Club</strong></a>, cohorts alternating <span style="color:var(--ink-faint)">(waitlist)</span><br><em>Evening, 6:30–8:30pm</em> — a video cohort of one seminar, whichever has more applicants</td><td>Video</td></tr>
       <tr><td class="day">Thursday</td><td><a href="../hac/" class="hac-c"><strong>Homebrew AI Club</strong></a> · 6:30–8:00pm · Advanced and Intermediate on alternating weeks</td><td>Advanced in person, SF<br>Intermediate video</td></tr>
     </table>
   </section>
@@ -95,6 +99,7 @@
       <span class="legend-item"><span class="swatch sw-civ"></span> AI and Civilization</span>
       <span class="legend-item"><span class="swatch sw-shaping"></span> Shaping Technology</span>
       <span class="legend-item"><span class="swatch sw-hac"></span> Homebrew AI Club</span>
+      <span class="legend-item"><span class="swatch sw-tbd"></span> dotted = one of the two runs</span>
       <span class="legend-item"><span class="swatch sw-wait"></span> dashed = waitlist section</span>
     </div>
 
@@ -133,7 +138,7 @@
 <div class="cal-cell has"><span class="dnum">27</span><span class="chip civ"><b>Civilization</b> 4:00</span></div>
 <div class="cal-cell has"><span class="dnum">28</span><span class="chip shaping"><b>Shaping Tech</b> 6:30</span></div>
 <div class="cal-cell"><span class="dnum">29</span></div>
-<div class="cal-cell has"><span class="dnum">30</span><span class="chip hac wait"><b>HAC Adv</b> 12:00</span><span class="chip civ wait"><b>Civilization</b> 6:30</span><span class="chip shaping wait"><b>Shaping Tech</b> 6:30</span></div>
+<div class="cal-cell has"><span class="dnum">30</span><span class="chip hac wait"><b>HAC Adv</b> 12:00</span><span class="chip civ tbd"><b>Civilization</b> 6:30</span><span class="chip shaping tbd"><b>Shaping Tech</b> 6:30</span></div>
   </div>
 </div>
 
@@ -151,28 +156,28 @@
 <div class="cal-cell has"><span class="dnum">4</span><span class="chip civ"><b>Civilization</b> 4:00</span></div>
 <div class="cal-cell has"><span class="dnum">5</span><span class="chip shaping"><b>Shaping Tech</b> 6:30</span></div>
 <div class="cal-cell"><span class="dnum">6</span></div>
-<div class="cal-cell has"><span class="dnum">7</span><span class="chip hac wait"><b>HAC Int</b> 12:00</span><span class="chip civ wait"><b>Civilization</b> 6:30</span><span class="chip shaping wait"><b>Shaping Tech</b> 6:30</span></div>
+<div class="cal-cell has"><span class="dnum">7</span><span class="chip hac wait"><b>HAC Int</b> 12:00</span><span class="chip civ tbd"><b>Civilization</b> 6:30</span><span class="chip shaping tbd"><b>Shaping Tech</b> 6:30</span></div>
 <div class="cal-cell has"><span class="dnum">8</span><span class="chip hac"><b>HAC Int</b> 6:30</span></div>
 <div class="cal-cell"><span class="dnum">9</span></div>
 <div class="cal-cell"><span class="dnum">10</span></div>
 <div class="cal-cell has"><span class="dnum">11</span><span class="chip civ"><b>Civilization</b> 4:00</span></div>
 <div class="cal-cell has"><span class="dnum">12</span><span class="chip shaping"><b>Shaping Tech</b> 6:30</span></div>
 <div class="cal-cell"><span class="dnum">13</span></div>
-<div class="cal-cell has"><span class="dnum">14</span><span class="chip hac wait"><b>HAC Adv</b> 12:00</span><span class="chip civ wait"><b>Civilization</b> 6:30</span><span class="chip shaping wait"><b>Shaping Tech</b> 6:30</span></div>
+<div class="cal-cell has"><span class="dnum">14</span><span class="chip hac wait"><b>HAC Adv</b> 12:00</span><span class="chip civ tbd"><b>Civilization</b> 6:30</span><span class="chip shaping tbd"><b>Shaping Tech</b> 6:30</span></div>
 <div class="cal-cell has"><span class="dnum">15</span><span class="chip hac"><b>HAC Adv</b> 6:30</span></div>
 <div class="cal-cell"><span class="dnum">16</span></div>
 <div class="cal-cell"><span class="dnum">17</span></div>
 <div class="cal-cell has"><span class="dnum">18</span><span class="chip civ"><b>Civilization</b> 4:00</span></div>
 <div class="cal-cell has"><span class="dnum">19</span><span class="chip shaping"><b>Shaping Tech</b> 6:30</span></div>
 <div class="cal-cell"><span class="dnum">20</span></div>
-<div class="cal-cell has"><span class="dnum">21</span><span class="chip hac wait"><b>HAC Int</b> 12:00</span><span class="chip civ wait"><b>Civilization</b> 6:30</span><span class="chip shaping wait"><b>Shaping Tech</b> 6:30</span></div>
+<div class="cal-cell has"><span class="dnum">21</span><span class="chip hac wait"><b>HAC Int</b> 12:00</span><span class="chip civ tbd"><b>Civilization</b> 6:30</span><span class="chip shaping tbd"><b>Shaping Tech</b> 6:30</span></div>
 <div class="cal-cell has"><span class="dnum">22</span><span class="chip hac"><b>HAC Int</b> 6:30</span></div>
 <div class="cal-cell"><span class="dnum">23</span></div>
 <div class="cal-cell"><span class="dnum">24</span></div>
 <div class="cal-cell has"><span class="dnum">25</span><span class="chip civ"><b>Civilization</b> 4:00</span></div>
 <div class="cal-cell has"><span class="dnum">26</span><span class="chip shaping"><b>Shaping Tech</b> 6:30</span></div>
 <div class="cal-cell"><span class="dnum">27</span></div>
-<div class="cal-cell has"><span class="dnum">28</span><span class="chip hac wait"><b>HAC Adv</b> 12:00</span><span class="chip civ wait"><b>Civilization</b> 6:30</span><span class="chip shaping wait"><b>Shaping Tech</b> 6:30</span></div>
+<div class="cal-cell has"><span class="dnum">28</span><span class="chip hac wait"><b>HAC Adv</b> 12:00</span><span class="chip civ tbd"><b>Civilization</b> 6:30</span><span class="chip shaping tbd"><b>Shaping Tech</b> 6:30</span></div>
 <div class="cal-cell has"><span class="dnum">29</span><span class="chip hac"><b>HAC Adv</b> 6:30</span></div>
 <div class="cal-cell"><span class="dnum">30</span></div>
 <div class="cal-cell"><span class="dnum">31</span></div>
@@ -186,7 +191,7 @@
 <div class="cal-cell has"><span class="dnum">1</span><span class="chip civ"><b>Civilization</b> 4:00</span></div>
 <div class="cal-cell has"><span class="dnum">2</span><span class="chip shaping"><b>Shaping Tech</b> 6:30</span></div>
 <div class="cal-cell"><span class="dnum">3</span></div>
-<div class="cal-cell has"><span class="dnum">4</span><span class="chip hac wait"><b>HAC Int</b> 12:00</span><span class="chip civ wait"><b>Civilization</b> 6:30</span><span class="chip shaping wait"><b>Shaping Tech</b> 6:30</span></div>
+<div class="cal-cell has"><span class="dnum">4</span><span class="chip hac wait"><b>HAC Int</b> 12:00</span><span class="chip civ tbd"><b>Civilization</b> 6:30</span><span class="chip shaping tbd"><b>Shaping Tech</b> 6:30</span></div>
 <div class="cal-cell has"><span class="dnum">5</span><span class="chip hac"><b>HAC Int</b> 6:30</span></div>
 <div class="cal-cell"><span class="dnum">6</span></div>
 <div class="cal-cell"><span class="dnum">7</span></div>
@@ -256,7 +261,7 @@
   </div>
 </div>
 
-    <p class="cta-note">Times shown are start times, Pacific. The two Wednesday-evening video cohorts share one slot — whichever fills first is the one that runs.</p>
+    <p class="cta-note">Times shown are start times, Pacific. The two Wednesday-evening video cohorts share one slot — the one with more applicants on September 22 is the one that runs.</p>
   </section>
 
   <section class="cta">

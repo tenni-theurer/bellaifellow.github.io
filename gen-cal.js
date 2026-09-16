@@ -12,13 +12,13 @@ const SERIES = [
     mode:'in person', wait:false,
     dates:['2026-09-27','2026-10-04','2026-10-11','2026-10-18','2026-10-25','2026-11-01'] },
   { track:'civ', label:'AI and Civilization — video', short:'Civilization', time:'6:30–8:30pm',
-    mode:'video', wait:true,
+    mode:'video', wait:false, tbd:true,
     dates:['2026-09-30','2026-10-07','2026-10-14','2026-10-21','2026-10-28','2026-11-04'] },
   { track:'shaping', label:'How Society Shapes Technology', short:'Shaping Tech', time:'6:30–8:30pm',
     mode:'in person', wait:false,
     dates:['2026-09-28','2026-10-05','2026-10-12','2026-10-19','2026-10-26','2026-11-02'] },
   { track:'shaping', label:'How Society Shapes Technology — video', short:'Shaping Tech', time:'6:30–8:30pm',
-    mode:'video', wait:true,
+    mode:'video', wait:false, tbd:true,
     dates:['2026-09-30','2026-10-07','2026-10-14','2026-10-21','2026-10-28','2026-11-04'] },
   { track:'hac', label:'HAC Advanced', short:'HAC Adv', time:'6:30–8:00pm',
     mode:'in person', wait:false,
@@ -84,7 +84,7 @@ function renderMonth(mo) {
     const key = iso(mo.y, mo.m, d);
     const evs = byDate[key] || [];
     const chips = evs.map(e =>
-      `<span class="chip ${e.track}${e.wait ? ' wait' : ''}"><b>${e.short}</b> ${e.time.split('–')[0]}</span>`
+      `<span class="chip ${e.track}${e.wait ? ' wait' : ''}${e.tbd ? ' tbd' : ''}"><b>${e.short}</b> ${e.time.split('–')[0]}</span>`
     ).join('');
     cells += `<div class="cal-cell${evs.length ? ' has' : ''}"><span class="dnum">${d}</span>${chips}</div>\n`;
   }
@@ -123,6 +123,7 @@ const page = `<!DOCTYPE html>
   .swatch { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
   .sw-civ { background: #7a2e1d; } .sw-shaping { background: #2b5e8c; } .sw-hac { background: #1f8f5f; }
   .sw-wait { background: repeating-linear-gradient(45deg, #999, #999 3px, transparent 3px, transparent 6px); border: 1px solid #bbb; }
+  .sw-tbd { background: #fff; border: 1px dotted #555; }
 
   /* week rhythm */
   .rhythm { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 0.95rem; }
@@ -145,6 +146,9 @@ const page = `<!DOCTYPE html>
   .chip.shaping { background: #2b5e8c; }
   .chip.hac { background: #1f8f5f; }
   .chip.wait { background: #fff; border: 1px dashed currentColor; }
+  .chip.tbd { background: #fff; border: 1px dotted currentColor; }
+  .chip.civ.tbd { color: #7a2e1d; }
+  .chip.shaping.tbd { color: #2b5e8c; }
   .chip.civ.wait { color: #7a2e1d; }
   .chip.shaping.wait { color: #2b5e8c; }
   .chip.hac.wait { color: #1f8f5f; }
@@ -177,7 +181,7 @@ const page = `<!DOCTYPE html>
   <header class="page">
     <div class="eyebrow">Fall 2026</div>
     <h1>The Schedule</h1>
-    <p class="standfirst">Every section of all three paths, in one place. Solid blocks are running now; dashed blocks are waitlist sections that open only if enough people ask for them.</p>
+    <p class="standfirst">Every section of all three paths, in one place. Solid blocks are running now. Dotted blocks are the Wednesday-evening video seminar: one of the two runs, whichever has more applicants on September 22. Dashed blocks are waitlist sections that open only if enough people ask for them.</p>
   </header>
 
   <section>
@@ -186,7 +190,7 @@ const page = `<!DOCTYPE html>
       <tr><th>Day</th><th>What runs</th><th>Where</th></tr>
       <tr><td class="day">Sunday</td><td><a href="../civilization/" class="civ-c"><strong>AI and Civilization</strong></a> · 4:00–6:00pm · weekly, six weeks</td><td>In person, SF</td></tr>
       <tr><td class="day">Monday</td><td><a href="../shaping/" class="shaping-c"><strong>How Society Shapes Technology</strong></a> · 6:30–8:30pm · weekly, six weeks</td><td>In person, SF</td></tr>
-      <tr><td class="day">Wednesday</td><td><em>Lunch, 12:00–1:00pm</em> — <a href="../hac/" class="hac-c"><strong>Homebrew AI Club</strong></a>, cohorts alternating <span style="color:var(--ink-faint)">(waitlist)</span><br><em>Evening, 6:30–8:30pm</em> — a video cohort of one seminar <span style="color:var(--ink-faint)">(waitlist)</span></td><td>Video</td></tr>
+      <tr><td class="day">Wednesday</td><td><em>Lunch, 12:00–1:00pm</em> — <a href="../hac/" class="hac-c"><strong>Homebrew AI Club</strong></a>, cohorts alternating <span style="color:var(--ink-faint)">(waitlist)</span><br><em>Evening, 6:30–8:30pm</em> — a video cohort of one seminar, whichever has more applicants</td><td>Video</td></tr>
       <tr><td class="day">Thursday</td><td><a href="../hac/" class="hac-c"><strong>Homebrew AI Club</strong></a> · 6:30–8:00pm · Advanced and Intermediate on alternating weeks</td><td>Advanced in person, SF<br>Intermediate video</td></tr>
     </table>
   </section>
@@ -197,12 +201,13 @@ const page = `<!DOCTYPE html>
       <span class="legend-item"><span class="swatch sw-civ"></span> AI and Civilization</span>
       <span class="legend-item"><span class="swatch sw-shaping"></span> Shaping Technology</span>
       <span class="legend-item"><span class="swatch sw-hac"></span> Homebrew AI Club</span>
+      <span class="legend-item"><span class="swatch sw-tbd"></span> dotted = one of the two runs</span>
       <span class="legend-item"><span class="swatch sw-wait"></span> dashed = waitlist section</span>
     </div>
 
 ${calendars}
 
-    <p class="cta-note">Times shown are start times, Pacific. The two Wednesday-evening video cohorts share one slot — whichever fills first is the one that runs.</p>
+    <p class="cta-note">Times shown are start times, Pacific. The two Wednesday-evening video cohorts share one slot — the one with more applicants on September 22 is the one that runs.</p>
   </section>
 
   <section class="cta">
