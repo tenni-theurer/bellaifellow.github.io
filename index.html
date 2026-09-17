@@ -75,6 +75,10 @@
 .hp-say { padding: 88px 0 80px; display: flex; flex-direction: column; gap: 40px; }
 .hp-quote { grid-column: span 6; display: flex; flex-direction: column; gap: 18px; max-width: 600px; }
 .hp-quote + .hp-quote { grid-column: 8 / span 5; }
+.hp-quote.hp-quote-lead { grid-column: span 10; max-width: 900px; margin-bottom: 24px; }
+.hp-quote.hp-quote-lead blockquote { font-size: 34px; }
+.hp-quote.hp-quote-lead + .hp-quote { grid-column: span 6; }
+.hp-quote.hp-quote-lead + .hp-quote + .hp-quote { grid-column: 8 / span 5; }
 .hp-quote .hp-kicker.hp-kicker-fellowship { color: var(--ink-faint); }
 .hp-quote .hp-kicker { color: #1f8f5f; }
 .hp-quote blockquote { font-family: var(--serif); font-size: 28px; line-height: 1.35; font-style: italic; font-weight: 300; margin: 0; padding: 0; border: none; color: var(--ink); text-wrap: pretty; }
@@ -119,7 +123,8 @@
   .hp-paths-head .hp-h2, .hp-paths-head .hp-lead, .hp-founders-head .hp-h2, .hp-founders-head .hp-lead { grid-column: span 12; }
   .hp-band .hp-kicker, .hp-band-text { grid-column: span 12; }
   .hp-band { padding: 72px 0; }
-  .hp-quote, .hp-quote + .hp-quote { grid-column: span 12; }
+  .hp-quote, .hp-quote + .hp-quote, .hp-quote.hp-quote-lead, .hp-quote.hp-quote-lead + .hp-quote, .hp-quote.hp-quote-lead + .hp-quote + .hp-quote { grid-column: span 12; }
+  .hp-quote.hp-quote-lead blockquote { font-size: 28px; }
   .hp-ready-text, .hp-ready-cta { grid-column: span 12; }
   .hp-founder-grid { grid-template-columns: 1fr; gap: 40px; }
 }
@@ -229,8 +234,13 @@
 
         <div class="hp-wrap">
             <section class="hp-say">
-                <h2 class="hp-h2">What participants say</h2>
+                <h2 class="hp-h2">What people say</h2>
                 <div class="hp-grid">
+                    <div class="hp-quote hp-quote-lead">
+                        <div class="hp-kicker hp-kicker-fellowship">From the announcement</div>
+                        <blockquote>“It's worth checking out. These cohorts are going to be really strong with an extra level of depth.”</blockquote>
+                        <cite><strong>DJ Patil</strong> · former U.S. Chief Data Scientist</cite>
+                    </div>
                     <div class="hp-quote">
                         <div class="hp-kicker">On Homebrew AI Club</div>
                         <blockquote>“I was already building with AI tools before the Bell AI Fellowship. What it changed was the approach. I came out running on a system I built myself, and I use it every day now.”</blockquote>
