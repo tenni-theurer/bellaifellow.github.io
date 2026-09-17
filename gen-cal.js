@@ -20,10 +20,10 @@ const SERIES = [
   { track:'shaping', label:'How Society Shapes Technology — video', short:'Shaping Tech', time:'6:30–8:30pm',
     mode:'video', wait:false, tbd:true,
     dates:['2026-09-30','2026-10-07','2026-10-14','2026-10-21','2026-10-28','2026-11-04'] },
-  { track:'hac', label:'HAC Advanced', short:'HAC Adv', time:'6:30–8:00pm',
+  { track:'hac', label:'HAC Advanced', short:'HAC Adv', time:'5:00–6:30pm',
     mode:'in person', wait:false,
     dates:['2026-10-01','2026-10-15','2026-10-29','2026-11-12','2026-12-03','2026-12-17'] },
-  { track:'hac', label:'HAC Intermediate', short:'HAC Int', time:'6:30–8:00pm',
+  { track:'hac', label:'HAC Intermediate', short:'HAC Int', time:'5:00–6:30pm',
     mode:'video', wait:false,
     dates:['2026-10-08','2026-10-22','2026-11-05','2026-11-19','2026-12-10'] },
   { track:'hac', label:'HAC Advanced — lunch', short:'HAC Adv', time:'12:00–1:00pm',
@@ -191,7 +191,7 @@ const page = `<!DOCTYPE html>
       <tr><td class="day">Sunday</td><td><a href="../civilization/" class="civ-c"><strong>AI and Civilization</strong></a> · 4:00–6:00pm · weekly, six weeks</td><td>In person, SF</td></tr>
       <tr><td class="day">Monday</td><td><a href="../shaping/" class="shaping-c"><strong>How Society Shapes Technology</strong></a> · 6:30–8:30pm · weekly, six weeks</td><td>In person, SF</td></tr>
       <tr><td class="day">Wednesday</td><td><em>Lunch, 12:00–1:00pm</em> — <a href="../hac/" class="hac-c"><strong>Homebrew AI Club</strong></a>, cohorts alternating <span style="color:var(--ink-faint)">(waitlist)</span><br><em>Evening, 6:30–8:30pm</em> — a video cohort of one seminar, whichever has more applicants</td><td>Video</td></tr>
-      <tr><td class="day">Thursday</td><td><a href="../hac/" class="hac-c"><strong>Homebrew AI Club</strong></a> · 6:30–8:00pm · Advanced and Intermediate on alternating weeks</td><td>Advanced in person, SF<br>Intermediate video</td></tr>
+      <tr><td class="day">Thursday</td><td><a href="../hac/" class="hac-c"><strong>Homebrew AI Club</strong></a> · 5:00–6:30pm · Advanced and Intermediate on alternating weeks</td><td>Advanced in person, SF<br>Intermediate video</td></tr>
     </table>
   </section>
 
