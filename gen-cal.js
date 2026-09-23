@@ -171,16 +171,17 @@ const page = `<!DOCTYPE html>
   <header class="page">
     <div class="eyebrow">Fall 2026</div>
     <h1>The Schedule</h1>
-    <p class="standfirst">Four cohorts run this fall: AI and Civilization on Sundays in person, How Society Shapes Technology on Wednesday evenings by video, and the Homebrew AI Club's Advanced and Intermediate cohorts on alternating Thursdays. The Monday in-person cases, the Wednesday video seminar on the texts, and the lunch cohorts did not fill and are not running.</p>
+    <p class="standfirst">Four cohorts run this fall: AI and Civilization on Sundays in person, How Society Shapes Technology on Wednesday evenings by video, and the Homebrew AI Club's Advanced and Intermediate cohorts, each every other Thursday.</p>
   </header>
 
   <section>
-    <h2>The weekly rhythm</h2>
+    <h2>The four cohorts</h2>
     <table class="rhythm">
-      <tr><th>Day</th><th>What runs</th><th>Where</th></tr>
-      <tr><td class="day">Sunday</td><td><a href="../civilization/" class="civ-c"><strong>AI and Civilization</strong></a> · 4:00–6:00pm · weekly, six weeks</td><td>In person, SF</td></tr>
-      <tr><td class="day">Wednesday</td><td><a href="../shaping/" class="shaping-c"><strong>How Society Shapes Technology</strong></a> · 6:30–8:30pm · weekly, six weeks</td><td>Video</td></tr>
-      <tr><td class="day">Thursday</td><td><a href="../hac/" class="hac-c"><strong>Homebrew AI Club</strong></a> · 5:00–6:30pm · Advanced and Intermediate on alternating weeks</td><td>Advanced in person, SF, with remote seats<br>Intermediate video</td></tr>
+      <tr><th>Day</th><th>Cohort</th><th>Cadence</th><th>Where</th></tr>
+      <tr><td class="day">Sunday</td><td><a href="../civilization/" class="civ-c"><strong>AI and Civilization</strong></a> · 4:00–6:00pm</td><td>Every week, six sessions, Sept 27 to Nov 1</td><td>In person, SF</td></tr>
+      <tr><td class="day">Wednesday</td><td><a href="../shaping/" class="shaping-c"><strong>How Society Shapes Technology</strong></a> · 6:30–8:30pm</td><td>Every week, six sessions, Sept 30 to Nov 4</td><td>Video</td></tr>
+      <tr><td class="day">Thursday</td><td><a href="../hac/" class="hac-c"><strong>Homebrew AI Club — Advanced</strong></a> · 5:00–6:30pm</td><td>Every other week, six sessions, Oct 1 to Dec 17</td><td>In person, SF, with remote seats</td></tr>
+      <tr><td class="day">Thursday</td><td><a href="../hac/" class="hac-c"><strong>Homebrew AI Club — Intermediate</strong></a> · 5:00–6:30pm</td><td>Every other week, five sessions, Oct 8 to Dec 10, on the Thursdays Advanced doesn't meet</td><td>Video</td></tr>
     </table>
   </section>
 
