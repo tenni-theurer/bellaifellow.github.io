@@ -11,28 +11,18 @@ const SERIES = [
   { track:'civ', label:'AI and Civilization', short:'Civilization', time:'4:00–6:00pm',
     mode:'in person', wait:false,
     dates:['2026-09-27','2026-10-04','2026-10-11','2026-10-18','2026-10-25','2026-11-01'] },
-  { track:'civ', label:'AI and Civilization — video', short:'Civilization', time:'6:30–8:30pm',
-    mode:'video', wait:false, tbd:true,
-    dates:['2026-09-30','2026-10-07','2026-10-14','2026-10-21','2026-10-28','2026-11-04'] },
-  { track:'shaping', label:'How Society Shapes Technology', short:'Shaping Tech', time:'6:30–8:30pm',
-    mode:'in person', wait:false,
-    dates:['2026-09-28','2026-10-05','2026-10-12','2026-10-19','2026-10-26','2026-11-02'] },
   { track:'shaping', label:'How Society Shapes Technology — video', short:'Shaping Tech', time:'6:30–8:30pm',
-    mode:'video', wait:false, tbd:true,
+    mode:'video', wait:false,
     dates:['2026-09-30','2026-10-07','2026-10-14','2026-10-21','2026-10-28','2026-11-04'] },
   { track:'hac', label:'HAC Advanced', short:'HAC Adv', time:'5:00–6:30pm',
-    mode:'in person', wait:false,
+    mode:'hybrid', wait:false,
     dates:['2026-10-01','2026-10-15','2026-10-29','2026-11-12','2026-12-03','2026-12-17'] },
   { track:'hac', label:'HAC Intermediate', short:'HAC Int', time:'5:00–6:30pm',
     mode:'video', wait:false,
     dates:['2026-10-08','2026-10-22','2026-11-05','2026-11-19','2026-12-10'] },
-  { track:'hac', label:'HAC Advanced — lunch', short:'HAC Adv', time:'12:00–1:00pm',
-    mode:'video', wait:true,
-    dates:['2026-09-30','2026-10-14','2026-10-28','2026-11-11','2026-12-02','2026-12-16'] },
-  { track:'hac', label:'HAC Intermediate — lunch', short:'HAC Int', time:'12:00–1:00pm',
-    mode:'video', wait:true,
-    dates:['2026-10-07','2026-10-21','2026-11-04','2026-11-18','2026-12-09'] },
 ];
+// Sections decided 2026-09-23: Monday Shaping in person, the Wednesday Civilization video cohort,
+// and both HAC lunch cohorts did not fill and are not running this fall.
 
 // index by date
 const byDate = {};
@@ -181,7 +171,7 @@ const page = `<!DOCTYPE html>
   <header class="page">
     <div class="eyebrow">Fall 2026</div>
     <h1>The Schedule</h1>
-    <p class="standfirst">Every section of all three paths, in one place. Solid blocks are running now. Dotted blocks are the Wednesday-evening video seminar: one of the two runs, whichever has more applicants on September 22. Dashed blocks are waitlist sections that open only if enough people ask for them.</p>
+    <p class="standfirst">Four cohorts run this fall: AI and Civilization on Sundays in person, How Society Shapes Technology on Wednesday evenings by video, and the Homebrew AI Club's Advanced and Intermediate cohorts on alternating Thursdays. The Monday in-person cases, the Wednesday video seminar on the texts, and the lunch cohorts did not fill and are not running.</p>
   </header>
 
   <section>
@@ -189,9 +179,8 @@ const page = `<!DOCTYPE html>
     <table class="rhythm">
       <tr><th>Day</th><th>What runs</th><th>Where</th></tr>
       <tr><td class="day">Sunday</td><td><a href="../civilization/" class="civ-c"><strong>AI and Civilization</strong></a> · 4:00–6:00pm · weekly, six weeks</td><td>In person, SF</td></tr>
-      <tr><td class="day">Monday</td><td><a href="../shaping/" class="shaping-c"><strong>How Society Shapes Technology</strong></a> · 6:30–8:30pm · weekly, six weeks</td><td>In person, SF</td></tr>
-      <tr><td class="day">Wednesday</td><td><em>Lunch, 12:00–1:00pm</em> — <a href="../hac/" class="hac-c"><strong>Homebrew AI Club</strong></a>, cohorts alternating <span style="color:var(--ink-faint)">(waitlist)</span><br><em>Evening, 6:30–8:30pm</em> — a video cohort of one seminar, whichever has more applicants</td><td>Video</td></tr>
-      <tr><td class="day">Thursday</td><td><a href="../hac/" class="hac-c"><strong>Homebrew AI Club</strong></a> · 5:00–6:30pm · Advanced and Intermediate on alternating weeks</td><td>Advanced in person, SF<br>Intermediate video</td></tr>
+      <tr><td class="day">Wednesday</td><td><a href="../shaping/" class="shaping-c"><strong>How Society Shapes Technology</strong></a> · 6:30–8:30pm · weekly, six weeks</td><td>Video</td></tr>
+      <tr><td class="day">Thursday</td><td><a href="../hac/" class="hac-c"><strong>Homebrew AI Club</strong></a> · 5:00–6:30pm · Advanced and Intermediate on alternating weeks</td><td>Advanced in person, SF, with remote seats<br>Intermediate video</td></tr>
     </table>
   </section>
 
@@ -201,18 +190,16 @@ const page = `<!DOCTYPE html>
       <span class="legend-item"><span class="swatch sw-civ"></span> AI and Civilization</span>
       <span class="legend-item"><span class="swatch sw-shaping"></span> Shaping Technology</span>
       <span class="legend-item"><span class="swatch sw-hac"></span> Homebrew AI Club</span>
-      <span class="legend-item"><span class="swatch sw-tbd"></span> dotted = one of the two runs</span>
-      <span class="legend-item"><span class="swatch sw-wait"></span> dashed = waitlist section</span>
     </div>
 
 ${calendars}
 
-    <p class="cta-note">Times shown are start times, Pacific. The two Wednesday-evening video cohorts share one slot — the one with more applicants on September 22 is the one that runs.</p>
+    <p class="cta-note">Times shown are start times, Pacific.</p>
   </section>
 
   <section class="cta">
     <h2>Applying</h2>
-    <p class="lede">Each path takes applications separately. Each one is read, and admission isn't automatic — places go to the people who will make the strongest cohort. Five minutes each, and they close September 22. Tuition is $180 a path.</p>
+    <p class="lede">Each path takes applications separately. Each one is read, and admission isn't automatic — places go to the people who will make the strongest cohort. Five minutes each. The September 22 deadline has passed; late applications are read while seats remain. Tuition is $180 a path.</p>
     <p>
       <a href="../hac/" class="hac-c"><strong>Homebrew AI Club</strong></a> — build judgment through demos.<br>
       <a href="../civilization/" class="civ-c"><strong>AI and Civilization</strong></a> — think through the original texts.<br>
