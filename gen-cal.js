@@ -211,6 +211,19 @@ ${calendars}
     <p class="cta-note">One application covers every section — pick the ones you want on the form. Opens in a new tab.</p>
   </section>
 
+  <section class="subscribe" aria-label="Stay in the loop">
+    <div class="subscribe-text">
+      <div class="subscribe-kicker">Not ready for a cohort?</div>
+      <p class="subscribe-lede">Get the notes. One email when something is worth your attention, and first word when applications open.</p>
+    </div>
+    <form class="subscribe-form" action="https://buttondown.com/api/emails/embed-subscribe/bellaifellow" method="post" target="_blank">
+      <label class="sr-only" for="sub-email-schedule">Email</label>
+      <input class="subscribe-input" type="email" name="email" id="sub-email-schedule" placeholder="you@example.com" required autocomplete="email">
+      <input type="hidden" name="tag" value="schedule">
+      <button class="subscribe-btn" type="submit">Keep me posted</button>
+    </form>
+  </section>
+
   <footer class="page">
     The Schedule is part of the <a href="../">Bell AI Fellowship</a>.
   </footer>

@@ -92,6 +92,11 @@
 .hp-car-dot:focus-visible { outline: 2px solid #1f8f5f; outline-offset: 2px; }
 @media (prefers-reduced-motion: reduce) { .hp-track { scroll-behavior: auto; } }
 
+/* Subscribe (homepage) */
+.hp-subscribe { border-top: none; padding: 56px 0 8px; }
+.hp-subscribe .subscribe-lede { font-size: 22px; font-weight: 300; max-width: 640px; }
+.hp-subscribe .subscribe-form { max-width: 640px; }
+
 /* Ready */
 .hp-ready { background: var(--panel); padding: 56px 48px; align-items: center; }
 .hp-ready-text { grid-column: span 7; display: flex; flex-direction: column; gap: 16px; }
@@ -342,6 +347,19 @@
                     <a class="hp-btn" href="https://tally.so/r/Pd7d75" target="_blank" rel="noopener">Apply for Fall 2026</a>
                     <a class="hp-link" href="/schedule/">See the full schedule →</a>
                 </div>
+            </section>
+
+            <section class="subscribe hp-subscribe" aria-label="Stay in the loop">
+              <div class="subscribe-text">
+                <div class="subscribe-kicker">Not ready for a cohort?</div>
+                <p class="subscribe-lede">Get the notes. One email when something is worth your attention, and first word when applications open.</p>
+              </div>
+              <form class="subscribe-form" action="https://buttondown.com/api/emails/embed-subscribe/bellaifellow" method="post" target="_blank">
+                <label class="sr-only" for="sub-email-home">Email</label>
+                <input class="subscribe-input" type="email" name="email" id="sub-email-home" placeholder="you@example.com" required autocomplete="email">
+                <input type="hidden" name="tag" value="home">
+                <button class="subscribe-btn" type="submit">Keep me posted</button>
+              </form>
             </section>
 
             <section class="hp-founders">
