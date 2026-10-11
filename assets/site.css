@@ -192,6 +192,6 @@ footer.page {
 .subscribe-form { display: flex; gap: 10px; flex-wrap: wrap; max-width: 560px; }
 .subscribe-input { flex: 1 1 240px; font: inherit; font-size: 1rem; padding: 13px 14px; border: 1px solid var(--rule); border-radius: 5px; background: #fff; color: var(--ink); min-width: 0; }
 .subscribe-input:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: var(--accent); }
-.subscribe-btn { font: inherit; font-size: 1rem; font-weight: 600; padding: 13px 22px; border: none; border-radius: 5px; background: var(--ink); color: var(--paper, #fff); cursor: pointer; }
-.subscribe-btn:hover { filter: brightness(1.2); }
+.subscribe-btn { display: inline-block; text-decoration: none; border-bottom: none; font: inherit; font-size: 1rem; font-weight: 600; padding: 13px 22px; border: none; border-radius: 5px; background: var(--ink); color: var(--paper, #fff); cursor: pointer; }
+.subscribe-btn:hover { filter: brightness(1.2); border-bottom: none; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
