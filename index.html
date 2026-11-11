@@ -3,23 +3,23 @@
     <head>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <meta name="description" content="Your judgment is the most valuable thing in the age of AI. This is the place you build it."/>
-        <link rel="icon" href="favicon.png" type="image/png">
-        <title>Bell AI Fellowship — Build your judgment</title>
+        <meta name="description" content="On December 10 the fellows of the Bell AI Fellowship show their work, share what they learned, and unveil the 2027 program. Demo Day and Winter Celebration, San Francisco and by video."/>
+        <link rel="icon" href="/favicon.png" type="image/png">
+        <title>Bell AI Fellowship — Demo Day and Winter Celebration, December 10</title>
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Bell AI Fellowship" />
 <meta property="og:url" content="https://bellaifellow.com/" />
-<meta property="og:title" content="Bell AI Fellowship — Build your judgment" />
-<meta property="og:description" content="In the age of AI, your judgment is the most valuable thing you have. Three paths to build it, fall 2026: practice, principles, precedent. Late applications read while seats remain." />
-<meta property="og:image" content="https://bellaifellow.com/images/bellai-logo.png" />
+<meta property="og:title" content="Bell AI Fellowship Demo Day and Winter Celebration · December 10" />
+<meta property="og:description" content="On December 10 the fellows of the Bell AI Fellowship show their work, share what they learned, and unveil the 2027 program. Demo Day and Winter Celebration, San Francisco and by video." />
+<meta property="og:image" content="https://bellaifellow.com/images/winter-2026-celebration.png" />
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Bell AI Fellowship — Build your judgment" />
-<meta name="twitter:description" content="In the age of AI, your judgment is the most valuable thing you have. Three paths to build it, fall 2026: practice, principles, precedent. Late applications read while seats remain." />
-<meta name="twitter:image" content="https://bellaifellow.com/images/bellai-logo.png" />
+<meta name="twitter:title" content="Bell AI Fellowship Demo Day and Winter Celebration · December 10" />
+<meta name="twitter:description" content="On December 10 the fellows of the Bell AI Fellowship show their work, share what they learned, and unveil the 2027 program. Demo Day and Winter Celebration, San Francisco and by video." />
+<meta name="twitter:image" content="https://bellaifellow.com/images/winter-2026-celebration.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
-        <link rel="stylesheet" href="assets/site.css">
+        <link rel="stylesheet" href="/assets/site.css">
         <style>
 /* ---- Homepage layout (Editorial direction, 2026-09-13) ---- */
 .hp-wrap { max-width: 1296px; margin: 0 auto; padding: 0 72px; }
@@ -49,6 +49,9 @@
 .hp-strip span:last-child { font-size: 15px; font-weight: 500; line-height: 1.45; color: var(--ink); }
 
 /* Paths */
+.hp-next { padding: 28px 0 80px; display: flex; flex-direction: column; gap: 44px; border-top: 1px solid var(--ink); }
+.hp-reading { padding: 72px 0 80px; display: flex; flex-direction: column; gap: 44px; border-top: 1px solid var(--rule); }
+.hp-band-link { color: var(--paper); }
 .hp-paths { padding: 72px 0 80px; display: flex; flex-direction: column; gap: 44px; }
 .hp-paths-head { align-items: baseline; }
 .hp-paths-head .hp-h2 { grid-column: span 4; }
@@ -153,47 +156,159 @@
   .hp-h2 { font-size: 32px; }
   .hp-quote blockquote { font-size: 24px; }
 }
+
+/* ---- Demo Day hero (mockup, 2026-11-11) ---- */
+.dd-hero { background: #131820; background-image: radial-gradient(ellipse at 75% 40%, #1d3550 0%, #131820 60%); color: #f7f3ea; }
+.dd-hero .hp-wrap { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 56px; align-items: center; padding-top: 88px; padding-bottom: 88px; }
+.dd-kicker { font-family: var(--sans); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600; color: #8fc3ea; margin-bottom: 28px; }
+.dd-hero h1 { font-family: var(--serif); font-weight: 300; font-size: clamp(2.6rem, 5.6vw, 76px); line-height: 1.04; letter-spacing: -0.02em; margin: 0 0 28px; color: #f7f3ea; }
+.dd-hero h1 em { color: #8fc3ea; font-style: italic; }
+.dd-lead { font-family: var(--serif); font-size: clamp(1.2rem, 2vw, 24px); font-weight: 300; line-height: 1.45; color: #e4dccb; max-width: 620px; margin: 0 0 36px; }
+.dd-ctas { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+.dd-btn { display: inline-block; background: #f7f3ea; color: #131820; padding: 18px 32px; font-weight: 600; font-size: 16px; border: none; }
+.dd-btn:hover { filter: brightness(0.92); border: none; }
+.dd-btn-ghost { display: inline-block; color: #f7f3ea; padding: 17px 26px; font-weight: 500; font-size: 15px; border: 1px solid #f7f3ea55; }
+.dd-btn-ghost:hover { border-color: #f7f3ea; }
+.dd-note { font-size: 13px; color: #a9b4c0; margin: 18px 0 0; max-width: 560px; }
+.dd-art img { width: 100%; height: auto; display: block; border-radius: 2px; box-shadow: 0 30px 80px rgba(0,0,0,0.45); }
+.dd-facts { border-bottom: 1px solid var(--rule); }
+.dd-facts .hp-strip { border-top: none; }
+.dd-see { padding: 72px 0 64px; display: flex; flex-direction: column; gap: 40px; }
+.dd-two { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 56px; padding: 0 0 80px; }
+.dd-sched { list-style: none; margin: 0; border-top: 1px solid var(--ink); }
+.dd-sched li { display: grid; grid-template-columns: 96px 1fr; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--rule); font-size: 16px; color: var(--ink); }
+.dd-sched b { font-family: var(--serif); font-weight: 400; font-size: 20px; }
+.dd-who { display: flex; flex-direction: column; gap: 16px; }
+.dd-who .hp-serif { font-size: 26px; line-height: 1.3; font-weight: 300; margin: 0; }
+.dd-venue { background: var(--panel); padding: 72px 0; }
+.dd-venue .hp-wrap { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: 56px; }
+.dd-venue .hp-serif { font-size: clamp(1.5rem, 2.6vw, 34px); line-height: 1.25; font-weight: 300; margin: 0 0 20px; }
+.dd-about { padding: 64px 0 0; }
+@media (max-width: 1100px) {
+  .dd-hero .hp-wrap, .dd-two, .dd-venue .hp-wrap { grid-template-columns: 1fr; gap: 36px; }
+  .dd-hero .hp-wrap { padding-top: 56px; padding-bottom: 64px; }
+  .dd-art { max-width: 420px; }
+}
+@media (max-width: 760px) { .dd-sched li { grid-template-columns: 72px 1fr; } }
         </style>
     </head>
     <body>
         <nav class="band">
             <div class="band-inner">
-                <a href="./"><img src="./images/bellai-logo.png" alt="" class="band-logo"></a>
-                <a href="./" class="band-brand">Bell AI Fellowship</a>
+                <a href="/"><img src="/images/bellai-logo.png" alt="" class="band-logo"></a>
+                <a href="/" class="band-brand">Bell AI Fellowship</a>
                 <div class="band-tracks">
                     <a href="/hac/">Homebrew AI Club</a>
                     <a href="/civilization/">AI and Civilization</a>
                     <a href="/shaping/">How Society Shapes Technology</a>
                     <a href="/schedule/">Schedule</a>
-                    <a href="https://tally.so/r/Pd7d75" target="_blank" rel="noopener" class="band-apply">Apply for Fall 2026</a>
+                    <a href="https://luma.com/gzqrh5hn" target="_blank" rel="noopener" class="band-apply">Get tickets · Dec 10</a>
                 </div>
             </div>
         </nav>
 
-        <div class="hp-wrap">
-            <section class="hp-grid hp-hero" id="hero">
-                <div class="hp-hero-main">
-                    <div class="hp-kicker">Fall 2026 · Practice · Principles · Precedent</div>
-                    <h1>Your judgment is the most valuable thing in the age of AI.</h1>
+        <section class="dd-hero" id="demo-day">
+            <div class="hp-wrap">
+                <div>
+                    <div class="dd-kicker">Thursday, December 10 · 4:30 to 7:30pm · San Francisco</div>
+                    <h1>Demo Day and <em>Winter Celebration</em></h1>
+                    <p class="dd-lead">What does it take to build good judgment and taste in the age of AI? The fellows of the Bell AI Fellowship spent the fall finding out. On December 10 we show our work, share what we learned, and unveil what comes next.</p>
+                    <div class="dd-ctas">
+                        <a class="dd-btn" href="https://luma.com/gzqrh5hn" target="_blank" rel="noopener">Get tickets on Luma</a>
+                        <a class="dd-btn-ghost" href="https://luma.com/gzqrh5hn" target="_blank" rel="noopener">Join remotely, free</a>
+                    </div>
+                    <p class="dd-note">In person $40, with approval; space is limited.</p>
                 </div>
-                <div class="hp-hero-side">
-                    <p class="hp-serif">This is the place you build it.</p>
-                    <p class="hp-p">A fellowship in San Francisco, with video cohorts, for people who want to do more with AI than learn a tool: to change how they think about it, and what they do with it. Three paths. $180 each, with financial assistance on the application.</p>
-                    <p class="hp-meta">Every application is read. You hear back either way.</p>
+                <div class="dd-art"><img src="/images/winter-2026-celebration.png" alt="Bell AI Fellowship Winter 2026 Celebration"></div>
+            </div>
+        </section>
+
+        <div class="dd-facts">
+            <div class="hp-wrap">
+                <div class="hp-strip">
+                    <div><span class="hp-kicker">When</span><span>Thursday, December 10<br>4:30 to 7:30pm PT</span></div>
+                    <div><span class="hp-kicker">Where</span><span>Outlier, the Payne Mansion<br>1409 Sutter Street, San Francisco</span></div>
+                    <div><span class="hp-kicker">In person</span><span>$40<br>Approval required; space is limited</span></div>
+                    <div><span class="hp-kicker">Remote</span><span>Free<br>Demos, seminar lessons, and the 2027 program by video</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hp-wrap">
+            <section class="dd-see">
+                <div class="hp-grid hp-paths-head">
+                    <h2 class="hp-h2">What you'll see</h2>
+                    <p class="hp-lead">The fall's work from all three paths, then the first look at 2027. Then we celebrate.</p>
+                </div>
+                <div class="hp-cards">
+                    <a class="hp-card" href="/hac/" style="--card-accent:#1f8f5f;">
+                        <div class="hp-kicker" style="color:#1f8f5f;">5:00 · Practice</div>
+                        <h3>Live demos</h3>
+                        <p class="hp-p">The Homebrew AI Club has met every other Thursday since October. Fellows show what they are building with AI, and the group digs into what worked and what didn't. On Demo Day they show that work to everyone. Expect useful, but also fun and goofy.</p>
+                        <div class="hp-card-foot"><span class="hp-link">About the club →</span></div>
+                    </a>
+                    <a class="hp-card" href="/civilization/" style="--card-accent:#7a2e1d;">
+                        <div class="hp-kicker" style="color:#7a2e1d;">6:00 · Principles and precedent</div>
+                        <h3>What we learned</h3>
+                        <p class="hp-p">Fellows from our two seminars, AI and Civilization and How Society Shapes Technology, share what a season of deep reading and hard questions taught us about building habits of mind, judgment, and taste in the age of AI.</p>
+                        <div class="hp-card-foot"><span class="hp-link">About the seminars →</span></div>
+                    </a>
+                    <a class="hp-card" href="https://luma.com/gzqrh5hn" target="_blank" rel="noopener" style="--card-accent:#2b5e8c;">
+                        <div class="hp-kicker" style="color:#2b5e8c;">6:00 · What's next</div>
+                        <h3>The 2027 program</h3>
+                        <p class="hp-p">We unveil it right after the seminar lessons. You will be the first to hear what's coming.</p>
+                        <div class="hp-card-foot"><span class="hp-link">Be there →</span></div>
+                    </a>
                 </div>
             </section>
 
-            <div class="hp-strip">
-                <div><span class="hp-kicker">Tuition</span><span>$180 per path, flat<br>Financial assistance available</span></div>
-                <div><span class="hp-kicker">Where</span><span>In person in San Francisco<br>Video: the Intermediate club, the Wednesday seminar, and remote seats in the Advanced club</span></div>
-                <div><span class="hp-kicker">Who</span><span>People who want to change how they think about AI<br>Past cohorts: engineers, product people, AI researchers, UI designers, founders, lawyers, recruiters, executives, students</span></div>
-                <div><span class="hp-kicker">Deadline</span><span>Late applications read while seats remain<br>One five-minute form covers all three paths</span></div>
-            </div>
+            <section class="dd-two">
+                <div>
+                    <h2 class="hp-h2" style="margin-bottom:24px;">Schedule</h2>
+                    <ul class="dd-sched">
+                        <li><b>4:30</b><span>Mingling</span></li>
+                        <li><b>5:00</b><span>Demo Day, with demonstrations from the Homebrew AI Club</span></li>
+                        <li><b>6:00</b><span>What we learned from the seminars, and the unveiling of the 2027 program</span></li>
+                        <li><b>6:30</b><span>Drinks and light appetizers</span></li>
+                        <li><b>7:30</b><span>Close</span></li>
+                    </ul>
+                </div>
+                <div class="dd-who">
+                    <h2 class="hp-h2">Who will be there</h2>
+                    <p class="hp-serif">AI industry veterans and aspiring talent. And people from outside AI who think outside the box: artists, lawyers, journalists, and authors.</p>
+                    <p class="hp-p">That mix is part of what this is all about. Anyone curious about how taste and judgment get built in the age of AI is welcome.</p>
+                    <p class="hp-p">If you can, please join us in person. We discovered in the fellowship that there is no real substitute for being there. The mingling and the celebration are in person only.</p>
+                    <a class="hp-link" href="https://luma.com/gzqrh5hn" target="_blank" rel="noopener">Request an in-person ticket →</a>
+                </div>
+            </section>
+        </div>
 
+        <section class="dd-venue">
+            <div class="hp-wrap">
+                <div class="hp-kicker" style="color:var(--ink-faint);">The venue</div>
+                <div>
+                    <p class="hp-serif">We are gathering at Outlier, a new AI mansion in one of San Francisco's grand Victorians: the Payne Mansion at 1409 Sutter Street.</p>
+                    <p class="hp-p" style="max-width:640px;">It was built in 1881 with Gold Rush and Comstock silver money, survived the 1906 earthquake and fire, and is the last of the mansions that once lined this stretch of Sutter. A house built by one San Francisco boom is now home to the next. Come early and look around.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="hp-band" id="argument">
+            <div class="hp-wrap hp-grid">
+                <div class="hp-kicker">About the fellowship</div>
+                <div class="hp-band-text">
+                    <p class="hp-serif">“What machines need from us is discernment, judgment, and wisdom: deciding what is good, whether it was done right, and whether it should be done in the first place.”</p>
+                    <p class="hp-lead">That judgment used to be built on the job, in entry-level work and the mentorship that came with it. Those jobs are thinning out, and AI changes enough that experienced people are close to starting over too. Taste sounds like something you're born with. We think it can be trained, and we're testing how.</p>
+                    <a class="hp-link hp-band-link" href="/writing/taste-is-the-wrong-word/">Read “Taste” is the wrong word, by Sunil Paul →</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="hp-wrap">
             <section class="hp-paths" id="tracks">
                 <div class="hp-grid hp-paths-head">
-                    <h2 class="hp-h2">How judgment gets built</h2>
-                    <p class="hp-lead">Judgment is built by grappling with real things, questioning them, and talking them through with others. Each path does that from a different angle. Pick one, or all three.</p>
+                    <h2 class="hp-h2">Three ways to train it</h2>
+                    <p class="hp-lead">Judgment gets built by doing things and seeing what fails, by arguing with the ideas that came before, and by studying how people handled comparable moments. Each path takes one of those methods. All three ran this fall. The 2027 program is unveiled at Demo Day.</p>
                 </div>
                 <div class="hp-cards">
                     <a class="hp-card" href="/hac/" style="--card-accent:#1f8f5f;">
@@ -232,17 +347,35 @@
                     <p class="hp-p"><strong>Mixed cohorts, on purpose.</strong> Past cohorts have included engineers and product people, AI researchers, UI designers, founders, lawyers, recruiters, executives, and students. What they had in common was the reason they came: to expand how they think, with the tools as the means. That is still the only entry requirement.</p>
                 </div>
             </section>
-        </div>
-
-        <section class="hp-band" id="content">
-            <div class="hp-wrap hp-grid">
-                <div class="hp-kicker">Our approach</div>
-                <div class="hp-band-text">
-                    <p class="hp-serif">Everything else about AI, you can rent. The models, the tools, the agents are the same for you as for everyone else, and they get better whether you do or not. Your judgment is the part that's yours.</p>
-                    <p class="hp-lead">There is no course for judgment. It gets built with experience and in company, which is why the method matters as much as the material.</p>
+            <section class="hp-reading" id="reading">
+                <div class="hp-grid hp-paths-head">
+                    <h2 class="hp-h2">What we're reading</h2>
+                    <p class="hp-lead">Others have worked on this question for a long time: whether judgment can be learned, which habits of mind build it, and what institutions a world with thinking machines will need. Three places to start.</p>
                 </div>
-            </div>
-        </section>
+                <div class="hp-cards">
+                    <a class="hp-card" href="https://doi.org/10.1037/a0016755" target="_blank" rel="noopener" style="--card-accent:var(--ink);">
+                        <div class="hp-kicker" style="color:var(--ink-faint);">Can it be learned?</div>
+                        <h3>Conditions for Intuitive Expertise</h3>
+                        <p class="hp-p">Kahneman and Klein, from opposing camps, agree on when expert intuition can be trusted: regular settings, long practice, fast feedback.</p>
+                        <div class="hp-card-foot"><p class="hp-meta">Paper · <em>American Psychologist</em>, 2009</p></div>
+                    </a>
+                    <a class="hp-card" href="https://www.paulgraham.com/hamming.html" target="_blank" rel="noopener" style="--card-accent:var(--ink);">
+                        <div class="hp-kicker" style="color:var(--ink-faint);">Habits of mind</div>
+                        <h3>You and Your Research</h3>
+                        <p class="hp-p">Richard Hamming of Bell Labs on the habits that separated people who did important work from people who didn't.</p>
+                        <div class="hp-card-foot"><p class="hp-meta">Talk · 1986</p></div>
+                    </a>
+                    <a class="hp-card" href="https://doi.org/10.1126/science.adt9819" target="_blank" rel="noopener" style="--card-accent:var(--ink);">
+                        <div class="hp-kicker" style="color:var(--ink-faint);">Institutions</div>
+                        <h3>Large AI Models Are Cultural and Social Technologies</h3>
+                        <p class="hp-p">Treat large models like markets and the printing press, systems for passing on knowledge, and institutions become the thing to design.</p>
+                        <div class="hp-card-foot"><p class="hp-meta">Paper · <em>Science</em>, 2025</p></div>
+                    </a>
+                </div>
+            </section>
+
+
+        </div>
 
         <div class="hp-wrap">
             <section class="hp-say" aria-roledescription="carousel" aria-label="What people say">
@@ -339,13 +472,13 @@
 
             <section class="hp-grid hp-ready" id="apply">
                 <div class="hp-ready-text">
-                    <h2 class="hp-h2">Ready?</h2>
-                    <p class="hp-lead">Pick the path, or paths, that fit how you learn. One five-minute form covers all three. Every application is read for one thing: whether you want to think differently, and will bring what you know to the table. Titles don't decide it. Places go to the people who will make the strongest cohort, and a strong cohort is a varied one, and a deep one.</p>
-                    <p class="hp-meta">$180 per path · Financial assistance on the form · Late applications read while seats remain · You hear back either way within a few days</p>
+                    <h2 class="hp-h2">Join us December 10</h2>
+                    <p class="hp-lead">Live demos, what the seminars taught us, the first look at the 2027 program, and then a celebration at the Payne Mansion. If you can, please join us in person.</p>
+                    <p class="hp-meta">Thursday, December 10 · 4:30 to 7:30pm · 1409 Sutter Street, San Francisco · In person $40 with approval · Remote free</p>
                 </div>
                 <div class="hp-ready-cta">
-                    <a class="hp-btn" href="https://tally.so/r/Pd7d75" target="_blank" rel="noopener">Apply for Fall 2026</a>
-                    <a class="hp-link" href="/schedule/">See the full schedule →</a>
+                    <a class="hp-btn" href="https://luma.com/gzqrh5hn" target="_blank" rel="noopener">Get tickets on Luma</a>
+                    <a class="hp-link" href="https://luma.com/gzqrh5hn" target="_blank" rel="noopener">Join remotely, free →</a>
                 </div>
             </section>
 
@@ -364,7 +497,7 @@
                 </div>
                 <div class="hp-founder-grid">
                     <div class="hp-founder">
-                        <div class="hp-founder-photo"><img src="./images/sunil-paul.jpg" alt="Sunil Paul" style="object-position: 70% 30%;"></div>
+                        <div class="hp-founder-photo"><img src="/images/sunil-paul.jpg" alt="Sunil Paul" style="object-position: 70% 30%;"></div>
                         <div class="hp-founder-body">
                             <h3>Sunil Paul</h3>
                             <p class="hp-p">Serial entrepreneur and investor. Founded four venture-backed companies; investor or board member for five IPOs and four unicorns. Analyzed technology policy at the congressional Office of Technology Assessment and charted climate-tech trajectories with the Gigaton Throwdown. Co-founded Bell AI to build the kind of learning community he wishes existed when he was starting out.</p>
@@ -372,7 +505,7 @@
                         </div>
                     </div>
                     <div class="hp-founder">
-                        <div class="hp-founder-photo"><img src="./images/tenni-theurer.jpg" alt="Tenni Theurer" style="object-position: 50% 12%; transform: scale(1.38); transform-origin: 50% 28%;"></div>
+                        <div class="hp-founder-photo"><img src="/images/tenni-theurer.jpg" alt="Tenni Theurer" style="object-position: 50% 12%; transform: scale(1.38); transform-origin: 50% 28%;"></div>
                         <div class="hp-founder-body">
                             <h3>Tenni Theurer</h3>
                             <p class="hp-p">Product builder who has led $1.6B businesses and products reaching 500M+ users at Yahoo, Visa, and Verizon. Engineer turned product leader, GM, and founder. Co-founded Bell AI because good judgment about AI is built the way she has always worked: hands-on, with other people.</p>
@@ -385,7 +518,7 @@
 
         <footer class="hp-footer">
             <div class="hp-wrap">
-                <div class="hp-footer-brand"><img src="./images/bellai-logo.png" alt=""><span>2026 Bell AI Fellowship · San Francisco</span></div>
+                <div class="hp-footer-brand"><img src="/images/bellai-logo.png" alt=""><span>2026 Bell AI Fellowship · San Francisco</span></div>
                 <div class="hp-footer-links">
                     <a href="https://aughthour.com/privacy.html" target="_blank" rel="noopener">Privacy</a>
                     <a href="https://www.aughthour.com/terms.html" target="_blank" rel="noopener">Terms</a>

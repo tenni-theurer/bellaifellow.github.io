@@ -195,3 +195,34 @@ footer.page {
 .subscribe-btn { display: inline-block; text-decoration: none; border-bottom: none; font: inherit; font-size: 1rem; font-weight: 600; padding: 13px 22px; border: none; border-radius: 5px; background: var(--ink); color: var(--paper, #fff); cursor: pointer; }
 .subscribe-btn:hover { filter: brightness(1.2); border-bottom: none; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* ---- Mockup placeholders (facts still to decide; remove before launch) ---- */
+.tbd { background: #e9e1cc; color: #6b655a; padding: 0 5px; border-radius: 2px; font-style: normal; font-weight: 500; white-space: nowrap; }
+
+/* ---- Candidate class cards (/next/) ---- */
+.sect.cand { border-left: 3px solid var(--card-accent, var(--ink)); }
+.sect.cand .sect-name { color: var(--ink); }
+.badge.returning { background: transparent; color: var(--ink-soft); border: 1px solid var(--rule); }
+.badge.new { background: var(--ink); color: var(--paper); }
+.sect-path { font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; color: var(--card-accent, var(--ink-faint)); margin: 0 0 4px; }
+.sect.cand .sect-meta + .sect-meta { margin-top: 6px; }
+.btn-ink { background: var(--ink); color: var(--paper); }
+.sect.cand .sect-when { font-size: 0.85rem; color: var(--ink-faint); margin: 10px 0 0; }
+
+/* ---- Essays (/writing/) ---- */
+.essay p { font-family: var(--serif); font-size: 1.22rem; line-height: 1.6; color: var(--ink); max-width: 640px; margin-bottom: 22px; }
+.essay p strong { font-weight: 500; }
+.byline { font-size: 0.85rem; color: var(--ink-faint); margin: 0; }
+.byline a { color: var(--ink-soft); }
+.note-box { background: var(--panel); padding: 22px 24px; border-radius: 4px; margin-top: 12px; }
+.note-box p { margin: 0; font-size: 0.95rem; }
+
+/* ---- Lists of entries (writing index, reading list) ---- */
+.entries { list-style: none; margin: 8px 0 0; }
+.entry { padding: 20px 0; border-top: 1px solid var(--rule); }
+.entry:first-child { border-top: none; padding-top: 4px; }
+.entry-kind { font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; color: var(--ink-faint); margin: 0 0 4px; }
+.entry-title { font-family: var(--serif); font-size: 1.3rem; line-height: 1.3; color: var(--ink); margin: 0 0 2px; }
+.entry-title a { color: var(--ink); }
+.entry-src { font-size: 0.88rem; color: var(--ink-faint); margin: 0 0 8px; }
+.entry-why { font-size: 0.97rem; margin: 0; }
