@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="description" content="Your judgment is the most valuable thing in the age of AI. This is the place you build it."/>
+        <link rel="icon" href="/favicon.png" type="image/png">
+        <title>Bell AI Fellowship — Build your judgment</title>
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Bell AI Fellowship" />
+<meta property="og:url" content="https://bellaifellow.com/" />
+<meta property="og:title" content="Bell AI Fellowship — Build your judgment" />
+<meta property="og:description" content="In the age of AI, your judgment is the most valuable thing you have. Three paths to build it: practice, principles, precedent. Demo Day December 10; help pick next season's classes." />
+<meta property="og:image" content="https://bellaifellow.com/images/bellai-logo.png" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Bell AI Fellowship — Build your judgment" />
+<meta name="twitter:description" content="In the age of AI, your judgment is the most valuable thing you have. Three paths to build it: practice, principles, precedent. Demo Day December 10; help pick next season's classes." />
+<meta name="twitter:image" content="https://bellaifellow.com/images/bellai-logo.png" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+        <link rel="stylesheet" href="/assets/site.css">
+        <style>
+/* ---- Homepage layout (Editorial direction, 2026-09-13) ---- */
+.hp-wrap { max-width: 1296px; margin: 0 auto; padding: 0 72px; }
+.hp-serif { font-family: var(--serif); }
+.hp-kicker { font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600; font-family: var(--sans); }
+.hp-meta { font-size: 13px; line-height: 1.6; color: #6b655a; font-family: var(--sans); }
+.hp-link { font-size: 13px; font-weight: 600; border-bottom: none; }
+.hp-link:hover { text-decoration: underline; text-underline-offset: 3px; border-bottom: none; }
+.hp-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 32px; }
+.hp-h2 { font-family: var(--serif); font-size: 40px; font-weight: 400; margin: 0; letter-spacing: -0.015em; line-height: 1.1; text-transform: none; color: var(--ink); }
+.hp-lead { font-size: 17px; color: var(--ink-soft); margin: 0; line-height: 1.6; max-width: none; }
+.hp-p { font-size: 15px; line-height: 1.6; color: var(--ink-soft); margin: 0; max-width: none; }
+.hp-p strong { color: var(--ink); font-weight: 600; }
+
+/* Hero */
+.hp-hero { padding: 112px 0 80px; align-items: end; }
+.hp-hero-main { grid-column: span 8; }
+.hp-hero-main .hp-kicker { color: var(--ink-faint); margin-bottom: 36px; }
+.hp-hero h1 { font-family: var(--serif); font-size: clamp(2.75rem, 6.4vw, 92px); line-height: 1.02; font-weight: 300; letter-spacing: -0.025em; margin: 0; text-wrap: balance; }
+.hp-hero-side { grid-column: span 4; display: flex; flex-direction: column; gap: 16px; padding-bottom: 8px; border-left: 1px solid var(--rule); padding-left: 28px; }
+.hp-hero-side .hp-serif { font-size: 24px; line-height: 1.3; font-style: italic; font-weight: 300; margin: 0; color: var(--ink); }
+
+/* Fact strip */
+.hp-strip { border-top: 1px solid var(--ink); border-bottom: 1px solid var(--rule); display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px; padding: 18px 0; }
+.hp-strip > div { display: flex; flex-direction: column; gap: 2px; }
+.hp-strip .hp-kicker { color: var(--ink-faint); }
+.hp-strip span:last-child { font-size: 15px; font-weight: 500; line-height: 1.45; color: var(--ink); }
+
+/* Paths */
+.hp-next { padding: 28px 0 80px; display: flex; flex-direction: column; gap: 44px; border-top: 1px solid var(--ink); }
+.hp-reading { padding: 72px 0 80px; display: flex; flex-direction: column; gap: 44px; border-top: 1px solid var(--rule); }
+.hp-band-link { color: var(--paper); }
+.hp-paths { padding: 72px 0 80px; display: flex; flex-direction: column; gap: 44px; }
+.hp-paths-head { align-items: baseline; }
+.hp-paths-head .hp-h2 { grid-column: span 4; }
+.hp-paths-head .hp-lead { grid-column: span 7; }
+.hp-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; }
+.hp-card { display: flex; flex-direction: column; gap: 14px; padding: 4px 40px; border-right: 1px solid var(--rule); color: var(--ink); border-bottom: none; }
+.hp-card:first-child { padding-left: 0; }
+.hp-card:last-child { padding-right: 0; border-right: none; }
+.hp-card h3 { font-family: var(--serif); font-size: 30px; font-weight: 400; line-height: 1.12; margin: 0; letter-spacing: -0.01em; }
+.hp-card-foot { margin-top: auto; display: flex; flex-direction: column; gap: 10px; padding-top: 14px; }
+.hp-card:hover h3 { color: var(--card-accent); }
+.hp-card:hover .hp-link { text-decoration: underline; text-underline-offset: 3px; }
+.hp-note { border-top: 1px solid var(--rule); padding-top: 28px; }
+.hp-note .hp-p { grid-column: span 6; }
+
+/* Approach band (photo slot: when a session photo exists, give it 5 columns at left, full bleed) */
+.hp-band { background: var(--ink); color: var(--paper); padding: 104px 0; }
+.hp-band .hp-kicker { grid-column: span 3; color: #b8ad98; }
+.hp-band-text { grid-column: span 8; display: flex; flex-direction: column; gap: 28px; }
+.hp-band-text .hp-serif { font-size: clamp(1.6rem, 2.8vw, 40px); line-height: 1.25; font-weight: 300; margin: 0; letter-spacing: -0.01em; color: var(--paper); max-width: none; }
+.hp-band-text .hp-lead { color: #c9c0ad; max-width: 640px; }
+
+/* Testimonial carousel */
+.hp-say { padding: 88px 0 80px; display: flex; flex-direction: column; gap: 40px; }
+.hp-carousel { position: relative; }
+.hp-track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; gap: 0; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+.hp-track::-webkit-scrollbar { display: none; }
+.hp-quote { flex: 0 0 100%; scroll-snap-align: start; display: flex; flex-direction: column; gap: 18px; max-width: none; box-sizing: border-box; padding-right: 48px; }
+.hp-quote .hp-kicker.hp-kicker-fellowship { color: var(--ink-faint); }
+.hp-quote .hp-kicker { color: #1f8f5f; }
+.hp-quote blockquote { font-family: var(--serif); font-size: 34px; line-height: 1.3; font-style: italic; font-weight: 300; margin: 0; padding: 0; border: none; color: var(--ink); text-wrap: pretty; max-width: 900px; }
+.hp-quote cite { font-style: normal; font-size: 13px; color: var(--ink-soft); }
+.hp-quote cite strong { color: var(--ink); }
+.hp-car-nav { display: flex; align-items: center; gap: 20px; margin-top: 36px; }
+.hp-car-btn { width: 40px; height: 40px; border: 1px solid var(--rule); border-radius: 50%; background: transparent; color: var(--ink); font-size: 18px; line-height: 1; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; }
+.hp-car-btn:hover { border-color: var(--ink); }
+.hp-car-btn:focus-visible { outline: 2px solid #1f8f5f; outline-offset: 2px; }
+.hp-car-dots { display: flex; gap: 10px; }
+.hp-car-dot { width: 8px; height: 8px; border-radius: 50%; border: 1px solid var(--ink-faint); background: transparent; padding: 0; cursor: pointer; }
+.hp-car-dot[aria-current="true"] { background: var(--ink); border-color: var(--ink); }
+.hp-car-dot:focus-visible { outline: 2px solid #1f8f5f; outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { .hp-track { scroll-behavior: auto; } }
+
+/* Subscribe (homepage) */
+.hp-subscribe { border-top: none; padding: 56px 0 8px; }
+.hp-subscribe .subscribe-lede { font-size: 22px; font-weight: 300; max-width: 640px; }
+.hp-subscribe .subscribe-form { max-width: 640px; }
+
+/* Ready */
+.hp-ready { background: var(--panel); padding: 56px 48px; align-items: center; }
+.hp-ready-text { grid-column: span 7; display: flex; flex-direction: column; gap: 16px; }
+.hp-ready-cta { grid-column: 9 / span 4; display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
+.hp-btn { display: inline-block; background: var(--ink); color: var(--paper); padding: 20px 40px; font-size: 16px; font-weight: 600; border-bottom: none; font-family: var(--sans); }
+.hp-btn:hover { filter: brightness(1.25); border-bottom: none; }
+
+/* Founders */
+.hp-founders { padding: 80px 0; display: flex; flex-direction: column; gap: 40px; }
+.hp-founders-head { align-items: baseline; border-top: 1px solid var(--ink); padding-top: 22px; }
+.hp-founders-head .hp-h2 { grid-column: span 4; }
+.hp-founders-head .hp-lead { grid-column: span 7; }
+.hp-founder-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 64px; }
+.hp-founder { display: flex; gap: 28px; align-items: flex-start; }
+.hp-founder-photo { width: 140px; height: 187px; overflow: hidden; border-radius: 2px; flex-shrink: 0; background: var(--rule); }
+.hp-founder-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.hp-founder-body { display: flex; flex-direction: column; gap: 10px; }
+.hp-founder h3 { font-family: var(--serif); font-size: 28px; font-weight: 400; margin: 0; }
+.hp-founder .hp-p { line-height: 1.65; }
+
+/* Footer */
+.hp-footer { border-top: 1px solid var(--rule); padding: 28px 0 40px; font-size: 13px; color: var(--ink-faint); }
+.hp-footer .hp-wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.hp-footer-brand { display: flex; align-items: center; gap: 12px; }
+.hp-footer-brand img { width: 22px; height: 22px; opacity: 0.7; }
+.hp-footer-links { display: flex; gap: 24px; }
+.hp-footer-links a { color: var(--ink-faint); border-bottom: none; }
+.hp-footer-links a:hover { color: var(--ink); }
+
+@media (max-width: 1100px) {
+  .hp-wrap { padding: 0 40px; }
+  .hp-hero { padding: 72px 0 56px; }
+  .hp-hero-main, .hp-hero-side { grid-column: span 12; }
+  .hp-hero-side { border-left: none; padding-left: 0; border-top: 1px solid var(--rule); padding-top: 24px; }
+  .hp-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hp-paths-head .hp-h2, .hp-paths-head .hp-lead, .hp-founders-head .hp-h2, .hp-founders-head .hp-lead { grid-column: span 12; }
+  .hp-band .hp-kicker, .hp-band-text { grid-column: span 12; }
+  .hp-band { padding: 72px 0; }
+  .hp-quote blockquote { font-size: 28px; }
+  .hp-quote { padding-right: 0; }
+  .hp-ready-text, .hp-ready-cta { grid-column: span 12; }
+  .hp-founder-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+@media (max-width: 760px) {
+  .hp-wrap { padding: 0 24px; }
+  .hp-cards { grid-template-columns: 1fr; }
+  .hp-card { padding: 28px 0; border-right: none; border-top: 1px solid var(--rule); }
+  .hp-card:first-child { border-top: none; padding-top: 0; }
+  .hp-card:last-child { padding-bottom: 0; }
+  .hp-note .hp-p { grid-column: span 12; }
+  .hp-strip { grid-template-columns: 1fr; gap: 16px; }
+  .hp-ready { padding: 40px 24px; }
+  .hp-founder { flex-direction: column; }
+  .hp-h2 { font-size: 32px; }
+  .hp-quote blockquote { font-size: 24px; }
+}
+        </style>
+    </head>
+    <body>
+        <nav class="band">
+            <div class="band-inner">
+                <a href="/"><img src="/images/bellai-logo.png" alt="" class="band-logo"></a>
+                <a href="/" class="band-brand">Bell AI Fellowship</a>
+                <div class="band-tracks">
+                    <a href="/hac/">Homebrew AI Club</a>
+                    <a href="/civilization/">AI and Civilization</a>
+                    <a href="/shaping/">How Society Shapes Technology</a>
+                    <a href="/newsletter/">Newsletter</a>
+                    <a href="/next/">Next season</a>
+                    <a href="/teach/">Teach</a>
+                    <a href="/demo-day/" class="band-apply">Demo Day · Dec 10</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="hp-wrap">
+            <section class="hp-grid hp-hero" id="hero">
+                <div class="hp-hero-main">
+                    <div class="hp-kicker">The question we work on</div>
+                    <h1>How do you train taste and judgment for the age of AI?</h1>
+                </div>
+                <div class="hp-hero-side">
+                    <p class="hp-serif">Machines can do more of the work every month. Deciding what is good, and what is worth doing at all, is still ours.</p>
+                    <p class="hp-p">The Bell AI Fellowship is a San Francisco program, with video cohorts, built around one question: how that judgment gets trained on purpose. Three paths, each a different method: practice, principles, precedent.</p>
+                    <a class="hp-link" href="/writing/taste-is-the-wrong-word/">Read the essay that started it →</a>
+                </div>
+            </section>
+
+        </div>
+
+        <section class="hp-band" id="argument">
+            <div class="hp-wrap hp-grid">
+                <div class="hp-kicker">The argument</div>
+                <div class="hp-band-text">
+                    <p class="hp-serif">“What machines need from us is discernment, judgment, and wisdom: deciding what is good, whether it was done right, and whether it should be done in the first place.”</p>
+                    <p class="hp-lead">That judgment used to be built on the job, in entry-level work and the mentorship that came with it. Those jobs are thinning out, and AI changes enough that experienced people are close to starting over too. Taste sounds like something you're born with. We think it can be trained, and we're testing how.</p>
+                    <a class="hp-link hp-band-link" href="/writing/taste-is-the-wrong-word/">Read “Taste” is the wrong word, by Sunil Paul →</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="hp-wrap">
+            <section class="hp-paths" id="tracks">
+                <div class="hp-grid hp-paths-head">
+                    <h2 class="hp-h2">Three ways to train it</h2>
+                    <p class="hp-lead">Judgment gets built by doing things and seeing what fails, by arguing with the ideas that came before, and by studying how people handled comparable moments. Each path takes one of those methods. All three are running this fall and return next season.</p>
+                </div>
+                <div class="hp-cards">
+                    <a class="hp-card" href="/hac/" style="--card-accent:#1f8f5f;">
+                        <div class="hp-kicker" style="color:#1f8f5f;">I · Practice</div>
+                        <h3>Homebrew AI Club</h3>
+                        <p class="hp-p">A working session for people running real AI agents, tools, and loops. Members demo their setups live, say what worked and what broke, and we dig into it together.</p>
+                        <p class="hp-p"><strong>Advanced</strong> is for people who run agents, pipelines, or loops every day; demos go to full depth. <strong>Intermediate</strong> is for people who want to do much more than simple prompts.</p>
+                        <div class="hp-card-foot">
+                            <p class="hp-meta">Every other Thursday, 5:00–6:30pm PT<br>Advanced: six sessions, Oct 1 to Dec 17 · In person in SF, with remote seats<br>Intermediate: five sessions, Oct 8 to Dec 10 · By video, screen-shared demos<br>Ten to twenty seats per cohort · Dates on the schedule</p>
+                            <span class="hp-link">See the club →</span>
+                        </div>
+                    </a>
+                    <a class="hp-card" href="/civilization/" style="--card-accent:#7a2e1d;">
+                        <div class="hp-kicker" style="color:#7a2e1d;">II · Principles</div>
+                        <h3>AI and Civilization</h3>
+                        <p class="hp-p">A deep-reading seminar on the texts today's AI arguments came from: Descartes, Turing, Hobbes, Wiener, Schelling. Short readings, sent ahead. Two hours at the table working out what they say.</p>
+                        <p class="hp-p">No lecture and no expert at the head of the table. A moderator keeps the argument honest; everyone has read the same pages. No technical background needed; the readings are the only prerequisite.</p>
+                        <div class="hp-card-foot">
+                            <p class="hp-meta">Sundays 4–6pm PT<br>Six sessions, Sept 27 to Nov 1 · In person in SF<br>Eight to fifteen seats</p>
+                            <span class="hp-link">See the seminar →</span>
+                        </div>
+                    </a>
+                    <a class="hp-card" href="/shaping/" style="--card-accent:#2b5e8c;">
+                        <div class="hp-kicker" style="color:#2b5e8c;">III · Precedent</div>
+                        <h3>How Society Shapes Technology</h3>
+                        <p class="hp-p">Cases from 120 years of technologies being sped up, redirected, or stopped, and why. Work through the record, then argue where AI's path will be decided.</p>
+                        <p class="hp-p">Built for people who bring a field with them, whatever it is. The history is the shared ground; your expertise is the contribution.</p>
+                        <div class="hp-card-foot">
+                            <p class="hp-meta">Wednesdays 6:30–8:30pm PT<br>Six sessions, Sept 30 to Nov 4 · By video<br>Fixed cohort, same people every week</p>
+                            <span class="hp-link">See the cases →</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="hp-grid hp-note">
+                    <p class="hp-p"><strong>Not in San Francisco?</strong> Two cohorts meet by video: the club's Intermediate cohort on Thursdays and How Society Shapes Technology on Wednesday evenings. The Advanced club holds a few remote seats for experienced builders. Times are Pacific. Nobody pays until a cohort is confirmed.</p>
+                    <p class="hp-p"><strong>Mixed cohorts, on purpose.</strong> Past cohorts have included engineers and product people, AI researchers, UI designers, founders, lawyers, recruiters, executives, and students. What they had in common was the reason they came: to expand how they think, with the tools as the means. That is still the only entry requirement.</p>
+                </div>
+            </section>
+            <section class="hp-reading" id="reading">
+                <div class="hp-grid hp-paths-head">
+                    <h2 class="hp-h2">What we're reading</h2>
+                    <p class="hp-lead">Others have worked on this question for a long time: whether judgment can be learned, which habits of mind build it, and what institutions a world with thinking machines will need. Three places to start.</p>
+                </div>
+                <div class="hp-cards">
+                    <a class="hp-card" href="https://doi.org/10.1037/a0016755" target="_blank" rel="noopener" style="--card-accent:var(--ink);">
+                        <div class="hp-kicker" style="color:var(--ink-faint);">Can it be learned?</div>
+                        <h3>Conditions for Intuitive Expertise</h3>
+                        <p class="hp-p">Kahneman and Klein, from opposing camps, agree on when expert intuition can be trusted: regular settings, long practice, fast feedback.</p>
+                        <div class="hp-card-foot"><p class="hp-meta">Paper · <em>American Psychologist</em>, 2009</p></div>
+                    </a>
+                    <a class="hp-card" href="https://www.paulgraham.com/hamming.html" target="_blank" rel="noopener" style="--card-accent:var(--ink);">
+                        <div class="hp-kicker" style="color:var(--ink-faint);">Habits of mind</div>
+                        <h3>You and Your Research</h3>
+                        <p class="hp-p">Richard Hamming of Bell Labs on the habits that separated people who did important work from people who didn't.</p>
+                        <div class="hp-card-foot"><p class="hp-meta">Talk · 1986</p></div>
+                    </a>
+                    <a class="hp-card" href="https://doi.org/10.1126/science.adt9819" target="_blank" rel="noopener" style="--card-accent:var(--ink);">
+                        <div class="hp-kicker" style="color:var(--ink-faint);">Institutions</div>
+                        <h3>Large AI Models Are Cultural and Social Technologies</h3>
+                        <p class="hp-p">Treat large models like markets and the printing press, systems for passing on knowledge, and institutions become the thing to design.</p>
+                        <div class="hp-card-foot"><p class="hp-meta">Paper · <em>Science</em>, 2025</p></div>
+                    </a>
+                </div>
+                <div class="hp-note"><a class="hp-link" href="/reading/">The full reading list →</a></div>
+            </section>
+
+            <section class="hp-next" id="next">
+                <div class="hp-grid hp-paths-head">
+                    <h2 class="hp-h2">What's next</h2>
+                    <p class="hp-lead">The fall season ends with Demo Day on December 10. Next season's lineup is being chosen now, and we're looking for people to lead classes.</p>
+                </div>
+                <div class="hp-cards">
+                    <a class="hp-card" href="/demo-day/" style="--card-accent:var(--ink);">
+                        <div class="hp-kicker" style="color:var(--ink-faint);">Thursday, December 10</div>
+                        <h3>Demo Day</h3>
+                        <p class="hp-p">The fall cohorts show what they built and what they concluded. Next season's lineup is announced. Then a party.</p>
+                        <div class="hp-card-foot">
+                            <p class="hp-meta">San Francisco · <span class="tbd">6:00–9:00pm</span></p>
+                            <span class="hp-link">RSVP →</span>
+                        </div>
+                    </a>
+                    <a class="hp-card" href="/next/" style="--card-accent:var(--ink);">
+                        <div class="hp-kicker" style="color:var(--ink-faint);">Next season · <span class="tbd">January 2027</span></div>
+                        <h3>Help pick the lineup</h3>
+                        <p class="hp-p">Eight candidate classes, five returning and three new. Tell us which you'd take. The ones that draw enough people run.</p>
+                        <div class="hp-card-foot">
+                            <p class="hp-meta">Two-minute form · No payment, no commitment</p>
+                            <span class="hp-link">See the candidates →</span>
+                        </div>
+                    </a>
+                    <a class="hp-card" href="/teach/" style="--card-accent:var(--ink);">
+                        <div class="hp-kicker" style="color:var(--ink-faint);">Call for instructors</div>
+                        <h3>Lead a class</h3>
+                        <p class="hp-p">Lead a cohort of one of our three paths, or propose a class of your own. We handle recruiting, admissions, and logistics.</p>
+                        <div class="hp-card-foot">
+                            <p class="hp-meta">Proposals due <span class="tbd">November 20</span></p>
+                            <span class="hp-link">Propose a class →</span>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+        </div>
+
+        <div class="hp-wrap">
+            <section class="hp-say" aria-roledescription="carousel" aria-label="What people say">
+                <h2 class="hp-h2">What people say</h2>
+                <div class="hp-carousel">
+                    <div class="hp-track" id="hp-track" tabindex="0">
+                        <div class="hp-quote" role="group" aria-roledescription="slide" aria-label="1 of 6">
+                            <div class="hp-kicker hp-kicker-fellowship">From the announcement</div>
+                            <blockquote>“It's worth checking out. These cohorts are going to be really strong with an extra level of depth.”</blockquote>
+                            <cite><strong>DJ Patil</strong> · former U.S. Chief Data Scientist</cite>
+                        </div>
+                        <div class="hp-quote" role="group" aria-roledescription="slide" aria-label="2 of 6">
+                            <div class="hp-kicker hp-kicker-fellowship">On the fellowship</div>
+                            <blockquote>“The most important, useful, and stimulating community and conversation in AI today.”</blockquote>
+                            <cite><strong>Yves Bergquist</strong> · AI &amp; Enterprise Systems researcher, Entertainment Technology Center at USC</cite>
+                        </div>
+                        <div class="hp-quote" role="group" aria-roledescription="slide" aria-label="3 of 6">
+                            <div class="hp-kicker">On Homebrew AI Club</div>
+                            <blockquote>“I was already building with AI tools before the Bell AI Fellowship. What it changed was the approach. I came out running on a system I built myself, and I use it every day now.”</blockquote>
+                            <cite><strong><a href="https://www.albersadvisory.biz/" target="_blank" rel="noopener">Michael Albers</a></strong> · former Chief Product Officer, Yahoo!/AOL</cite>
+                        </div>
+                        <div class="hp-quote" role="group" aria-roledescription="slide" aria-label="4 of 6">
+                            <div class="hp-kicker hp-kicker-fellowship">From the first cohort</div>
+                            <blockquote>“The fellowship was invaluable. It forced me to grapple with my ideas with a group of smart, technically savvy entrepreneurs and thinkers.”</blockquote>
+                            <cite><strong>Joshua Davis</strong> · Founder &amp; CEO, Storyline Labs · New York Times bestselling author and award-winning Hollywood producer</cite>
+                        </div>
+                        <div class="hp-quote" role="group" aria-roledescription="slide" aria-label="5 of 6">
+                            <div class="hp-kicker hp-kicker-fellowship">From the first cohort</div>
+                            <blockquote>“The Bell AI Fellowship changed how I was approaching building with AI. I left not just with new tools, but with better judgment about what to build, how to test it, and where AI is actually useful.”</blockquote>
+                            <cite><strong>Nimo Ismail</strong> · Brown University ’23 · Java Developer at NABP</cite>
+                        </div>
+                        <div class="hp-quote" role="group" aria-roledescription="slide" aria-label="6 of 6">
+                            <div class="hp-kicker hp-kicker-fellowship">From the first cohort</div>
+                            <blockquote>“What makes the fellowship special is the opportunity to connect with other builders and practitioners who bring genuine depth to the products and problems being explored.”</blockquote>
+                            <cite><strong>Rui Wang</strong> · AI Engineer · early LinkedIn software hire</cite>
+                        </div>
+                    </div>
+                    <div class="hp-car-nav">
+                        <button class="hp-car-btn" type="button" data-dir="-1" aria-label="Previous quote">&larr;</button>
+                        <div class="hp-car-dots" id="hp-dots" role="tablist" aria-label="Choose quote"></div>
+                        <button class="hp-car-btn" type="button" data-dir="1" aria-label="Next quote">&rarr;</button>
+                    </div>
+                </div>
+            </section>
+            <script>
+            (function () {
+                var track = document.getElementById('hp-track');
+                var slides = Array.prototype.slice.call(track.children);
+                var dots = document.getElementById('hp-dots');
+                var n = slides.length, current = 0, timer = null, userTouched = false;
+                var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                slides.forEach(function (_, i) {
+                    var b = document.createElement('button');
+                    b.className = 'hp-car-dot'; b.type = 'button'; b.setAttribute('role', 'tab');
+                    b.setAttribute('aria-label', 'Quote ' + (i + 1));
+                    b.addEventListener('click', function () { userTouched = true; go(i); });
+                    dots.appendChild(b);
+                });
+                function paint() {
+                    Array.prototype.forEach.call(dots.children, function (d, i) {
+                        if (i === current) d.setAttribute('aria-current', 'true'); else d.removeAttribute('aria-current');
+                    });
+                }
+                function go(i) {
+                    current = (i + n) % n;
+                    track.scrollTo({ left: slides[current].offsetLeft, behavior: reduce ? 'auto' : 'smooth' });
+                    paint();
+                }
+                Array.prototype.forEach.call(document.querySelectorAll('.hp-car-btn'), function (b) {
+                    b.addEventListener('click', function () { userTouched = true; go(current + Number(b.dataset.dir)); });
+                });
+                var scrollTimer;
+                track.addEventListener('scroll', function () {
+                    clearTimeout(scrollTimer);
+                    scrollTimer = setTimeout(function () {
+                        var w = track.clientWidth || 1;
+                        current = Math.round(track.scrollLeft / w) % n; paint();
+                    }, 80);
+                });
+                track.addEventListener('keydown', function (e) {
+                    if (e.key === 'ArrowRight') { userTouched = true; go(current + 1); e.preventDefault(); }
+                    if (e.key === 'ArrowLeft') { userTouched = true; go(current - 1); e.preventDefault(); }
+                });
+                function start() { if (reduce || userTouched) return; stop(); timer = setInterval(function () { go(current + 1); }, 8000); }
+                function stop() { if (timer) { clearInterval(timer); timer = null; } }
+                var box = track.parentNode;
+                box.addEventListener('mouseenter', stop); box.addEventListener('mouseleave', start);
+                box.addEventListener('focusin', stop); box.addEventListener('focusout', start);
+                track.addEventListener('touchstart', function () { userTouched = true; stop(); }, { passive: true });
+                document.addEventListener('visibilitychange', function () { document.hidden ? stop() : start(); });
+                paint(); start();
+            })();
+            </script>
+
+            <section class="hp-grid hp-ready" id="apply">
+                <div class="hp-ready-text">
+                    <h2 class="hp-h2">Help shape next season</h2>
+                    <p class="hp-lead">Tell us which classes you'd take, and the days and formats that work for you. We announce the lineup at Demo Day on December 10 and open applications that night. Everyone who answers hears first.</p>
+                    <p class="hp-meta"><span class="tbd">$180 per class</span> · Financial assistance for anyone who asks · Every application is read</p>
+                </div>
+                <div class="hp-ready-cta">
+                    <a class="hp-btn" href="/next/">See the candidate classes</a>
+                    <a class="hp-link" href="/teach/">Propose a class to lead →</a>
+                </div>
+            </section>
+
+            <section class="hp-founders">
+                <div class="hp-grid hp-founders-head">
+                    <h2 class="hp-h2">Who we are</h2>
+                    <p class="hp-lead">A founder and investor who began as a congressional technology-policy analyst, and a product leader from Yahoo, Visa, and Verizon.</p>
+                </div>
+                <div class="hp-founder-grid">
+                    <div class="hp-founder">
+                        <div class="hp-founder-photo"><img src="/images/sunil-paul.jpg" alt="Sunil Paul" style="object-position: 70% 30%;"></div>
+                        <div class="hp-founder-body">
+                            <h3>Sunil Paul</h3>
+                            <p class="hp-p">Serial entrepreneur and investor. Founded four venture-backed companies; investor or board member for five IPOs and four unicorns. Analyzed technology policy at the congressional Office of Technology Assessment and charted climate-tech trajectories with the Gigaton Throwdown. Co-founded Bell AI to build the kind of learning community he wishes existed when he was starting out.</p>
+                            <a href="https://www.linkedin.com/in/sunilpaul/" target="_blank" rel="noopener" class="hp-link">LinkedIn →</a>
+                        </div>
+                    </div>
+                    <div class="hp-founder">
+                        <div class="hp-founder-photo"><img src="/images/tenni-theurer.jpg" alt="Tenni Theurer" style="object-position: 50% 12%; transform: scale(1.38); transform-origin: 50% 28%;"></div>
+                        <div class="hp-founder-body">
+                            <h3>Tenni Theurer</h3>
+                            <p class="hp-p">Product builder who has led $1.6B businesses and products reaching 500M+ users at Yahoo, Visa, and Verizon. Engineer turned product leader, GM, and founder. Co-founded Bell AI because good judgment about AI is built the way she has always worked: hands-on, with other people.</p>
+                            <a href="https://www.linkedin.com/in/tennitheurer/" target="_blank" rel="noopener" class="hp-link">LinkedIn →</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <footer class="hp-footer">
+            <div class="hp-wrap">
+                <div class="hp-footer-brand"><img src="/images/bellai-logo.png" alt=""><span>2026 Bell AI Fellowship · San Francisco</span></div>
+                <div class="hp-footer-links">
+                    <a href="https://aughthour.com/privacy.html" target="_blank" rel="noopener">Privacy</a>
+                    <a href="https://www.aughthour.com/terms.html" target="_blank" rel="noopener">Terms</a>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
